@@ -1,0 +1,181 @@
+import { useState, useRef, useCallback } from "react";
+
+function BenefitsLongTerm() {
+    const menuItems = [
+        {
+            id: 1,
+            title: "Registracija vozila",
+            content: {
+                text: "Zaboravite na papirologiju – kod dugoročnog najma, sve administrativne obaveze preuzimamo mi. Nema gubljenja vremena ni dodatnih troškova, samo bezbrižna vožnja od prvog dana.",
+                image: "/src/assets/vehicleRegistration.jfif",
+            },
+        },
+        {
+            id: 2,
+            title: "Zamjensko vozilo",
+            content: {
+                text: "DRGUI BKSADKASLtručni tim osigurava pravovremeno obavljanje svih potrebnih koraka.",
+                image: "/src/assets/dalmatia.jfif",
+            },
+        },
+        {
+            id: 3,
+            title: "Održavanje vozila",
+            content: {
+                text: "TRECI Brinemo o registraciji vašeg vozila tijekom cijelog razdoblja najma. Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka.",
+                image: "/api/placeholder/400/300",
+            },
+        },
+        {
+            id: 4,
+            title: "Upravljanje štetama",
+            content: {
+                text: "ZADNJI Brinemo o registraciji vašeg vozila tijekom cijelog razdoblja najma. Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka.",
+                image: "/api/placeholder/400/300",
+            },
+        },
+        {
+            id: 5,
+            title: "Osiguranje vozila",
+            content: {
+                text: "ZADNJI Brinemo o registraciji vašeg vozila tijekom cijelog razdoblja najma. Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka.",
+                image: "/api/placeholder/400/300",
+            },
+        },
+        {
+            id: 6,
+            title: "Jamstvo pomoći na cesti",
+            content: {
+                text: "ZADNJI Brinemo o registraciji vašeg vozila tijekom cijelog razdoblja najma. Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka.",
+                image: "/api/placeholder/400/300",
+            },
+        },
+        {
+            id: 7,
+            title: "Zamjena guma",
+            content: {
+                text: "ZADNJI Brinemo o registraciji vašeg vozila tijekom cijelog razdoblja najma. Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka.",
+                image: "/api/placeholder/400/300",
+            },
+        },
+        {
+            id: 8,
+            title: "Kontrola troškova",
+            content: {
+                text: "ZADNJI Brinemo o registraciji vašeg vozila tijekom cijelog razdoblja najma. Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka.",
+                image: "/api/placeholder/400/300",
+            },
+        },
+    ];
+
+    const [activeId, setActiveId] = useState(1);
+    const navRef = useRef(null);
+
+    const handleItemClick = useCallback((id: number) => {
+        setActiveId(id);
+    }, []);
+
+    const handleKeyDown = useCallback(
+        (event: React.KeyboardEvent<HTMLDivElement>, id: number) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                setActiveId(id);
+            }
+        },
+        []
+    );
+
+    const activeContent = menuItems.find((item) => item.id === activeId)
+        ?.content ?? {
+        text: "Content not found",
+        image: "/api/placeholder/400/300",
+    };
+
+    return (
+        <div className="w-full bg-secondary-100 flex justify-center">
+            <div className="flex flex-col items-center gap-[40px] w-[1440px] px-[160px] pt-[80px] pb-[120px]">
+                <h3 className="text-primary text-[46px] font-extrabold leading-[110%]">
+                    Prednosti dugoročnog najma
+                </h3>
+                <div className="flex items-center justify-between w-full relative">
+                    <nav
+                        ref={navRef}
+                        role="tablist"
+                        aria-label="Benefits navigation"
+                        className="flex flex-col items-start relative"
+                    >
+                        {menuItems.map((item) => (
+                            <div
+                                key={item.id}
+                                role="tab"
+                                tabIndex={0}
+                                id={`tab-${item.id}`}
+                                aria-selected={activeId === item.id}
+                                aria-controls={`panel-${item.id}`}
+                                onClick={() => handleItemClick(item.id)}
+                                onKeyDown={(e) => handleKeyDown(e, item.id)}
+                                className={`flex items-end gap-2 pt-6 pb-5 px-5 relative self-stretch w-full border-r 
+                                    ${
+                                        activeId === item.id
+                                            ? "bg-secondary-200 border-r-4 border-secondary"
+                                            : "border-neutral-300"
+                                    }`}
+                            >
+                                <h3
+                                    className={`relative w-fit text-[20px] font-gilroy leading-[120%] whitespace-nowrap 
+                                    ${
+                                        activeId === item.id
+                                            ? "text-secondary"
+                                            : "text-base-black"
+                                    }
+                                    `}
+                                >
+                                    {item.title}
+                                </h3>
+                            </div>
+                        ))}
+                    </nav>
+                    <div
+                        role="tabpanel"
+                        id={`panel-${activeId}`}
+                        aria-labelledby={`tab-${activeId}`}
+                    >
+                        <div className="relative flex flex-col gap-[16px] w-[631px] transition-opacity duration-300 ease-in-out">
+                            <img
+                                src={activeContent.image}
+                                alt=""
+                                className="w-[431px] h-[288px] object-cover rounded-[32px]"
+                                aria-hidden="true"
+                            />
+                            <div className="w-[312px] p-[16px] flex flex-col gap-[8px] rounded rounded-[9px] bg-white absolute right-0 top-1/4">
+                                <div className="flex gap-[4px]">
+                                    <img src="/src/assets/checkCircle.svg"></img>
+                                    <p className="font-gilroy-medium text-[18px] leading-[120%] text-base-black">
+                                        Uštedite vrijeme i novac
+                                    </p>
+                                </div>
+                                <div className="flex gap-[4px]">
+                                    <img src="/src/assets/checkCircle.svg"></img>
+                                    <p className="font-gilroy-medium text-[18px] leading-[120%] text-base-black">
+                                        Bez papirologije i birokracije
+                                    </p>
+                                </div>
+                                <div className="flex gap-[4px]">
+                                    <img src="/src/assets/checkCircle.svg"></img>
+                                    <p className="font-gilroy-medium text-[18px] leading-[120%] text-base-black">
+                                        Jednostavno i lagano
+                                    </p>
+                                </div>
+                            </div>
+                            <p className="text-left text-[18px] text-base-black leading-[120%]">
+                                {activeContent.text}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default BenefitsLongTerm;

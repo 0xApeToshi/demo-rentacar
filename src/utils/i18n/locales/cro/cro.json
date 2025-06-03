@@ -1,0 +1,79 @@
+{
+    "booking.manage": "Upravljanje rezervacijom",
+
+    "nav": {
+        "rental": "Najam automobila",
+        "longTerm": "Dugoročni najam",
+        "offers": "Posebne ponude",
+        "locations": "Lokacije",
+        "about": "O nama",
+        "blog": "Blog",
+        "contact": "Kontakt"
+    },
+    "hero": {
+        "title": "Sigurna vožnja počinje s pravim partnerom",
+        "subtitle": "Odaberite vozilo, a mi ćemo se pobrinuti za sve ostalo. Idemo korak dalje kako bismo osigurali vaše zadovoljstvo.",
+        "checkOne": "Samo nova i provjerena vozila",
+        "checkTwo": "Mogućnost dostave i preuzimanja na vašu adresu",
+        "checkThree": "Brza rezervacija, bez papirologije i skrivenih troškova",
+        "checkFour": "Ako vam auto ne odgovara, lako ga zamijenimo",
+        "tagline": "300+ tvrtki se pouzdano oslanjaju na nas"
+    },
+
+    "red.tagline": "Odaberite auto, a mi ćemo se pobrinuti za sve ostalo",
+    "search": {
+        "place": "Mjesto preuzimanja",
+        "location": "Izaberite lokaciju",
+        "pickup": "Vrijeme preuzimanja",
+        "dropoff": "Vrijeme vraćanja",
+        "button": "Pronađi vozilo",
+        "alternateDropoff": "Vraćanje automobila u drugu poslovnicu"
+    },
+
+    "cards": {
+        "location": {
+            "title": "TREBATE AUTO?",
+            "text": "Dostavljamo ga i preuzimamo na vašoj adresi"
+        },
+        "exchange": {
+            "title": "NISTE ZADOVOLJNI?",
+            "text": "Lako ga zamjenjujemo"
+        },
+        "cardPayment": {
+            "title": "NEMATE KARTICU?",
+            "text": "Možete platiti i gotovinom"
+        },
+        "vehicles": {
+            "title": "SAMO NOVA VOZILA",
+            "text": "Maksimalno 2 godine stara"
+        },
+        "support": {
+            "title": "24/7 PODRŠKA",
+            "text": "Uvijek dostupna i brzo reagira"
+        },
+        "flex": {
+            "title": "NAJBRŽE RASTUĆA",
+            "text": "rent-a-car tvrtka u regiji"
+        }
+    },
+    "services": {
+        "headline": "",
+        "button": "",
+        "cars": {
+            "title": "",
+            "subtitle": "",
+            "text": ""
+        },
+        "vans": {
+            "title": "",
+            "subtitle": "",
+            "text": ""
+        },
+        "longterm": {
+            "title": "",
+            "subtitle": "",
+            "text": ""
+        }
+    },
+    "carousel": {}
+}

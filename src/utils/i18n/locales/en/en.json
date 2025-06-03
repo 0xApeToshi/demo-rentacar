@@ -1,0 +1,140 @@
+{
+    "nav": {
+        "rental": "Rent a Car",
+        "longTerm": "Long-Term Rental",
+        "offers": "Special Offers",
+        "locations": "Locations",
+        "about": "About Us",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "booking": {
+        "manage": "Manage Booking"
+    },
+    "search": {
+        "place": "Pick-up & Drop-off Location",
+        "location": "Select a location",
+        "pickup": "Pick-up Date & Time",
+        "dropoff": "Drop-off Date & Time",
+        "button": "Search",
+        "alternateDropoff": "I want to return the car to a different location"
+    },
+    "hero": {
+        "title": "Car Rental That Goes The Extra Mile",
+        "checkOne": "Modern fleet – vehicles up to 2 years old",
+        "checkTwo": "Free pickup and delivery to your address",
+        "checkThree": "Full 24/7 support for your peace of mind",
+        "checkFour": "Flexible contracts tailored to your needs",
+        "tagline": "We Care More – Our promise to you"
+    },
+    "red": {
+        "tagline": "Easy & convenient car rental with Optima Rent"
+    },
+    "cards": {
+        "location": {
+            "title": "CONVENIENT LOCATIONS",
+            "text": "Multiple pickup and drop-off points across the city"
+        },
+        "exchange": {
+            "title": "FLEXIBLE RENTAL",
+            "text": "Change your vehicle if your needs change"
+        },
+        "cardPayment": {
+            "title": "EASY PAYMENT",
+            "text": "Secure and convenient payment methods"
+        },
+        "vehicles": {
+            "title": "MODERN VEHICLES",
+            "text": "Well-maintained cars up to 2 years old"
+        },
+        "support": {
+            "title": "24/7 SUPPORT",
+            "text": "Professional assistance whenever you need it"
+        },
+        "flex": {
+            "title": "TRANSPARENT PRICING",
+            "text": "No hidden fees or unexpected charges"
+        }
+    },
+    "booking_process": {
+        "progress": {
+            "rental_details": "Rental details",
+            "car_selection": "Car Selection",
+            "protection": "Protection Products",
+            "addons": "Other Add-ons",
+            "payment": "Payment"
+        },
+        "car_selection": {
+            "filter_title": "Filter & Sort",
+            "sort_by": "Sort by",
+            "featured": "Featured",
+            "price_high_low": "Price: High to Low",
+            "price_low_high": "Price: Low to High",
+            "car_type": "Car Type",
+            "price_per_day": "Price per day",
+            "gearshift": "Gearshift type",
+            "automatic": "Automatic",
+            "manual": "Manual",
+            "passengers": "Number of Passengers",
+            "filter_button": "Filter",
+            "select_button": "Select",
+            "details": "Details"
+        },
+        "protection": {
+            "title": "Protection Products",
+            "basic_insurance": {
+                "name": "Basic Insurance",
+                "description": "Coverage for basic accidents and third-party damage",
+                "price": "15 €/day"
+            },
+            "full_insurance": {
+                "name": "Full Coverage Insurance",
+                "description": "Complete coverage including theft and natural disasters",
+                "price": "25 €/day"
+            },
+            "additional_driver": {
+                "name": "Additional Driver",
+                "description": "Add one more authorized driver",
+                "price": "10 €/day"
+            },
+            "full_tank": {
+                "name": "Full Tank Option",
+                "description": "Return the car with any fuel level, we handle refueling",
+                "price": "45 €/day"
+            },
+            "continue": "Continue",
+            "booking_overview": "Your Booking Overview",
+            "overview_text1": "The Party shall not be liable for any material damage caused to the vehicle if it complies with all rental conditions",
+            "overview_text2": "Our comprehensive protection options provide peace of mind throughout your rental period"
+        },
+        "addons": {
+            "title": "Additional Services",
+            "extra_driver": {
+                "name": "Extra Driver",
+                "description": "Add an additional authorized driver to your rental",
+                "price": "12 €/day"
+            },
+            "green_card": {
+                "name": "Green Card",
+                "description": "International insurance certificate for cross-border travel",
+                "price": "35 €/day"
+            },
+            "gps": {
+                "name": "GPS Navigation",
+                "description": "Advanced navigation system with real-time traffic updates",
+                "price": "8 €/day"
+            },
+            "child_seat": {
+                "name": "Child Seat",
+                "description": "Safe and comfortable child seat for kids under 5 years",
+                "price": "7 €/day"
+            },
+            "continue": "Continue",
+            "price_details": "Price details"
+        },
+        "payment": {
+            "title": "Payment Details",
+            "reserve_now": "Reserve Now"
+        }
+    }
+}
