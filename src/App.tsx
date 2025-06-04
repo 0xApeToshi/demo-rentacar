@@ -14,6 +14,7 @@ import Addons from "./components/bookingprocess/Addons";
 import Payment from "./components/bookingprocess/Payment";
 import CityRentalPage from "./components/pages/CityRentalPage";
 import ContactForm from "./components/common/ContactForm";
+import NotFoundPage from "./components/pages/NotFoundPage";
 
 function App() {
     return (
@@ -38,10 +39,8 @@ function App() {
                         <Route path="/about-us" element={<AboutUsPage />} />
                         <Route path="/contact" element={<ContactForm />} />
 
-                        {/* Dynamic city rental routes - TODO fix this, leave comment, workaround for now */}
-                        {/* <Route path="/rent-:citySlug" element={<CityRentalPage />} /> */}
-                        <Route path="/rent-zagreb" element={<CityRentalPage />} />
-                        <Route path="/rent-split" element={<CityRentalPage />} />
+                        {/* Dynamic city rental routes */}
+                        <Route path="/rent-:citySlug" element={<CityRentalPage />} />
 
                         {/* Booking process routes */}
                         <Route path="/booking" element={<CarSelection />} />
@@ -51,6 +50,7 @@ function App() {
                         />
                         <Route path="/booking/add-ons" element={<Addons />} />
                         <Route path="/booking/payment" element={<Payment />} />
+                        <Route path="*" element={<NotFoundPage />} />
                     </Routes>
                 </BookingProvider>
                 <Footer />
