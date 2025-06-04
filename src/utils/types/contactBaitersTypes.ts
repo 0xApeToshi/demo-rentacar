@@ -1,5 +1,4 @@
-import { useTranslation } from "react-i18next";
-
+// Simple interface definitions only
 export interface contactBaitersTypes {
     imageSrc: string;
     title: string;
@@ -14,6 +13,7 @@ export interface BaiterProps {
     items: contactBaitersTypes[];
 }
 
+// Only keeping the original data for reference or fallback
 export const baiterData: contactBaitersTypes[] = [
     {
         imageSrc: "/assets/contactBaiterOne.jpg",
@@ -74,69 +74,3 @@ export const aboutData: contactBaitersTypes[] = [
         buttonText: "",
     },
 ];
-
-export const useBaiterData = () => {
-    const { t } = useTranslation();
-
-    return [
-        {
-            imageSrc: "/assets/contactBaiterOne.jpg",
-            title: t("long_term.contact_baiters.private.title"),
-            subtitle: t("long_term.contact_baiters.private.subtitle"),
-            text: t("long_term.contact_baiters.private.text"),
-            buttonText: t("common.buttons.contact_us"),
-        },
-        {
-            imageSrc: "/assets/contactBaiterTwo.jpg",
-            title: t("long_term.contact_baiters.business.title"),
-            subtitle: t("long_term.contact_baiters.business.subtitle"),
-            text: t("long_term.contact_baiters.business.text"),
-            buttonText: t("common.buttons.contact_us"),
-        },
-    ];
-};
-
-export const useAboutData = () => {
-    const { t } = useTranslation();
-
-    return [
-        {
-            imageSrc: "/assets/fleet.jpg",
-            title: t("about.fleet.title"),
-            subtitle: t("about.fleet.subtitle"),
-            points: [
-                t("about.fleet.points.0"),
-                t("about.fleet.points.1"),
-                t("about.fleet.points.2"),
-                t("about.fleet.points.3"),
-            ],
-            color: "blue",
-            buttonText: t("common.buttons.rent_now"),
-        },
-        {
-            imageSrc: "/assets/values.jpg",
-            title: t("about.values.title"),
-            subtitle: t("about.values.subtitle"),
-            points: [
-                t("about.values.points.0"),
-                t("about.values.points.1"),
-                t("about.values.points.2"),
-                t("about.values.points.3"),
-            ],
-            color: "blue",
-            buttonText: t("common.buttons.rent_long_term"),
-        },
-        {
-            imageSrc: "/assets/environment.jpg",
-            title: t("about.sustainable.title"),
-            subtitle: t("about.sustainable.subtitle"),
-            points: [
-                t("about.sustainable.points.0"),
-                t("about.sustainable.points.1"),
-                t("about.sustainable.points.2"),
-            ],
-            color: "green",
-            buttonText: "",
-        },
-    ];
-};

@@ -19,7 +19,7 @@ const getCardData = (t: TFunction<"translation", undefined>) => [
             </svg>
         ),
         title: t("cards.vehicles.title"),
-        description: "Do 2 godine starosti",
+        description: t("long_term.features.new_vehicles"),
     },
     {
         icon: (
@@ -36,8 +36,8 @@ const getCardData = (t: TFunction<"translation", undefined>) => [
                 />
             </svg>
         ),
-        title: "FLEKSIBILNI UVJETI",
-        description: "i mogućnost zamjene vozila",
+        title: t("long_term.features.flexible_terms.title"),
+        description: t("long_term.features.flexible_terms.description"),
     },
     {
         icon: (
@@ -54,8 +54,8 @@ const getCardData = (t: TFunction<"translation", undefined>) => [
                 />
             </svg>
         ),
-        title: "BEZ SKRIVENIH TROŠKOVA",
-        description: "i bez komplikacija",
+        title: t("long_term.features.no_hidden_costs.title"),
+        description: t("long_term.features.no_hidden_costs.description"),
     },
     {
         icon: (
@@ -73,7 +73,7 @@ const getCardData = (t: TFunction<"translation", undefined>) => [
             </svg>
         ),
         title: t("cards.support.title"),
-        description: " i brza reakcija u slučaju potrebe",
+        description: t("long_term.features.support"),
     },
     {
         icon: (
@@ -90,8 +90,8 @@ const getCardData = (t: TFunction<"translation", undefined>) => [
                 />
             </svg>
         ),
-        title: "Dostava i preuzimanje",
-        description: "vozila na vašoj adresi",
+        title: t("long_term.features.delivery.title"),
+        description: t("long_term.features.delivery.description"),
     },
 ];
 

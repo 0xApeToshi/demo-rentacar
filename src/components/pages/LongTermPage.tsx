@@ -1,4 +1,3 @@
-import { baiterData } from "@/utils/types/contactBaitersTypes";
 import { useTranslation } from "react-i18next";
 import PartnerLogos from "../common/PartnerLogos";
 import BenefitsLongTerm from "../longtermpage/BenefitsLongTerm";
@@ -7,12 +6,14 @@ import ComparisonTable from "../longtermpage/ComparisonTable";
 import LongTermFeat from "../longtermpage/LongTermFeat";
 import LongTermHero from "../longtermpage/LongTermHero";
 import RentFlow from "../longtermpage/RentFlow";
-import ContactBaiters from "../longtermpage/ContactBaiters";
+import ContactBaiters, { getTranslatedBaiterData } from "../longtermpage/ContactBaiters";
 import Faq from "../common/Faq";
 import ContactForm from "../common/ContactForm";
 
 function LongTermPage() {
     const { t } = useTranslation();
+    // Get translated baiter data
+    const translatedBaiterData = getTranslatedBaiterData();
 
     return (
         <div className="flex flex-col items-center bg-base w-full">
@@ -36,7 +37,8 @@ function LongTermPage() {
             <ComparisonTable />
             <RentFlow />
 
-            <ContactBaiters items={baiterData} />
+            {/* Use translated baiter data instead of the static Croatian data */}
+            <ContactBaiters items={translatedBaiterData} />
             <Faq />
             <ContactForm />
         </div>

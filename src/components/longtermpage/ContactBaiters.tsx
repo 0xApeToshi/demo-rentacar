@@ -19,8 +19,6 @@ function ContactBaiterItem({
     color,
     isMirrored = false,
 }: ContactBaiterItemProps) {
-    // const { t } = useTranslation();
-
     return (
         <div className="w-full bg-base flex justify-center">
             <section className="w-[1440px] min-h-[800px] relative px-[120px] py-[200px] flex justify-between">
@@ -87,7 +85,7 @@ function ContactBaiters({ items }: BaiterProps) {
     );
 }
 
-// Helper function to update data source in contactBaitersTypes.ts
+// Helper function to get translated baiter data
 export function getTranslatedBaiterData() {
     const { t } = useTranslation();
 
@@ -120,7 +118,12 @@ export function getTranslatedAboutData() {
             imageSrc: "/assets/fleet.jpg",
             title: t("about.fleet.title"),
             subtitle: t("about.fleet.subtitle"),
-            points: t("about.fleet.points", { returnObjects: true }) as string[],
+            points: [
+                t("about.fleet.points.0"),
+                t("about.fleet.points.1"),
+                t("about.fleet.points.2"),
+                t("about.fleet.points.3"),
+            ],
             color: "blue",
             buttonText: t("common.buttons.rent_now"),
         },
@@ -128,7 +131,12 @@ export function getTranslatedAboutData() {
             imageSrc: "/assets/values.jpg",
             title: t("about.values.title"),
             subtitle: t("about.values.subtitle"),
-            points: t("about.values.points", { returnObjects: true }) as string[],
+            points: [
+                t("about.values.points.0"),
+                t("about.values.points.1"),
+                t("about.values.points.2"),
+                t("about.values.points.3"),
+            ],
             color: "blue",
             buttonText: t("common.buttons.rent_long_term"),
         },
@@ -136,7 +144,11 @@ export function getTranslatedAboutData() {
             imageSrc: "/assets/environment.jpg",
             title: t("about.sustainable.title"),
             subtitle: t("about.sustainable.subtitle"),
-            points: t("about.sustainable.points", { returnObjects: true }) as string[],
+            points: [
+                t("about.sustainable.points.0"),
+                t("about.sustainable.points.1"),
+                t("about.sustainable.points.2"),
+            ],
             color: "green",
             buttonText: "",
         },
