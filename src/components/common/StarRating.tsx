@@ -1,10 +1,11 @@
 import { Star, StarHalf } from "lucide-react";
 
-interface StarProps {
+interface StarRatingProps {
     rating: number;
     size?: number;
     color?: string;
     className?: string;
+    showValue?: boolean;
 }
 
 function StarRating({
@@ -12,7 +13,8 @@ function StarRating({
     size = 20,
     color = "#EDB167",
     className = "",
-}: StarProps) {
+    showValue = true,
+}: StarRatingProps) {
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 >= 0.3;
     const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
@@ -25,22 +27,27 @@ function StarRating({
                     size={size}
                     fill={color}
                     color={color}
+                    strokeWidth={1}
                 />
             ))}
 
-            {hasHalfStar && <StarHalf size={size} fill={color} color={color} />}
+            {hasHalfStar && <StarHalf size={size} fill={color} color={color} strokeWidth={1} />}
 
             {[...Array(emptyStars)].map((_, i) => (
                 <Star
                     key={`empty-${i}`}
                     size={size}
                     color={color}
-                    strokeWidth={1.5}
+                    strokeWidth={1}
+                    fill="transparent"
                 />
             ))}
-            <span className="heading-[120%] text-base-black text-[16px] font-semibold">
-                ({rating.toFixed(1)})
-            </span>
+
+            {showValue && (
+                <span className="heading-[120%] text-base-black text-sm sm:text-base font-semibold ml-1">
+                    ({rating.toFixed(1)})
+                </span>
+            )}
         </div>
     );
 }

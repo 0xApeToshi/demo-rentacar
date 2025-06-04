@@ -1,55 +1,78 @@
+// src/components/rentpage/CarPicker.tsx
 import { getWordVariation } from "@/utils/cityDeclinations";
-import { rentProps } from "../pages/RentACarZagreb";
-import CarCarousel from "../common/CarCarousel";
 import Button from "../common/Button";
+import CarCarousel from "../common/CarCarousel";
+import { useTranslation } from "react-i18next";
 
-const rentPickerData = [
-    {
-        title: "MINI AUTOMOBILI",
-        description: "Idealni za gradske vožnje.",
-    },
-    {
-        title: "SUV I LIMUZINE",
-        description: "Savršeni za obiteljske i poslovne korisnike.",
-    },
-    {
-        title: "KOMBI VOZILA",
-        description: "Prostrana opcija za grupe ili veći prtljag.",
-    },
-];
+interface CarPickerProps {
+    city: string;
+    recommendedVehicles?: string[];
+}
 
-function CarPicker({ city }: rentProps) {
+function CarPicker({ city, recommendedVehicles = [] }: CarPickerProps) {
+    const { t } = useTranslation();
+    const cityInDative = getWordVariation(city, "dative");
+
+    // Default categories
+    const defaultCategories = [
+        {
+            id: "mini",
+            title: t("rent.car_picker.categories.mini.title"),
+            description: t("rent.car_picker.categories.mini.description"),
+        },
+        {
+            id: "suv",
+            title: t("rent.car_picker.categories.suv.title"),
+            description: t("rent.car_picker.categories.suv.description"),
+        },
+        {
+            id: "van",
+            title: t("rent.car_picker.categories.van.title"),
+            description: t("rent.car_picker.categories.van.description"),
+        },
+    ];
+
+    // Filter categories based on recommended vehicles for this city
+    const filteredCategories = recommendedVehicles?.length
+        ? defaultCategories.filter(cat => recommendedVehicles.includes(cat.id))
+        : defaultCategories;
+
     return (
         <div className="w-full bg-white flex justify-center">
             <section className="w-[1440px] px-[120px] py-[80px]">
                 <div className="flex flex-col gap-[8px] text-left w-[593px] items-start">
                     <h3 className="font-gilroy text-[46px] leading-[110%] text-primary">
-                        Odaberite savršeno vozilo za svoj boravak u{" "}
-                        {getWordVariation(city, "dative")}
+                        {t("rent.car_picker.title", { city: cityInDative })}
                     </h3>
-                    <p className="w-[565px] text-base-black text-[20px] font-gilory leading-[120%]">
-                        Provjerite našu flotu i pronađite automobil koji
-                        najbolje odgovara vašim potrebama.
+                    <p className="w-[565px] text-base-black text-[20px] font-gilroy leading-[120%]">
+                        {t("rent.car_picker.subtitle")}
                     </p>
                 </div>
                 <div className="pb-[80px] pt-[40px] flex gap-[32px]">
-                    {rentPickerData.map((item) => (
-                        <div className="p-[22px] rounded-[16px] w-1/3 h-fit flex flex-col gap-[16px] items-center shadow-lg">
+                    {filteredCategories.map((category) => (
+                        <div
+                            key={category.id}
+                            className="p-[22px] rounded-[16px] w-1/3 h-fit flex flex-col gap-[16px] items-center shadow-lg"
+                        >
                             <div className="flex flex-col gap-[8px]">
                                 <p className="font-gilroy text-[28px] leading-[112%] text-base-black">
-                                    {item.title}
+                                    {category.title}
                                 </p>
                                 <p className="text-[16px] leading-[150%] text-base-black">
-                                    {item.description}
+                                    {category.description}
                                 </p>
                             </div>
-                            <Button variant="secondary" icon="search">
-                                Pretražite
+                            <Button
+                                variant="secondary"
+                                icon="search"
+                                onClick={() => window.location.href = `/booking?category=${category.id}&location=${city}`}
+                            >
+                                {t("common.buttons.search")}
                             </Button>
                         </div>
                     ))}
                 </div>
-                <CarCarousel />
+                <CarCarousel city={city} />
             </section>
         </div>
     );

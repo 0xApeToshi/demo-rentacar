@@ -1,3 +1,4 @@
+// src/App.tsx
 import "./App.css";
 import { ConfigProvider } from "antd";
 import Header from "./components/common/Header";
@@ -6,12 +7,13 @@ import HomePage from "./components/pages/HomePage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LongTermPage from "./components/pages/LongTermPage";
 import AboutUsPage from "./components/pages/AboutUsPage";
-import RentACarZagreb from "./components/pages/RentACarZagreb";
 import BookingProvider from "./context/BookingContext";
 import CarSelection from "./components/bookingprocess/CarSelection";
 import ProtectionProducts from "./components/bookingprocess/ProtectionProducts";
 import Addons from "./components/bookingprocess/Addons";
 import Payment from "./components/bookingprocess/Payment";
+import CityRentalPage from "./components/pages/CityRentalPage";
+import ContactForm from "./components/common/ContactForm";
 
 function App() {
     return (
@@ -34,10 +36,14 @@ function App() {
                         <Route path="/" element={<HomePage />} />
                         <Route path="/long-term" element={<LongTermPage />} />
                         <Route path="/about-us" element={<AboutUsPage />} />
-                        <Route
-                            path="/rent-zagreb"
-                            element={<RentACarZagreb city="Zagreb" />}
-                        />
+                        <Route path="/contact" element={<ContactForm />} />
+
+                        {/* Dynamic city rental routes - TODO fix this, leave comment, workaround for now */}
+                        {/* <Route path="/rent-:citySlug" element={<CityRentalPage />} /> */}
+                        <Route path="/rent-zagreb" element={<CityRentalPage />} />
+                        <Route path="/rent-split" element={<CityRentalPage />} />
+
+                        {/* Booking process routes */}
                         <Route path="/booking" element={<CarSelection />} />
                         <Route
                             path="/booking/protection-products"

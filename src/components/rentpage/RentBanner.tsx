@@ -1,36 +1,46 @@
+// src/components/rentpage/RentBanner.tsx
 import { getWordVariation } from "@/utils/cityDeclinations";
 import Button from "../common/Button";
-import { rentProps } from "../pages/RentACarZagreb";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
-function RentBanner({ city }: rentProps) {
+interface RentBannerProps {
+    city: string;
+}
+
+function RentBanner({ city }: RentBannerProps) {
+    const { t } = useTranslation();
+    const navigate = useNavigate();
+    const cityInDative = getWordVariation(city, "dative");
+
     return (
         <div className="w-full bg-white flex justify-center">
             <section className="w-[1440px] px-[120px] py-[80px]">
                 <div className="w-full rounded-[32px] bg-primary py-[88px] px-[120px] flex flex-col gap-[32px] items-center">
                     <div className="w-[736px] flex flex-col gap-[16px] items-start text-left">
                         <h3 className="w-[697px] font-gilroy text-[64px] leading-[110%] text-base">
-                            Rezervirajte automobil već danas
+                            {t("rent.banner.title")}
                         </h3>
                         <p className="font-gilroy text-[20px] leading-[120%] text-base">
-                            Iskoristite vrhunsku uslugu najma u{" "}
-                            {getWordVariation(city, "dative")} uz Optima Rent
+                            {t("rent.banner.subtitle", { city: cityInDative })}
                         </p>
                         <p className="text-base leading-[120%]">
-                            Whether you need a car for a day or a long-term
-                            rental, we’ve got you covered with flexible options
-                            and a customer-first approach.
+                            {t("rent.banner.description")}
                         </p>
                     </div>
                     <div className="w-[736px] flex justify-start gap-[16px]">
                         <Button
                             variant="primary"
-                            icon="search"
-                            className="border"
+                            className="border border-base"
+                            onClick={() => navigate("/contact")}
                         >
-                            Kontaktirajte nas
+                            {t("common.buttons.contact_us")}
                         </Button>
-                        <Button variant="secondary" icon="search">
-                            Pogledajte flotu
+                        <Button
+                            variant="secondary"
+                            onClick={() => navigate(`/booking?location=${city}`)}
+                        >
+                            {t("common.buttons.book")}
                         </Button>
                     </div>
                 </div>

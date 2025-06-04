@@ -1,13 +1,20 @@
+// src/components/common/CarCarousel.tsx
 import { Card, CardContent } from "@/components/ui/card";
 import { carTypes as CarData } from "@/utils/types/carTypes";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Button from "./Button";
 import { useCallback, useEffect, useState } from "react";
 import Badge from "./Badge";
+import Button from "./Button";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
-function CarCarousel() {
+interface CarCarouselProps {
+    city?: string;
+}
+
+function CarCarousel({ city }: CarCarouselProps) {
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const carData: CarData[] = [
         {
@@ -109,6 +116,12 @@ function CarCarousel() {
             return () => clearInterval(timer);
         }
     }, [nextSlide, isPaused]);
+
+    const handleBookClick = (car: CarData) => {
+        // Add city parameter if available
+        const locationParam = city ? `&location=${city}` : '';
+        navigate(`/booking?carId=${car.id}${locationParam}`);
+    };
 
     return (
         <div className="w-full flex flex-col gap-[22px]">
@@ -253,7 +266,11 @@ function CarCarousel() {
                                         </div>
                                     </div>
 
-                                    <Button variant="primary" icon="search">
+                                    <Button
+                                        variant="primary"
+                                        icon="search"
+                                        onClick={() => handleBookClick(car)}
+                                    >
                                         {car.buttonText}
                                     </Button>
                                 </div>
@@ -266,7 +283,7 @@ function CarCarousel() {
                 <button
                     onClick={prevSlide}
                     className="bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 border border-secondary-900"
-                    aria-label="Previous slide"
+                    aria-label={t("common.buttons.previous_slide")}
                 >
                     <ChevronLeft className="w-6 h-6 text-secondary-700" />
                 </button>
@@ -274,7 +291,7 @@ function CarCarousel() {
                 <button
                     onClick={nextSlide}
                     className="bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 border border-secondary-900"
-                    aria-label="Next slide"
+                    aria-label={t("common.buttons.next_slide")}
                 >
                     <ChevronRight className="w-6 h-6 text-secondary-700" />
                 </button>

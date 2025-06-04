@@ -1,4 +1,5 @@
-import { useCallback, useState } from "react";
+// src/components/common/SearchBar.tsx
+import { useCallback, useState, useEffect } from "react";
 import Button from "./Button";
 import { SearchState } from "../../utils/types/searchTypes";
 import { DatePicker } from "antd";
@@ -9,28 +10,62 @@ import { Dayjs } from "dayjs";
 import { useTranslation } from "react-i18next";
 import { useBooking } from "@/context/BookingContext";
 import { useNavigate } from "react-router-dom";
+import { getAllCities } from "@/utils/cityRepository";
 
 type Location = {
     id: string;
     name: string;
     city: string;
 };
-const mockLocations: Location[] = [
-    { id: "1", name: "Airport", city: "Zagreb" },
-    { id: "2", name: "Airport", city: "Split" },
-    { id: "3", name: "Center", city: "Zadar" },
-    { id: "4", name: "Bus Station", city: "Rijeka" },
-];
 
-function SearchBar() {
+interface SearchBarProps {
+    initialLocation?: string;
+}
+
+function SearchBar({ initialLocation = "" }: SearchBarProps) {
     const [isLoading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [differentLocation, setDiffLocation] = useState(false);
     const { state, dispatch } = useBooking();
     const navigate = useNavigate();
+    const [isMobile, setIsMobile] = useState(false);
 
-    const [searchParams, setParams] = useState<SearchState>(state.search);
+    // Check screen size
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+
+        return () => {
+            window.removeEventListener('resize', checkScreenSize);
+        };
+    }, []);
+
+    // Initialize search params from state or with initial location if provided
+    const initialSearchParams = initialLocation
+        ? { ...state.search, location: initialLocation }
+        : state.search;
+
+    const [searchParams, setParams] = useState<SearchState>(initialSearchParams);
     const { t } = useTranslation();
+
+    // Generate locations from city repository
+    const cities = getAllCities();
+    const mockLocations: Location[] = [
+        ...cities.map(city => ({
+            id: city.slug,
+            name: "Airport",
+            city: city.name
+        })),
+        ...cities.map(city => ({
+            id: `${city.slug}-center`,
+            name: "Center",
+            city: city.name
+        })),
+    ];
 
     const handleSearch = useCallback(async () => {
         if (!searchParams.location) {
@@ -54,7 +89,7 @@ function SearchBar() {
         );
 
         if (!dateUtils.isValidDateRange(pickup, dropoff)) {
-            setError(t("search.validation.invalid_date_range", "Pickup time must be before dropoff time"));
+            setError(t("search.validation.invalid_date_range"));
             return;
         }
 
@@ -104,149 +139,283 @@ function SearchBar() {
     };
 
     return (
-        <div className="flex z-1 flex-col justify-start w-[1277px] bg-base px-[48px] pt-[40px] pb-[60px] rounded-[10px] gap-[10px] relative shadow-[4px_-8px_15px_-3px_rgba(0,0,0,0.1)]">
-            <div className="absolute inline-flex right-[64px] top-[30px] w-fit rounded-[6px] p-[6px] bg-[#E3F0E6] gap-[4px]">
+        <div className="flex z-1 flex-col justify-start w-full max-w-[1277px] bg-base px-6 sm:px-8 md:px-12 lg:px-[48px] pt-[24px] md:pt-[40px] pb-[30px] md:pb-[60px] rounded-[10px] gap-[10px] relative shadow-[4px_-8px_15px_-3px_rgba(0,0,0,0.1)]">
+            <div className="absolute inline-flex right-4 sm:right-[64px] top-[15px] sm:top-[30px] w-fit rounded-[6px] p-[6px] bg-[#E3F0E6] gap-[4px]">
                 <a className="flex text-[12px] text-secondary-1000 leading-[120%]">
-                    ⚡{t("home.reservation_banner.title", "Book your car in 60 seconds!")}
+                    ⚡{t("home.reservation_banner.title")}
                 </a>
             </div>
 
-            <div className="inline-flex place-content-between ">
-                <div className="flex flex-col gap-[8px] w-[531px]">
-                    <label className="flex text-[14px] text-base-black leading-[120%]">
-                        {t("search.place")}
-                    </label>
-                    <select
-                        className="w-full px-[14px] py-[12px] border rounded-[6px] appearance-none border-neutral-700 hover:border-primary"
-                        value={searchParams.location}
-                        onChange={(e) =>
-                            setParams({
-                                ...searchParams,
-                                location: e.target.value,
-                            })
-                        }
-                    >
-                        {!searchParams.location && (
-                            <option value="">{t("search.location")}</option>
-                        )}
-                        {mockLocations.map((location) => (
-                            <option
-                                key={location.id}
-                                value={location.city}
-                            // selected={
-                            //     searchParams.location === location.city
-                            // }
+            {/* Mobile Layout - Stack vertically */}
+            {isMobile && (
+                <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-2">
+                        <label className="text-[14px] text-base-black leading-[120%]">
+                            {t("search.place")}
+                        </label>
+                        <select
+                            className="w-full px-[14px] py-[12px] border rounded-[6px] appearance-none border-neutral-700 hover:border-primary"
+                            value={searchParams.location}
+                            onChange={(e) =>
+                                setParams({
+                                    ...searchParams,
+                                    location: e.target.value,
+                                })
+                            }
+                        >
+                            {!searchParams.location && (
+                                <option value="">{t("search.location")}</option>
+                            )}
+                            {mockLocations.map((location) => (
+                                <option
+                                    key={location.id}
+                                    value={location.city}
+                                >
+                                    {location.city}, {location.name}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                        <label className="text-[14px] text-base-black leading-[120%]">
+                            {t("search.pickup")}
+                        </label>
+                        <div className="grid grid-cols-2 gap-2">
+                            <DatePicker
+                                style={{
+                                    borderTopRightRadius: 0,
+                                    borderBottomRightRadius: 0,
+                                }}
+                                className="w-full"
+                                onChange={handlePickupDateChange}
+                            />
+                            <TimePicker
+                                style={{
+                                    borderTopLeftRadius: 0,
+                                    borderBottomLeftRadius: 0,
+                                }}
+                                className="w-full"
+                                format="HH:mm"
+                                minuteStep={5}
+                                onChange={handlePickupTimeChange}
+                                needConfirm={false}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                        <label className="text-[14px] text-base-black leading-[120%]">
+                            {t("search.dropoff")}
+                        </label>
+                        <div className="grid grid-cols-2 gap-2">
+                            <DatePicker
+                                style={{
+                                    borderTopRightRadius: 0,
+                                    borderBottomRightRadius: 0,
+                                }}
+                                className="w-full"
+                                onChange={handleDropoffDateChange}
+                            />
+                            <TimePicker
+                                style={{
+                                    borderTopLeftRadius: 0,
+                                    borderBottomLeftRadius: 0,
+                                }}
+                                className="w-full"
+                                format="HH:mm"
+                                minuteStep={5}
+                                onChange={handleDropoffTimeChange}
+                                needConfirm={false}
+                            />
+                        </div>
+                    </div>
+
+                    {differentLocation && (
+                        <div className="flex flex-col gap-2">
+                            <label className="text-[14px] text-base-black leading-[120%]">
+                                {t("search.custom_dropoff")}
+                            </label>
+                            <select
+                                className="w-full px-[14px] py-[12px] border rounded-[6px] appearance-none border-neutral-700 hover:border-primary"
+                                value={searchParams.dropoffLocation}
+                                onChange={(e) =>
+                                    setParams({
+                                        ...searchParams,
+                                        dropoffLocation: e.target.value,
+                                    })
+                                }
                             >
-                                {location.city}, {location.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+                                <option value="">{t("search.location")}</option>
+                                {mockLocations.map((location) => (
+                                    <option key={location.id} value={location.city}>
+                                        {location.city}, {location.name}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    )}
 
-                <div className="flex flex-col justify-end gap-[8px] w-[177px] ">
-                    <label className="flex text-[14px] text-base-black leading-[120%]">
-                        {t("search.pickup")}
-                    </label>
-                    <div className="flex">
-                        <DatePicker
-                            style={{
-                                borderTopRightRadius: 0,
-                                borderBottomRightRadius: 0,
-                            }}
-                            className="w-[87px] h-[42px]"
-                            onChange={handlePickupDateChange}
-                        ></DatePicker>
-                        <TimePicker
-                            style={{
-                                borderTopLeftRadius: 0,
-                                borderBottomLeftRadius: 0,
-                            }}
-                            className="w-[87px] h-[42px]"
-                            format="HH:mm"
-                            minuteStep={5}
-                            onChange={handlePickupTimeChange}
-                            needConfirm={false}
-                        ></TimePicker>
+                    <div className="flex w-fit gap-[4px] mb-4">
+                        <input
+                            type="checkbox"
+                            onClick={() => setDiffLocation(!differentLocation)}
+                        />
+                        <label className="text-[14px] text-neutral-700 leading-[120%]">
+                            {t("search.alternateDropoff")}
+                        </label>
                     </div>
-                </div>
-                <div className="flex flex-col justify-end gap-[8px] w-[177px]">
-                    <label className="flex text-[14px] text-base-black leading-[120%]">
-                        {t("search.dropoff")}
-                    </label>
-                    <div className="flex">
-                        <DatePicker
-                            style={{
-                                borderTopRightRadius: 0,
-                                borderBottomRightRadius: 0,
-                            }}
-                            className="w-[87px] h-[42px]"
-                            onChange={handleDropoffDateChange}
-                        ></DatePicker>
-                        <TimePicker
-                            style={{
-                                borderTopLeftRadius: 0,
-                                borderBottomLeftRadius: 0,
-                            }}
-                            className="w-[87px] h-[42px]"
-                            format="HH:mm"
-                            minuteStep={5}
-                            onChange={handleDropoffTimeChange}
-                            needConfirm={false}
-                        ></TimePicker>
-                    </div>
-                </div>
 
-                <div className="flex flex-col justify-end align-middle">
                     <Button
-                        className="w-[200px]"
                         variant="primary"
+                        className="w-full"
                         onClick={handleSearch}
                         disabled={isLoading}
                     >
                         {isLoading ? t("common.form.sending") : t("search.button")}
                     </Button>
                 </div>
-                {error && (
-                    <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-red-500">
-                        {error}
-                    </div>
-                )}
-            </div>
-
-            {differentLocation && (
-                <div className="flex flex-col gap-[4px] w-[531px]">
-                    <label className="flex text-[14px] text-base-black leading-[120%]">
-                        {t("search.custom_dropoff", "Custom dropoff")}
-                    </label>
-                    <select
-                        className="w-full px-[14px] py-[12px] border rounded-[6px] appearance-none border-neutral-700 hover:border-primary"
-                        value={searchParams.dropoffLocation}
-                        onChange={(e) =>
-                            setParams({
-                                ...searchParams,
-                                dropoffLocation: e.target.value,
-                            })
-                        }
-                    >
-                        <option value="">{t("search.location")}</option>
-                        {mockLocations.map((location) => (
-                            <option key={location.id} value={location.id}>
-                                {location.city}, {location.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
             )}
 
-            <div className="flex w-fit gap-[4px]">
-                <input
-                    type="checkbox"
-                    onClick={() => setDiffLocation(!differentLocation)}
-                ></input>
-                <label className="flex text-[14px] text-neutral-700 leading-[120%]">
-                    {t("search.alternateDropoff")}
-                </label>
-            </div>
+            {/* Desktop Layout - Horizontal */}
+            {!isMobile && (
+                <>
+                    <div className="inline-flex place-content-between">
+                        <div className="flex flex-col gap-[8px] w-full md:w-[531px]">
+                            <label className="flex text-[14px] text-base-black leading-[120%]">
+                                {t("search.place")}
+                            </label>
+                            <select
+                                className="w-full px-[14px] py-[12px] border rounded-[6px] appearance-none border-neutral-700 hover:border-primary"
+                                value={searchParams.location}
+                                onChange={(e) =>
+                                    setParams({
+                                        ...searchParams,
+                                        location: e.target.value,
+                                    })
+                                }
+                            >
+                                {!searchParams.location && (
+                                    <option value="">{t("search.location")}</option>
+                                )}
+                                {mockLocations.map((location) => (
+                                    <option
+                                        key={location.id}
+                                        value={location.city}
+                                    >
+                                        {location.city}, {location.name}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+
+                        <div className="flex flex-col justify-end gap-[8px] w-[177px]">
+                            <label className="flex text-[14px] text-base-black leading-[120%]">
+                                {t("search.pickup")}
+                            </label>
+                            <div className="flex">
+                                <DatePicker
+                                    style={{
+                                        borderTopRightRadius: 0,
+                                        borderBottomRightRadius: 0,
+                                    }}
+                                    className="w-[87px] h-[42px]"
+                                    onChange={handlePickupDateChange}
+                                />
+                                <TimePicker
+                                    style={{
+                                        borderTopLeftRadius: 0,
+                                        borderBottomLeftRadius: 0,
+                                    }}
+                                    className="w-[87px] h-[42px]"
+                                    format="HH:mm"
+                                    minuteStep={5}
+                                    onChange={handlePickupTimeChange}
+                                    needConfirm={false}
+                                />
+                            </div>
+                        </div>
+                        <div className="flex flex-col justify-end gap-[8px] w-[177px]">
+                            <label className="flex text-[14px] text-base-black leading-[120%]">
+                                {t("search.dropoff")}
+                            </label>
+                            <div className="flex">
+                                <DatePicker
+                                    style={{
+                                        borderTopRightRadius: 0,
+                                        borderBottomRightRadius: 0,
+                                    }}
+                                    className="w-[87px] h-[42px]"
+                                    onChange={handleDropoffDateChange}
+                                />
+                                <TimePicker
+                                    style={{
+                                        borderTopLeftRadius: 0,
+                                        borderBottomLeftRadius: 0,
+                                    }}
+                                    className="w-[87px] h-[42px]"
+                                    format="HH:mm"
+                                    minuteStep={5}
+                                    onChange={handleDropoffTimeChange}
+                                    needConfirm={false}
+                                />
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col justify-end align-middle">
+                            <Button
+                                className="w-[200px]"
+                                variant="primary"
+                                onClick={handleSearch}
+                                disabled={isLoading}
+                            >
+                                {isLoading ? t("common.form.sending") : t("search.button")}
+                            </Button>
+                        </div>
+                    </div>
+
+                    {differentLocation && (
+                        <div className="flex flex-col gap-[4px] w-[531px]">
+                            <label className="flex text-[14px] text-base-black leading-[120%]">
+                                {t("search.custom_dropoff")}
+                            </label>
+                            <select
+                                className="w-full px-[14px] py-[12px] border rounded-[6px] appearance-none border-neutral-700 hover:border-primary"
+                                value={searchParams.dropoffLocation}
+                                onChange={(e) =>
+                                    setParams({
+                                        ...searchParams,
+                                        dropoffLocation: e.target.value,
+                                    })
+                                }
+                            >
+                                <option value="">{t("search.location")}</option>
+                                {mockLocations.map((location) => (
+                                    <option key={location.id} value={location.city}>
+                                        {location.city}, {location.name}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    )}
+
+                    <div className="flex w-fit gap-[4px]">
+                        <input
+                            type="checkbox"
+                            onClick={() => setDiffLocation(!differentLocation)}
+                        />
+                        <label className="flex text-[14px] text-neutral-700 leading-[120%]">
+                            {t("search.alternateDropoff")}
+                        </label>
+                    </div>
+                </>
+            )}
+
+            {error && (
+                <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-red-500 text-sm md:text-base">
+                    {error}
+                </div>
+            )}
         </div>
     );
 }
