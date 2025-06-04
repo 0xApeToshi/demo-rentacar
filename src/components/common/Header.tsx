@@ -9,7 +9,7 @@ import { Menu, X } from "lucide-react";
 function Header() {
     const { t } = useTranslation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
+    const [_isMobile, setIsMobile] = useState(false);
 
     // Handle screen size changes
     useEffect(() => {

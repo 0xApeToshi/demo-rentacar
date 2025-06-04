@@ -1,5 +1,5 @@
 // src/components/pages/CityRentalPage.tsx
-import { useParams, Navigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from 'react';
 

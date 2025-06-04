@@ -3,7 +3,7 @@ import ReviewCard from "../common/ReviewCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useState, useRef } from "react";
 import StarRating from "../common/StarRating";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import ResponsiveContainer from "../common/ResponsiveContainer";
 
 interface reviewProps {
@@ -12,7 +12,7 @@ interface reviewProps {
 }
 
 function Reviews({ title, text }: reviewProps) {
-    const { t } = useTranslation();
+    // const { t } = useTranslation();
     const [isMobile, setIsMobile] = useState(false);
 
     // Check screen size
@@ -181,8 +181,8 @@ function ResponsiveReviewsCarousel({
                         className="flex transition-transform duration-500 ease-in-out"
                         style={{
                             transform: `translateX(-${currentIndex === testimonials.length - 1
-                                    ? (testimonials.length - 2) * 50
-                                    : currentIndex * 50
+                                ? (testimonials.length - 2) * 50
+                                : currentIndex * 50
                                 }%)`,
                         }}
                     >
@@ -196,8 +196,8 @@ function ResponsiveReviewsCarousel({
                             >
                                 <div
                                     className={`relative rounded-[16px] shadow-lg flex flex-col gap-[20px] px-[28px] py-[32px] transition-all duration-500 ease-in-out ${index === currentIndex
-                                            ? "scale-100"
-                                            : "scale-80"
+                                        ? "scale-100"
+                                        : "scale-80"
                                         }`}
                                 >
                                     <StarRating rating={testimonial.rating} />
