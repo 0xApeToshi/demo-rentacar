@@ -1,5 +1,5 @@
+// src/components/pages/HomePage.tsx
 import { useTranslation } from "react-i18next";
-// import CarCarousel from "../common/CarCarousel";
 import Deals from "../homepage/Deals";
 import FeatureCards from "../homepage/FeatureCards";
 import Hero from "../homepage/Hero";
@@ -18,22 +18,22 @@ function HomePage() {
         <div className="flex flex-col items-center bg-base w-full">
             <Hero />
             <div className="relative w-full">
-                <div className="relative flex justify-center items-end top-0 z-0 w-full h-[472px] pt-[160px] pb-[80px] px-[120px] bg-primary">
-                    <div className="w-[860px] h-fit">
-                        <span className="text-wrap text-[64px] font-extrabold text-base leading-[110%]">
+                <div className="relative flex justify-center items-end top-0 z-0 w-full h-auto pt-[100px] sm:pt-[120px] md:pt-[160px] pb-[60px] sm:pb-[80px] px-4 sm:px-6 md:px-8 lg:px-[120px] bg-primary">
+                    <div className="w-full max-w-[860px] h-fit">
+                        <span className="text-wrap text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-extrabold text-base leading-[110%]">
                             {t("home.red.tagline")}
                         </span>
                     </div>
                 </div>
-                <div className="absolute left-0 right-0 -top-8 transform z-10 flex justify-center">
+                <div className="absolute left-0 right-0 -top-8 transform z-10 flex justify-center px-4 sm:px-0">
                     <SearchBar></SearchBar>
                 </div>
             </div>
 
             <FeatureCards></FeatureCards>
 
-            <div className="w-[1440px] px-[120px] py-[80px] flex flex-col items-center gap-[40px]">
-                <span className="w-[842px] h-[51px] text-primary text-[46px] font-extrabold leading-[110%]">
+            <div className="w-full max-w-[1440px] px-4 sm:px-6 md:px-8 lg:px-[120px] py-[40px] sm:py-[60px] md:py-[80px] flex flex-col items-center gap-[20px] sm:gap-[30px] md:gap-[40px]">
+                <span className="w-full max-w-[842px] text-primary text-3xl sm:text-4xl md:text-[46px] font-extrabold leading-[110%] text-center">
                     {t("common.navigation.services")}
                 </span>
 
@@ -54,8 +54,8 @@ function HomePage() {
             <Explore />
 
             <div className="w-full bg-primary flex justify-center">
-                <div className="w-[1440px] flex flex-col items-center px-[120px] pt-[100px] pb-[120px] gap-[40px] ">
-                    <span className="text-left w-full max-w-[1440px] text-[46px] font-extrabold text-base leading-[110%]">
+                <div className="w-full max-w-[1440px] flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-[120px] pt-[60px] sm:pt-[80px] md:pt-[100px] pb-[80px] sm:pb-[100px] md:pb-[120px] gap-[20px] sm:gap-[30px] md:gap-[40px]">
+                    <span className="text-left w-full max-w-[1440px] text-3xl sm:text-4xl md:text-[46px] font-extrabold text-base leading-[110%]">
                         {t("home.reservation_banner.title")}
                     </span>
                     <SearchBar />

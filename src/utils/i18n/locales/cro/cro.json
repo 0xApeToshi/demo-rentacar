@@ -112,7 +112,8 @@
         },
         "contact": {
             "phone": "Tel:",
-            "email": "Email:"
+            "email": "Email:",
+            "title": "Optima Rent"
         },
         "booking": {
             "manage": "Upravljanje rezervacijom"

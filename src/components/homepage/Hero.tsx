@@ -1,3 +1,4 @@
+// src/components/homepage/Hero.tsx
 import { useTranslation } from "react-i18next";
 import PolaroidImage from "../common/PolaroidImage";
 import ResponsiveContainer from "../common/ResponsiveContainer";

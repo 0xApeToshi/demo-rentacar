@@ -1,3 +1,4 @@
+// src/components/homepage/ServicesCards.tsx
 import { Card, CardContent } from "@/components/ui/card";
 import Button from "../common/Button";
 import { useTranslation } from "react-i18next";
@@ -33,11 +34,11 @@ function ServicesCards() {
     ];
 
     return (
-        <div className="flex items-center justify-center gap-[20px] w-full">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-[20px] w-full overflow-x-auto md:overflow-visible py-4">
             {cardData.map((card) => (
                 <Card
                     key={card.id}
-                    className={`flex flex-col items-center place-content-between h-[416px] px-[32px] py-[24px] rounded-[8px] relative overflow-hidden bg-neutral-1000`}
+                    className={`flex flex-col items-center place-content-between min-w-[300px] md:w-1/3 h-[380px] sm:h-[416px] px-[20px] sm:px-[32px] py-[20px] sm:py-[24px] rounded-[8px] relative overflow-hidden bg-neutral-1000`}
                 >
                     <div className="absolute inset-0 w-full h-full z-0">
                         <img
@@ -49,13 +50,13 @@ function ServicesCards() {
                     </div>
 
                     <CardContent className="flex flex-col gap-[8px] z-1">
-                        <h3 className="text-left h-[140px] w-[348px] text-wrap text-[64px] font-extrabold text-base leading-[110%]">
+                        <h3 className="text-left h-[100px] sm:h-[140px] w-full text-[40px] sm:text-[64px] font-extrabold text-base leading-[110%]">
                             {card.title}
                         </h3>
-                        <h4 className="text-left w-[348px] text-wrap text-[24px] font-extrabold text-base leading-[120%]">
+                        <h4 className="text-left w-full text-[18px] sm:text-[24px] font-extrabold text-base leading-[120%]">
                             {card.subtitle}
                         </h4>
-                        <p className="text-left h-[38px] w-[348px] text-wrap text-[16px] font-semibold text-base leading-[120%]">
+                        <p className="text-left h-[38px] w-full text-[14px] sm:text-[16px] font-semibold text-base leading-[120%]">
                             {card.description}
                         </p>
                     </CardContent>

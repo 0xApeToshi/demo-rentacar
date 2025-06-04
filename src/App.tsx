@@ -31,29 +31,32 @@ function App() {
             }}
         >
             <BrowserRouter>
-                <Header />
-                <BookingProvider>
-                    <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/long-term" element={<LongTermPage />} />
-                        <Route path="/about-us" element={<AboutUsPage />} />
-                        <Route path="/contact" element={<ContactForm />} />
+                {/* Added overflow-x-hidden to prevent horizontal scrolling */}
+                <div className="overflow-x-hidden relative w-full">
+                    <Header />
+                    <BookingProvider>
+                        <Routes>
+                            <Route path="/" element={<HomePage />} />
+                            <Route path="/long-term" element={<LongTermPage />} />
+                            <Route path="/about-us" element={<AboutUsPage />} />
+                            <Route path="/contact" element={<ContactForm />} />
 
-                        {/* Dynamic city rental routes */}
-                        <Route path="/rent-:citySlug" element={<CityRentalPage />} />
+                            {/* Dynamic city rental routes */}
+                            <Route path="/rent-:citySlug" element={<CityRentalPage />} />
 
-                        {/* Booking process routes */}
-                        <Route path="/booking" element={<CarSelection />} />
-                        <Route
-                            path="/booking/protection-products"
-                            element={<ProtectionProducts />}
-                        />
-                        <Route path="/booking/add-ons" element={<Addons />} />
-                        <Route path="/booking/payment" element={<Payment />} />
-                        <Route path="*" element={<NotFoundPage />} />
-                    </Routes>
-                </BookingProvider>
-                <Footer />
+                            {/* Booking process routes */}
+                            <Route path="/booking" element={<CarSelection />} />
+                            <Route
+                                path="/booking/protection-products"
+                                element={<ProtectionProducts />}
+                            />
+                            <Route path="/booking/add-ons" element={<Addons />} />
+                            <Route path="/booking/payment" element={<Payment />} />
+                            <Route path="*" element={<NotFoundPage />} />
+                        </Routes>
+                    </BookingProvider>
+                    <Footer />
+                </div>
             </BrowserRouter>
         </ConfigProvider>
     );

@@ -91,6 +91,21 @@ function CarCarousel({ city }: CarCarouselProps) {
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Check screen size
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+
+        return () => {
+            window.removeEventListener('resize', checkScreenSize);
+        };
+    }, []);
 
     const goToSlide = useCallback(
         (index: number) => {
@@ -123,6 +138,121 @@ function CarCarousel({ city }: CarCarouselProps) {
         navigate(`/booking?carId=${car.id}${locationParam}`);
     };
 
+    // For mobile view, just show one car at a time
+    if (isMobile) {
+        return (
+            <div className="w-full flex flex-col gap-[22px]">
+                <div
+                    className="overflow-hidden"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                >
+                    <div className="flex flex-col items-center">
+                        {carData.map((car, index) => (
+                            <Card
+                                key={car.id}
+                                className={`flex-shrink-0 py-0 flex-col w-full rounded-[8px] overflow-hidden border border-solid border-neutral-200 shadow-[7px_4px_13.2px_#00000040] transition-all duration-500 ease-in-out mb-4 ${index === currentIndex ? "block" : "hidden"}`}
+                            >
+                                <div className="absolute pt-[4px] pl-[4px] w-fit flex flex-col gap-[4px]">
+                                    {car.badges.map((badge, idx) => (
+                                        <Badge
+                                            key={idx}
+                                            type={badge.type}
+                                            text={badge.text}
+                                        />
+                                    ))}
+                                </div>
+
+                                <div className="h-[180px] px-[20px] flex flex-col items-center justify-center bg-white">
+                                    <img
+                                        className="max-h-[160px] object-contain"
+                                        alt={car.name}
+                                        src={car.image}
+                                    />
+                                </div>
+                                <CardContent className="flex flex-col items-end gap-[20px] p-[20px] bg-base">
+                                    <div className="flex items-start justify-between w-full">
+                                        <div className="flex flex-col text-left items-start gap-3">
+                                            <h3 className="text-[20px] font-extrabold leading-[120%] text-primary">
+                                                {car.name}
+                                            </h3>
+                                            <p className="max-w-[226px] text-base-black leading-[120%] text-[14px]">
+                                                {car.description}
+                                            </p>
+                                        </div>
+
+                                        <div className="flex flex-col text-right items-end">
+                                            <span className="text-neutral-500 leading-[150%] text-[14px]">
+                                                {t("cars.features.from")}
+                                            </span>
+                                            <span className="text-base-black font-extrabold leading-[120%] text-[24px]">
+                                                {car.price}
+                                            </span>
+                                            <span className="text-neutral-500 leading-[150%] text-[14px]">
+                                                {t("cars.features.per_day")}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex justify-between w-full">
+                                        <div className="flex items-center gap-2">
+                                            <div className="inline-flex items-center justify-center p-2 bg-secondary-100 rounded-md">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 28 28"
+                                                    fill="none"
+                                                >
+                                                    <path
+                                                        d="M14 4.66675C15.2377 4.66675 16.4247 5.15841 17.2998 6.03358C18.175 6.90875 18.6667 8.09574 18.6667 9.33342C18.6667 10.5711 18.175 11.7581 17.2998 12.6332C16.4247 13.5084 15.2377 14.0001 14 14.0001C12.7623 14.0001 11.5753 13.5084 10.7002 12.6332C9.82499 11.7581 9.33332 10.5711 9.33332 9.33342C9.33332 8.09574 9.82499 6.90875 10.7002 6.03358C11.5753 5.15841 12.7623 4.66675 14 4.66675ZM14 16.3334C19.1567 16.3334 23.3333 18.4217 23.3333 21.0001V23.3334H4.66666V21.0001C4.66666 18.4217 8.84332 16.3334 14 16.3334Z"
+                                                        fill="#1E3555"
+                                                    />
+                                                </svg>
+                                                {car.passengers && (
+                                                    <span className="text-secondary-900 text-center">
+                                                        {car.passengers}
+                                                    </span>
+                                                )}
+                                            </div>
+                                        </div>
+
+                                        <Button
+                                            variant="primary"
+                                            icon="search"
+                                            onClick={() => handleBookClick(car)}
+                                            className="text-sm px-3"
+                                        >
+                                            {car.buttonText}
+                                        </Button>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+                <div className="flex justify-center gap-[25px]">
+                    <button
+                        onClick={prevSlide}
+                        className="bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 border border-secondary-900"
+                        aria-label={t("common.buttons.previous_slide")}
+                    >
+                        <ChevronLeft className="w-6 h-6 text-secondary-700" />
+                    </button>
+
+                    <button
+                        onClick={nextSlide}
+                        className="bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 border border-secondary-900"
+                        aria-label={t("common.buttons.next_slide")}
+                    >
+                        <ChevronRight className="w-6 h-6 text-secondary-700" />
+                    </button>
+                </div>
+            </div>
+        );
+    }
+
+    // Desktop version
     return (
         <div className="w-full flex flex-col gap-[22px]">
             <div
@@ -284,6 +414,7 @@ function CarCarousel({ city }: CarCarouselProps) {
                     onClick={prevSlide}
                     className="bg-white rounded-full p-2 shadow-lg hover:bg-gray-50 border border-secondary-900"
                     aria-label={t("common.buttons.previous_slide")}
+
                 >
                     <ChevronLeft className="w-6 h-6 text-secondary-700" />
                 </button>
