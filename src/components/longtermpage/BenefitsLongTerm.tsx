@@ -96,16 +96,69 @@ function BenefitsLongTerm() {
 
     return (
         <div className="w-full bg-secondary-100 flex justify-center">
-            <div className="flex flex-col items-center gap-[40px] w-[1440px] px-[160px] pt-[80px] pb-[120px]">
-                <h3 className="text-primary text-[46px] font-extrabold leading-[110%]">
+            <div className="flex flex-col items-center gap-[20px] sm:gap-[30px] md:gap-[40px] w-full max-w-[1440px] px-4 sm:px-6 md:px-8 lg:px-[160px] pt-[40px] sm:pt-[60px] md:pt-[80px] pb-[60px] sm:pb-[80px] md:pb-[120px]">
+                <h3 className="text-primary text-2xl sm:text-3xl md:text-4xl lg:text-[46px] font-extrabold leading-[110%] text-center sm:text-left">
                     {t("long_term.benefits.title")}
                 </h3>
-                <div className="flex items-center justify-between w-full relative">
+
+                {/* Mobile dropdown for small screens */}
+                <div className="block md:hidden w-full">
+                    <select
+                        className="w-full p-3 bg-white border border-neutral-300 rounded text-base-black text-lg"
+                        value={activeId}
+                        onChange={(e) => setActiveId(Number(e.target.value))}
+                    >
+                        {menuItems.map(item => (
+                            <option key={item.id} value={item.id}>
+                                {item.title}
+                            </option>
+                        ))}
+                    </select>
+
+                    <div className="mt-6">
+                        <div role="tabpanel" id={`panel-${activeId}`} aria-labelledby={`tab-${activeId}`}>
+                            <div className="relative flex flex-col gap-[16px] w-full transition-opacity duration-300 ease-in-out">
+                                <img
+                                    src={activeContent.image}
+                                    alt=""
+                                    className="w-full h-auto sm:h-[288px] object-cover rounded-[16px] sm:rounded-[32px]"
+                                    aria-hidden="true"
+                                />
+                                <div className="w-full sm:w-[312px] p-[16px] flex flex-col gap-[8px] rounded rounded-[9px] bg-white sm:absolute sm:right-0 sm:top-1/4">
+                                    <div className="flex gap-[4px]">
+                                        <img src="/assets/checkCircle.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+                                        <p className="font-gilroy-medium text-[16px] sm:text-[18px] leading-[120%] text-base-black">
+                                            {t("long_term.benefits.tabs.registration.points.0")}
+                                        </p>
+                                    </div>
+                                    <div className="flex gap-[4px]">
+                                        <img src="/assets/checkCircle.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+                                        <p className="font-gilroy-medium text-[16px] sm:text-[18px] leading-[120%] text-base-black">
+                                            {t("long_term.benefits.tabs.registration.points.1")}
+                                        </p>
+                                    </div>
+                                    <div className="flex gap-[4px]">
+                                        <img src="/assets/checkCircle.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+                                        <p className="font-gilroy-medium text-[16px] sm:text-[18px] leading-[120%] text-base-black">
+                                            {t("long_term.benefits.tabs.registration.points.2")}
+                                        </p>
+                                    </div>
+                                </div>
+                                <p className="text-left text-[16px] sm:text-[18px] text-base-black leading-[120%]">
+                                    {activeContent.text}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Desktop tab layout */}
+                <div className="hidden md:flex items-start justify-between w-full relative flex-col lg:flex-row gap-8 lg:gap-0">
                     <nav
                         ref={navRef}
                         role="tablist"
                         aria-label="Benefits navigation"
-                        className="flex flex-col items-start relative"
+                        className="flex flex-col items-start relative w-full lg:w-auto lg:min-w-[280px]"
                     >
                         {menuItems.map((item) => (
                             <div
@@ -124,7 +177,7 @@ function BenefitsLongTerm() {
                                     }`}
                             >
                                 <h3
-                                    className={`relative w-fit text-[20px] font-gilroy leading-[120%] whitespace-nowrap 
+                                    className={`relative w-fit text-[18px] md:text-[20px] font-gilroy leading-[120%] whitespace-nowrap 
                                     ${activeId === item.id
                                             ? "text-secondary"
                                             : "text-base-black"
@@ -137,38 +190,39 @@ function BenefitsLongTerm() {
                         ))}
                     </nav>
                     <div
+                        className="w-full lg:w-auto"
                         role="tabpanel"
                         id={`panel-${activeId}`}
                         aria-labelledby={`tab-${activeId}`}
                     >
-                        <div className="relative flex flex-col gap-[16px] w-[631px] transition-opacity duration-300 ease-in-out">
+                        <div className="relative flex flex-col gap-[16px] w-full lg:w-[631px] transition-opacity duration-300 ease-in-out">
                             <img
                                 src={activeContent.image}
                                 alt=""
-                                className="w-[431px] h-[288px] object-cover rounded-[32px]"
+                                className="w-full lg:w-[431px] h-auto lg:h-[288px] object-cover rounded-[32px]"
                                 aria-hidden="true"
                             />
-                            <div className="w-[312px] p-[16px] flex flex-col gap-[8px] rounded rounded-[9px] bg-white absolute right-0 top-1/4">
+                            <div className="w-full sm:w-[312px] p-[16px] flex flex-col gap-[8px] rounded rounded-[9px] bg-white lg:absolute lg:right-0 lg:top-1/4">
                                 <div className="flex gap-[4px]">
-                                    <img src="/assets/checkCircle.svg" alt=""></img>
-                                    <p className="font-gilroy-medium text-[18px] leading-[120%] text-base-black">
+                                    <img src="/assets/checkCircle.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+                                    <p className="font-gilroy-medium text-[16px] md:text-[18px] leading-[120%] text-base-black">
                                         {t("long_term.benefits.tabs.registration.points.0")}
                                     </p>
                                 </div>
                                 <div className="flex gap-[4px]">
-                                    <img src="/assets/checkCircle.svg" alt=""></img>
-                                    <p className="font-gilroy-medium text-[18px] leading-[120%] text-base-black">
+                                    <img src="/assets/checkCircle.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+                                    <p className="font-gilroy-medium text-[16px] md:text-[18px] leading-[120%] text-base-black">
                                         {t("long_term.benefits.tabs.registration.points.1")}
                                     </p>
                                 </div>
                                 <div className="flex gap-[4px]">
-                                    <img src="/assets/checkCircle.svg" alt=""></img>
-                                    <p className="font-gilroy-medium text-[18px] leading-[120%] text-base-black">
+                                    <img src="/assets/checkCircle.svg" alt="" className="w-5 h-5 flex-shrink-0" />
+                                    <p className="font-gilroy-medium text-[16px] md:text-[18px] leading-[120%] text-base-black">
                                         {t("long_term.benefits.tabs.registration.points.2")}
                                     </p>
                                 </div>
                             </div>
-                            <p className="text-left text-[18px] text-base-black leading-[120%]">
+                            <p className="text-left text-[16px] md:text-[18px] text-base-black leading-[120%]">
                                 {activeContent.text}
                             </p>
                         </div>

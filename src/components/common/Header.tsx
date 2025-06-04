@@ -9,7 +9,7 @@ import { Menu, X } from "lucide-react";
 function Header() {
     const { t } = useTranslation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [_isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     // Handle screen size changes
     useEffect(() => {
@@ -124,20 +124,24 @@ function Header() {
                     </ul>
                 </nav>
 
-                {/* Mobile Navigation Toggle */}
+                {/* Mobile Navigation Toggle - Always visible on mobile */}
                 <button
-                    className="lg:hidden p-2"
+                    className="lg:hidden p-2 z-[60] relative"
                     onClick={toggleMenu}
                     aria-expanded={isMenuOpen}
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                 >
-                    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    {isMenuOpen ? (
+                        <X size={24} className="text-primary" />
+                    ) : (
+                        <Menu size={24} />
+                    )}
                 </button>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu Overlay */}
             {isMenuOpen && (
-                <div className="fixed inset-0 z-50 bg-white pt-[80px] overflow-y-auto lg:hidden">
+                <div className="fixed inset-0 z-[55] bg-white pt-[80px] overflow-y-auto lg:hidden">
                     <nav className="px-4 py-6">
                         <ul className="flex flex-col gap-4">
                             {navItems.map((item) => (

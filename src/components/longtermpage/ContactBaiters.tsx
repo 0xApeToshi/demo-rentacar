@@ -21,20 +21,21 @@ function ContactBaiterItem({
 }: ContactBaiterItemProps) {
     return (
         <div className="w-full bg-base flex justify-center">
-            <section className="w-[1440px] min-h-[800px] relative px-[120px] py-[200px] flex justify-between">
+            <section className="w-full max-w-[1440px] relative px-4 sm:px-6 md:px-8 lg:px-[120px] py-[60px] sm:py-[80px] md:py-[120px] lg:py-[200px] flex flex-col md:flex-row md:justify-between gap-8 md:gap-4">
+                {/* Text Content */}
                 <div
-                    className={`w-[520px] flex flex-col gap-[24px] text-left ${isMirrored ? "order-2" : "order-1"}`}
+                    className={`w-full md:w-[520px] flex flex-col gap-[24px] text-left ${isMirrored ? "md:order-2" : "md:order-1"}`}
                 >
-                    <div className="flex flex-col gap-[16px]">
-                        <h3 className="font-gilroy text-primary text-[46px] leading-[110%]">
+                    <div className="flex flex-col gap-[8px] sm:gap-[16px]">
+                        <h3 className="font-gilroy text-primary text-2xl sm:text-3xl md:text-4xl lg:text-[46px] leading-[110%]">
                             {title}
                         </h3>
-                        <h4 className="font-gilroy text-base-black text-[20px] leading-[120%]">
+                        <h4 className="font-gilroy text-base-black text-lg sm:text-[20px] leading-[120%]">
                             {subtitle}
                         </h4>
                     </div>
                     {text && (
-                        <p className=" text-base-black text-[16px] leading-[150%]">
+                        <p className="text-base-black text-sm sm:text-base md:text-[16px] leading-[150%]">
                             {text}
                         </p>
                     )}
@@ -43,12 +44,12 @@ function ContactBaiterItem({
                             {points.map((point, index) => (
                                 <div className="flex items-start" key={index}>
                                     {color === "blue" ? (
-                                        <img src="/assets/heroCheckCircle.svg" alt="Check" />
+                                        <img src="/assets/heroCheckCircle.svg" alt="Check" className="w-5 h-5 mt-0.5 flex-shrink-0" />
                                     ) : (
-                                        <img src="/assets/checkCircle.svg" alt="Check" />
+                                        <img src="/assets/checkCircle.svg" alt="Check" className="w-5 h-5 mt-0.5 flex-shrink-0" />
                                     )}
 
-                                    <p className="text-[16px] leading-[150%]">
+                                    <p className="text-sm sm:text-base md:text-[16px] leading-[150%]">
                                         {point}
                                     </p>
                                 </div>
@@ -56,12 +57,24 @@ function ContactBaiterItem({
                         </div>
                     )}
                     {buttonText && (
-                        <Button variant="primary">{buttonText}</Button>
+                        <Button variant="primary" className="w-full sm:w-auto">
+                            {buttonText}
+                        </Button>
                     )}
                 </div>
-                <div className={`w-fill ${isMirrored ? "order-1" : "order-2"}`}>
+
+                {/* Image */}
+                <div className={`w-full md:w-auto ${isMirrored ? "md:order-1" : "md:order-2"}`}>
+                    {/* Mobile image (contained) */}
                     <img
-                        className={`w-[703px] h-[765px] object-cover absolute top-0 ${isMirrored ? "left-0" : "right-0"}`}
+                        className="w-full h-[300px] sm:h-[400px] object-cover rounded-lg md:hidden"
+                        src={imageSrc}
+                        alt=""
+                    />
+
+                    {/* Desktop image (absolute positioning) */}
+                    <img
+                        className={`hidden md:block w-[400px] lg:w-[703px] h-[400px] lg:h-[765px] object-cover absolute top-0 ${isMirrored ? "left-0" : "right-0"}`}
                         src={imageSrc}
                         alt=""
                     />
