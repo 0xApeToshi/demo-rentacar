@@ -23,6 +23,7 @@ export interface SearchResponse {
 
 export const searchService = {
   async searchCars(params: SearchState): Promise<SearchResponse> {
+    console.log(params);
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     return {

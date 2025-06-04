@@ -85,7 +85,8 @@ const carData: carTypes[] = [
 ];
 
 function CarSelection() {
-    const { state, dispatch } = useBooking();
+    // const { state, dispatch } = useBooking();
+    const { dispatch } = useBooking();
     const navigation = useNavigate();
     const { t } = useTranslation();
 
@@ -224,8 +225,8 @@ function CarSelection() {
                                     <button
                                         key={type}
                                         className={`p-[12px] text-[14px] leading-[120%] rounded-[999px] ${carTypes.includes(type)
-                                                ? "bg-secondary-200"
-                                                : "bg-neutral-100"
+                                            ? "bg-secondary-200"
+                                            : "bg-neutral-100"
                                             }`}
                                         onClick={() => toggleCarType(type)}
                                     >
@@ -251,8 +252,8 @@ function CarSelection() {
                             <div className="flex gap-[8px]">
                                 <button
                                     className={`flex gap-[3px] p-[8px] rounded-[999px] ${gearshiftType === "Automatic"
-                                            ? "bg-secondary-200"
-                                            : "bg-neutral-100"
+                                        ? "bg-secondary-200"
+                                        : "bg-neutral-100"
                                         }`}
                                     onClick={() =>
                                         setGearshiftType("Automatic")
@@ -266,8 +267,8 @@ function CarSelection() {
                                 </button>
                                 <button
                                     className={`flex gap-[3px] p-[8px] rounded-[999px] ${gearshiftType === "Manual"
-                                            ? "bg-secondary-200"
-                                            : "bg-neutral-100"
+                                        ? "bg-secondary-200"
+                                        : "bg-neutral-100"
                                         }`}
                                     onClick={() => setGearshiftType("Manual")}
                                 >
@@ -288,8 +289,8 @@ function CarSelection() {
                                     <button
                                         key={number}
                                         className={`p-[12px] flex gap-[3px] text-[14px] leading-[120%] rounded-[999px] ${passengers.includes(number)
-                                                ? "bg-secondary-200"
-                                                : "bg-neutral-100"
+                                            ? "bg-secondary-200"
+                                            : "bg-neutral-100"
                                             }`}
                                         onClick={() => togglePassengers(number)}
                                     >
