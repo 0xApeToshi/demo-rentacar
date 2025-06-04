@@ -4,6 +4,26 @@ import Button from "../common/Button";
 function LongTermHero() {
     const { t } = useTranslation();
 
+    // Function to scroll to the contact section
+    const scrollToContact = () => {
+        // Find the contact form element
+        const contactElement = document.getElementById('contact-form');
+
+        if (contactElement) {
+            // Smooth scroll to the element
+            contactElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        } else {
+            // If no specific contact element is found, scroll to the bottom of the page
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return (
         <div className="bg-black w-full flex justify-center">
             <div className="flex flex-col md:flex-row h-auto md:h-[582px] overflow-hidden w-full max-w-[1440px]">
@@ -40,7 +60,11 @@ function LongTermHero() {
                                 </a>
                             </div>
                         </div>
-                        <Button variant="primary" className="w-full sm:w-auto mt-2">
+                        <Button
+                            variant="primary"
+                            className="w-full sm:w-auto mt-2"
+                            onClick={scrollToContact}
+                        >
                             {t("common.buttons.get_quote")}
                         </Button>
                     </div>

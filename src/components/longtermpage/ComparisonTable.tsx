@@ -193,8 +193,9 @@ function ComparisonTable() {
 
                 {/* Desktop comparison table */}
                 <div className="relative bg-white overflow-hidden hidden md:flex md:flex-col gap-[12px] rounded-[16px] w-full max-w-[1202px] px-[40px] lg:px-[100px] pt-[60px] lg:pt-[96px] pb-[60px] lg:pb-[80px]">
-                    <div className="absolute w-[211px] h-full top-[15px] left-[calc(100%-440px)] rounded-lg bg-secondary-300/40 z-1"></div>
-                    <div className="absolute w-[211px] h-[38px] top-[15px] left-[calc(100%-440px)] rounded-t-lg bg-secondary-200 z-0"></div>
+                    {/* Blue background column highlight - fixed positioning */}
+                    <div className="absolute w-[211px] h-full top-[15px] left-[calc(50%+64px)] xl:left-[662px] rounded-lg bg-secondary-300/40 z-1"></div>
+                    <div className="absolute w-[211px] h-[38px] top-[15px] left-[calc(50%+64px)] xl:left-[662px] rounded-t-lg bg-secondary-200 z-0"></div>
 
                     <div className="flex w-full justify-end z-10">
                         <span className="w-[211px] font-gilroy text-[20px] lg:text-[28px] leading-[120%] text-primary">
