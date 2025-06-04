@@ -698,5 +698,13 @@
                 "answer": "Lorem ipsum ..."
             }
         ]
+    },
+    "notFound": {
+        "title": "Stranica nije pronađena",
+        "message": "Nismo mogli pronaći stranicu koju tražite. Adresa je možda netočna ili je stranica premještena.",
+        "path": "Pokušana putanja",
+        "homePage": "Idi na početnu stranicu",
+        "back": "Idi natrag",
+        "tryInstead": "Možda tražite:"
     }
 }

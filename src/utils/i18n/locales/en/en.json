@@ -698,5 +698,13 @@
                 "answer": "Lorem ipsum ..."
             }
         ]
+    },
+    "notFound": {
+        "title": "Page Not Found",
+        "message": "We couldn't find the page you're looking for. The address may be incorrect or the page may have moved.",
+        "path": "Attempted path",
+        "homePage": "Go to Homepage",
+        "back": "Go Back",
+        "tryInstead": "You might be looking for:"
     }
 }
