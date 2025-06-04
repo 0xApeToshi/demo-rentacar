@@ -16,7 +16,7 @@ function LongTermPage() {
     const translatedBaiterData = getTranslatedBaiterData();
 
     return (
-        <div className="flex flex-col items-center bg-base w-full">
+        <div className="flex flex-col items-center bg-base w-full text-black">
             <LongTermHero />
 
             {/* Intro Section - Made responsive with padding and font size adjustments */}
@@ -43,7 +43,9 @@ function LongTermPage() {
             <PartnerLogos />
 
             {/* Category Shower */}
-            <CategoryShower />
+            <div className="text-black">
+                <CategoryShower />
+            </div>
 
             {/* Comparison Table */}
             <ComparisonTable />

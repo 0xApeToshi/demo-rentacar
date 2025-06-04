@@ -21,7 +21,7 @@ function CategoryShower() {
         {
             id: "4",
             text: (
-                <span>
+                <span className="text-black">
                     1x <span className="text-[#337540]">{t("common.free")}</span>{" "}
                     {t("long_term.categories.features.3")}
                 </span>
@@ -92,7 +92,7 @@ function CategoryShower() {
                                             className="flex gap-[8px] items-start"
                                         >
                                             <img src="/assets/checkCircle.svg" alt="Check" className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                                            <span className="text-sm sm:text-base md:text-[16px] leading-[150%] text-base-black">
+                                            <span className="text-sm sm:text-base md:text-[16px] leading-[150%] text-black">
                                                 {feature.text}
                                             </span>
                                         </div>
