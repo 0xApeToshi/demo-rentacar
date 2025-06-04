@@ -16,7 +16,7 @@ function AboutHero() {
                 </div>
                 <img
                     className="absolute w-[709px] h-[504px] object-cover -bottom-[62px] right-0 rounded-tl-[80px]"
-                    src="/src/assets/aboutHero.png"
+                    src="/assets/aboutHero.png"
                     alt="About Hero"
                 ></img>
             </section>

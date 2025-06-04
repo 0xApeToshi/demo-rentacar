@@ -24,7 +24,7 @@ function Deals() {
                 <Card className="relative w-[600px] h-[396px] rounded-[8px] overflow-hidden">
                     <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
                         <img
-                            src="/src/assets/road.jfif"
+                            src="/assets/road.jfif"
                             className="absolute w-full h-full object-cover"
                             alt="Road"
                         />
@@ -49,7 +49,7 @@ function Deals() {
                         </div>
                         <div className="flex z-2 flex-col items-end gap-[6px]">
                             <div className="inline-flex items-center w-fit rounded-t-[6px] p-[6px] bg-[#E3F0E6] gap-[4px]">
-                                <img src="/src/assets/checkStar.svg" alt="Check Star"></img>
+                                <img src="/assets/checkStar.svg" alt="Check Star"></img>
                                 <a className="z-3 flex text-[12px] text-secondary-1000 leading-[120%] text-left">
                                     {t("home.deals.included_km")}
                                 </a>
@@ -63,7 +63,7 @@ function Deals() {
                 <Card className="relative w-[280px] h-[396px] rounded-[8px] overflow-hidden">
                     <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
                         <img
-                            src="/src/assets/sunsetCar.jfif"
+                            src="/assets/sunsetCar.jfif"
                             className="absolute w-full h-full object-cover"
                             alt="Sunset Car"
                         />
@@ -94,7 +94,7 @@ function Deals() {
                 <Card className="relative w-[280px] h-[396px] rounded-[8px] overflow-hidden">
                     <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
                         <img
-                            src="/src/assets/sunsetCar.jfif"
+                            src="/assets/sunsetCar.jfif"
                             className="absolute w-full h-full object-cover"
                             alt="Sunset Car"
                         />

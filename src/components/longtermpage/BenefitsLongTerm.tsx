@@ -10,7 +10,7 @@ function BenefitsLongTerm() {
             title: t("long_term.benefits.tabs.registration.title"),
             content: {
                 text: t("long_term.benefits.tabs.registration.text"),
-                image: "/src/assets/vehicleRegistration.jfif",
+                image: "/assets/vehicleRegistration.jfif",
             },
         },
         {
@@ -18,7 +18,7 @@ function BenefitsLongTerm() {
             title: t("long_term.benefits.tabs.replacement.title"),
             content: {
                 text: t("long_term.benefits.tabs.replacement.text"),
-                image: "/src/assets/dalmatia.jfif",
+                image: "/assets/dalmatia.jfif",
             },
         },
         {
@@ -150,19 +150,19 @@ function BenefitsLongTerm() {
                             />
                             <div className="w-[312px] p-[16px] flex flex-col gap-[8px] rounded rounded-[9px] bg-white absolute right-0 top-1/4">
                                 <div className="flex gap-[4px]">
-                                    <img src="/src/assets/checkCircle.svg" alt=""></img>
+                                    <img src="/assets/checkCircle.svg" alt=""></img>
                                     <p className="font-gilroy-medium text-[18px] leading-[120%] text-base-black">
                                         {t("long_term.benefits.tabs.registration.points.0")}
                                     </p>
                                 </div>
                                 <div className="flex gap-[4px]">
-                                    <img src="/src/assets/checkCircle.svg" alt=""></img>
+                                    <img src="/assets/checkCircle.svg" alt=""></img>
                                     <p className="font-gilroy-medium text-[18px] leading-[120%] text-base-black">
                                         {t("long_term.benefits.tabs.registration.points.1")}
                                     </p>
                                 </div>
                                 <div className="flex gap-[4px]">
-                                    <img src="/src/assets/checkCircle.svg" alt=""></img>
+                                    <img src="/assets/checkCircle.svg" alt=""></img>
                                     <p className="font-gilroy-medium text-[18px] leading-[120%] text-base-black">
                                         {t("long_term.benefits.tabs.registration.points.2")}
                                     </p>

@@ -75,7 +75,7 @@ function Explore() {
                                     </p>
                                     <a href="/whatever">
                                         <img
-                                            src="/src/assets/hyperlink.svg"
+                                            src="/assets/hyperlink.svg"
                                             className="w-[24px] h-[24px]"
                                             alt="Read more"
                                         ></img>

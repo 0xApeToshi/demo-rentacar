@@ -32,7 +32,7 @@ function OurStory() {
                         <div className="bg-secondary-200 flex items-center rounded-s-[8px] px-[16px] py-[12px]">
                             <img
                                 className="w-[24px] h-[24px]"
-                                src="/src/assets/userLogo.svg"
+                                src="/assets/userLogo.svg"
                                 alt="User icon"
                             />
                         </div>
@@ -48,7 +48,7 @@ function OurStory() {
                         <div className="bg-secondary-200 flex items-center rounded-s-[8px] px-[16px] py-[12px]">
                             <img
                                 className="w-[24px] h-[24px]"
-                                src="/src/assets/chartLogo.svg"
+                                src="/assets/chartLogo.svg"
                                 alt="Chart icon"
                             />
                         </div>
@@ -64,7 +64,7 @@ function OurStory() {
                         <div className="bg-secondary-200 flex items-center rounded-s-[8px] px-[16px] py-[12px]">
                             <img
                                 className="w-[24px] h-[24px]"
-                                src="/src/assets/handHeartLogo.svg"
+                                src="/assets/handHeartLogo.svg"
                                 alt="Heart icon"
                             />
                         </div>

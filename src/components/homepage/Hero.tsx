@@ -20,7 +20,7 @@ function Hero() {
                         <div className="flex gap-[4px]">
                             <img
                                 className="w-[24px] text-primary"
-                                src="/src/assets/heroCheckCircle.svg"
+                                src="/assets/heroCheckCircle.svg"
                                 alt=""
                             ></img>
                             <a className="w-fit font-gilroy-medium">
@@ -29,7 +29,7 @@ function Hero() {
                         </div>
                         <div className="flex gap-[4px]">
                             <img
-                                src="/src/assets/heroCheckCircle.svg"
+                                src="/assets/heroCheckCircle.svg"
                                 alt=""
                             ></img>
                             <a className="w-fit font-gilroy-medium">
@@ -38,7 +38,7 @@ function Hero() {
                         </div>
                         <div className="flex gap-[4px]">
                             <img
-                                src="/src/assets/heroCheckCircle.svg"
+                                src="/assets/heroCheckCircle.svg"
                                 alt=""
                             ></img>
                             <a className="w-fit font-gilroy-medium">
@@ -47,7 +47,7 @@ function Hero() {
                         </div>
                         <div className="flex gap-[4px]">
                             <img
-                                src="/src/assets/heroCheckCircle.svg"
+                                src="/assets/heroCheckCircle.svg"
                                 alt=""
                             ></img>
                             <a className="w-fit font-gilroy-medium">

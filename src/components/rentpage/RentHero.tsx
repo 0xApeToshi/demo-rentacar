@@ -16,7 +16,7 @@ function RentHero({ city }: rentProps) {
             <div className="absolute top-0 left-0 h-full w-full">
                 <img
                     className="absolute -top-[272px] left-0"
-                    src="/src/assets/zagrebHero.png"
+                    src="/assets/zagrebHero.png"
                 ></img>
                 <div className="absolute -inset-1 rotate-180 bg-gradient-to-l from-[rgba(0,0,0,1)] via-[rgba(34,31,31,0.6)] to-[rgba(34,31,31,0)]"></div>
             </div>

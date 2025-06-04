@@ -19,14 +19,14 @@ function LongTermHero() {
                         </span>
                         <div className="flex flex-col gap-[4px] text-base text-[18px] leading-[120%]">
                             <div className="flex gap-[4px]">
-                                <img src="/src/assets/longtermCheckCircle.svg" alt=""></img>
+                                <img src="/assets/longtermCheckCircle.svg" alt=""></img>
                                 <a className="w-fit font-gilroy-medium">
                                     {t("long_term.hero.points.0")}
                                 </a>
                             </div>
 
                             <div className="flex gap-[4px]">
-                                <img src="/src/assets/longtermCheckCircle.svg" alt=""></img>
+                                <img src="/assets/longtermCheckCircle.svg" alt=""></img>
 
                                 <a className="w-fit font-gilroy-medium">
                                     {t("long_term.hero.points.1")}
@@ -34,7 +34,7 @@ function LongTermHero() {
                             </div>
 
                             <div className="flex gap-[4px]">
-                                <img src="/src/assets/longtermCheckCircle.svg" alt=""></img>
+                                <img src="/assets/longtermCheckCircle.svg" alt=""></img>
 
                                 <a className="w-fit font-gilroy-medium">
                                     {t("long_term.hero.points.2")}
@@ -49,7 +49,7 @@ function LongTermHero() {
                 <div className="relative h-[582px] w-full">
                     <img
                         className="h-full aspect-3/2 object-cover"
-                        src="/src/assets/longTerm.png"
+                        src="/assets/longTerm.png"
                         alt="Long term car rental"
                     ></img>
                     <div className="absolute -inset-1 rotate-180 bg-gradient-to-l from-[rgba(0,0,0,1)] via-[rgba(34,31,31,0.1)] to-[rgba(34,31,31,0)]"></div>

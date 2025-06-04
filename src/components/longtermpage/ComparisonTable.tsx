@@ -148,13 +148,13 @@ function ComparisonTable() {
                                             item.longTerm ? (
                                                 <img
                                                     className="z-10"
-                                                    src="/src/assets/checkCircle.svg"
+                                                    src="/assets/checkCircle.svg"
                                                     alt={t("common.yes")}
                                                 ></img>
                                             ) : (
                                                 <img
                                                     className="z-10"
-                                                    src="/src/assets/closeCircle.svg"
+                                                    src="/assets/closeCircle.svg"
                                                     alt={t("common.no")}
                                                 ></img>
                                             )
@@ -169,13 +169,13 @@ function ComparisonTable() {
                                             item.leasing ? (
                                                 <img
                                                     className="z-10"
-                                                    src="/src/assets/checkCircle.svg"
+                                                    src="/assets/checkCircle.svg"
                                                     alt={t("common.yes")}
                                                 ></img>
                                             ) : (
                                                 <img
                                                     className="z-10"
-                                                    src="/src/assets/closeCircle.svg"
+                                                    src="/assets/closeCircle.svg"
                                                     alt={t("common.no")}
                                                 ></img>
                                             )

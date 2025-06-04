@@ -5,26 +5,26 @@ function RentFlow() {
 
     const flowRentData = [
         {
-            src: "/src/assets/firstStep.svg",
+            src: "/assets/firstStep.svg",
             title: t("long_term.flow.steps.choose.title"),
             text: t("long_term.flow.steps.choose.text"),
-            arrow: "/src/assets/arrowVector.svg",
+            arrow: "/assets/arrowVector.svg",
         },
         {
-            src: "/src/assets/secondStep.svg",
+            src: "/assets/secondStep.svg",
             title: t("long_term.flow.steps.contact.title"),
             text: t("long_term.flow.steps.contact.text"),
-            arrow: "/src/assets/arrowVector.svg",
+            arrow: "/assets/arrowVector.svg",
         },
         {
-            src: "/src/assets/thirdStep.svg",
+            src: "/assets/thirdStep.svg",
             title: t("long_term.flow.steps.call.title"),
             text: t("long_term.flow.steps.call.text"),
-            arrow: "/src/assets/arrowVector.svg",
+            arrow: "/assets/arrowVector.svg",
             offer: t("long_term.flow.steps.call.offer"),
         },
         {
-            src: "/src/assets/finalStep.svg",
+            src: "/assets/finalStep.svg",
             title: t("long_term.flow.steps.confirm.title"),
             text: t("long_term.flow.steps.confirm.text"),
         },

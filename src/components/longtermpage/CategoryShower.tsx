@@ -32,19 +32,19 @@ function CategoryShower() {
     const categoryData = [
         {
             id: "1",
-            src: "/src/assets/miniCoverImage.png",
+            src: "/assets/miniCoverImage.png",
             category: t("long_term.categories.categories.mini.title"),
             tagline: t("long_term.categories.categories.mini.subtitle"),
         },
         {
             id: "2",
-            src: "/src/assets/economyCoverImage.png",
+            src: "/assets/economyCoverImage.png",
             category: t("long_term.categories.categories.economy.title"),
             tagline: t("long_term.categories.categories.economy.subtitle"),
         },
         {
             id: "3",
-            src: "/src/assets/suvCoverImage.png",
+            src: "/assets/suvCoverImage.png",
             category: t("long_term.categories.categories.suv.title"),
             tagline: t("long_term.categories.categories.suv.subtitle"),
         },
@@ -90,7 +90,7 @@ function CategoryShower() {
                                             key={feature.id}
                                             className="flex gap-[8px]"
                                         >
-                                            <img src="/src/assets/checkCircle.svg" alt="Check"></img>
+                                            <img src="/assets/checkCircle.svg" alt="Check"></img>
                                             <span className="text-[16px] leading-[150%] text-base-black">
                                                 {feature.text}
                                             </span>

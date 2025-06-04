@@ -16,7 +16,7 @@ export interface BaiterProps {
 
 export const baiterData: contactBaitersTypes[] = [
     {
-        imageSrc: "/src/assets/contactBaiterOne.jfif",
+        imageSrc: "/assets/contactBaiterOne.jfif",
         title: "Dugoročni najam za privatne korisnike",
         subtitle:
             "Tražite fleksibilan i pristupačan način vožnje bez obveze vlasništva?",
@@ -24,7 +24,7 @@ export const baiterData: contactBaitersTypes[] = [
         buttonText: "Kontaktirajte nas",
     },
     {
-        imageSrc: "/src/assets/contactBaiterTwo.jfif",
+        imageSrc: "/assets/contactBaiterTwo.jfif",
         title: "Poslovni najam",
         subtitle: "Trebate vozila za neometano poslovanje?",
         text: "Naši dugoročni poslovni najam pružaju jednostavno i isplativo rješenje. Bilo da opremate svoj prodajni tim službenim automobilima, rješavate sezonsku potražnju ili upravljate poslovnim putovanjima, nudimo flotu pouzdanih vozila prilagođenih vašim poslovnim potrebama. Iskoristite prednosti konkurentnih cijena, fleksibilnih ugovora i personalizirane podrške kako biste zadržali svoje operacije na putu.",
@@ -34,7 +34,7 @@ export const baiterData: contactBaitersTypes[] = [
 
 export const aboutData: contactBaitersTypes[] = [
     {
-        imageSrc: "/src/assets/fleet.jfif",
+        imageSrc: "/assets/fleet.jfif",
         title: "Moderna flota",
         subtitle: "Kvaliteta, sigurnost i udobnost",
         points: [
@@ -47,7 +47,7 @@ export const aboutData: contactBaitersTypes[] = [
         buttonText: "Rent now",
     },
     {
-        imageSrc: "/src/assets/values.jfif",
+        imageSrc: "/assets/values.jfif",
         title: "Naše temeljne vrijednosti",
         subtitle:
             "U srcu svega što radimo su vrijednosti koje definiraju tko smo:",
@@ -61,7 +61,7 @@ export const aboutData: contactBaitersTypes[] = [
         buttonText: "Rent long-term",
     },
     {
-        imageSrc: "/src/assets/environment.jfif",
+        imageSrc: "/assets/environment.jfif",
         title: "Održivost i društvena odgovornost",
         subtitle:
             "Brinemo više – ne samo o korisnicima, već i o okolišu i zajednici. U Optima Rentu posvećeni smo smanjenju ekološkog otiska kroz:",
@@ -80,14 +80,14 @@ export const useBaiterData = () => {
 
     return [
         {
-            imageSrc: "/src/assets/contactBaiterOne.jfif",
+            imageSrc: "/assets/contactBaiterOne.jfif",
             title: t("long_term.contact_baiters.private.title"),
             subtitle: t("long_term.contact_baiters.private.subtitle"),
             text: t("long_term.contact_baiters.private.text"),
             buttonText: t("common.buttons.contact_us"),
         },
         {
-            imageSrc: "/src/assets/contactBaiterTwo.jfif",
+            imageSrc: "/assets/contactBaiterTwo.jfif",
             title: t("long_term.contact_baiters.business.title"),
             subtitle: t("long_term.contact_baiters.business.subtitle"),
             text: t("long_term.contact_baiters.business.text"),
@@ -101,7 +101,7 @@ export const useAboutData = () => {
 
     return [
         {
-            imageSrc: "/src/assets/fleet.jfif",
+            imageSrc: "/assets/fleet.jfif",
             title: t("about.fleet.title"),
             subtitle: t("about.fleet.subtitle"),
             points: [
@@ -114,7 +114,7 @@ export const useAboutData = () => {
             buttonText: t("common.buttons.rent_now"),
         },
         {
-            imageSrc: "/src/assets/values.jfif",
+            imageSrc: "/assets/values.jfif",
             title: t("about.values.title"),
             subtitle: t("about.values.subtitle"),
             points: [
@@ -127,7 +127,7 @@ export const useAboutData = () => {
             buttonText: t("common.buttons.rent_long_term"),
         },
         {
-            imageSrc: "/src/assets/environment.jfif",
+            imageSrc: "/assets/environment.jfif",
             title: t("about.sustainable.title"),
             subtitle: t("about.sustainable.subtitle"),
             points: [

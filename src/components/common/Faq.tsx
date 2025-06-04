@@ -58,14 +58,14 @@ function Faq() {
                         </div>
                         {isActive === index + 1 ? (
                             <img
-                                src="/src/assets/minusIcon.svg"
+                                src="/assets/minusIcon.svg"
                                 className="w-[32px] h-[32px]"
                                 alt="Collapse"
                                 onClick={() => handleClick(index + 1)}
                             ></img>
                         ) : (
                             <img
-                                src="/src/assets/arrowDownIcon.svg"
+                                src="/assets/arrowDownIcon.svg"
                                 className="w-[32px] h-[32px]"
                                 alt="Expand"
                                 onClick={() => handleClick(index + 1)}

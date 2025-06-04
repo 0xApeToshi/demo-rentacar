@@ -10,38 +10,38 @@ function TeamCarousel() {
         {
             id: 1,
             name: "Name Surname",
-            image: "/src/assets/teamMemberPlaceholder.png",
+            image: "/assets/teamMemberPlaceholder.png",
             description: "Founder & CEO",
             hoverText:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            hoverImg: "/src/assets/membersHover.png",
+            hoverImg: "/assets/membersHover.png",
         },
         {
             id: 2,
             name: "Name Surname",
-            image: "/src/assets/teamMemberPlaceholder.png",
+            image: "/assets/teamMemberPlaceholder.png",
             description: "Head of Operations",
             hoverText:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            hoverImg: "/src/assets/membersHover.png",
+            hoverImg: "/assets/membersHover.png",
         },
         {
             id: 3,
             name: "Name Surname",
-            image: "/src/assets/teamMemberPlaceholder.png",
+            image: "/assets/teamMemberPlaceholder.png",
             description: "Customer Support Manager",
             hoverText:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            hoverImg: "/src/assets/membersHover.png",
+            hoverImg: "/assets/membersHover.png",
         },
         {
             id: 4,
             name: "Name Surname",
-            image: "/src/assets/teamMemberPlaceholder.png",
+            image: "/assets/teamMemberPlaceholder.png",
             description: "Customer Support Manager",
             hoverText:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            hoverImg: "/src/assets/membersHover.png",
+            hoverImg: "/assets/membersHover.png",
         },
     ];
 
@@ -98,8 +98,8 @@ function TeamCarousel() {
                         className="flex gap-[32px] transition-transform duration-500 ease-in-out"
                         style={{
                             transform: `translateX(-${currentIndex === teamData.length - 1
-                                    ? (teamData.length - 2) * (351 + 32)
-                                    : currentIndex * (351 + 32)
+                                ? (teamData.length - 2) * (351 + 32)
+                                : currentIndex * (351 + 32)
                                 }px)`,
                         }}
                     >

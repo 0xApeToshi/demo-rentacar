@@ -38,7 +38,7 @@ function Footer() {
             <div className="flex flex-col min-w-[200px] px-[13px] gap-[32px] items-center">
                 <div className="flex flex-col gap-[16px] items-center">
                     <img
-                        src="/src/assets/OptimaLogoFooter.svg"
+                        src="/assets/OptimaLogoFooter.svg"
                         alt="Optima Rent Logo"
                     ></img>
 

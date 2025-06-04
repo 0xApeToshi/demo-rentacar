@@ -23,7 +23,7 @@ function ProgressSteps({ currentStep }: ProgressStepsProps) {
             <div className="flex gap-[4px]">
                 <img
                     className="w-[24px] h-[24px]"
-                    src="/src/assets/successIcon.svg"
+                    src="/assets/successIcon.svg"
                 />
                 <div className="flex flex-col gap-[7px] text-base-black">
                     <p className="font-gilroy text-[20px] leading-[120%]">
@@ -51,7 +51,7 @@ function ProgressSteps({ currentStep }: ProgressStepsProps) {
                         {step.id <= currentStep && (
                             <img
                                 className="w-[24px] h-[24px]"
-                                src="/src/assets/successIcon.svg"
+                                src="/assets/successIcon.svg"
                             />
                         )}
                         {step.id === currentStep + 1 && <Check />}

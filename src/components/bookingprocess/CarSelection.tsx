@@ -12,7 +12,7 @@ const carData: carTypes[] = [
     {
         id: 1,
         name: "Suzuki SWIFT",
-        image: "/src/assets/suzukiSwift.png",
+        image: "/assets/suzukiSwift.png",
         description: "Free GPS included",
         type: "Family",
         price: "20 €",
@@ -31,7 +31,7 @@ const carData: carTypes[] = [
     {
         id: 2,
         name: "Opel Corsa Aut",
-        image: "/src/assets/opelCorsa.png",
+        image: "/assets/opelCorsa.png",
         description: "Free GPS included",
         type: "Luxury",
 
@@ -55,7 +55,7 @@ const carData: carTypes[] = [
     {
         id: 3,
         name: "Fiat 500, Cabrio",
-        image: "/src/assets/fiat500.png",
+        image: "/assets/fiat500.png",
         description: "Free GPS included",
         type: "Sports",
 
@@ -70,7 +70,7 @@ const carData: carTypes[] = [
     {
         id: 4,
         name: "Opel Crossland",
-        image: "/src/assets/opelCrossland.png",
+        image: "/assets/opelCrossland.png",
         description: "Free GPS included",
         type: "SUV",
 
@@ -260,7 +260,7 @@ function CarSelection() {
                                     }
                                 >
                                     <img
-                                        src="/src/assets/automaticIcon.svg"
+                                        src="/assets/automaticIcon.svg"
                                         alt="Automatic"
                                     />
                                     {t("booking_process.car_selection.automatic")}
@@ -273,7 +273,7 @@ function CarSelection() {
                                     onClick={() => setGearshiftType("Manual")}
                                 >
                                     <img
-                                        src="/src/assets/manualIcon.svg"
+                                        src="/assets/manualIcon.svg"
                                         alt="Manual"
                                     />
                                     {t("booking_process.car_selection.manual")}
@@ -295,7 +295,7 @@ function CarSelection() {
                                         onClick={() => togglePassengers(number)}
                                     >
                                         <img
-                                            src="/src/assets/personIcon.svg"
+                                            src="/assets/personIcon.svg"
                                             className="w-[20px] h-[20px]"
                                             alt="Person"
                                         />

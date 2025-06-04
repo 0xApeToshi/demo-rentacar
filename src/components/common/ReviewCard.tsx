@@ -3,10 +3,10 @@ import StarRating from "./StarRating";
 
 function ReviewCard({ company = "facebook", rating = 5, reviewCount = 10 }) {
     const { t } = useTranslation();
-    let imageSrc = "/src/assets/facebookReviews.png";
+    let imageSrc = "/assets/facebookReviews.png";
 
     if (company === "google") {
-        imageSrc = "/src/assets/googleReviews.png";
+        imageSrc = "/assets/googleReviews.png";
     }
 
     return (

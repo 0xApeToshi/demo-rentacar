@@ -97,12 +97,12 @@ function ContactForm() {
                 <div className="absolute w-full h-[913px] top-0 left-0">
                     <img
                         className="absolute w-[1088px] h-[821px] top-0 left-0 object-cover"
-                        src="/src/assets/ContactFormBG.png"
+                        src="/assets/ContactFormBG.png"
                         alt="Background decoration"
                     />
                     <img
                         className="absolute w-[813px] h-[914px] top-0 right-0 object-cover object-[25%_75%]"
-                        src="/src/assets/ContactFormPerson.png"
+                        src="/assets/ContactFormPerson.png"
                         alt="Contact form illustration"
                     />
                     <div className="absolute rounded-tr-[80px] bg-primary w-[983px] h-[865px] bottom-0 left-0"></div>
@@ -259,7 +259,7 @@ function ContactForm() {
                         {!isSubmitting && (
                             <img
                                 className="pl-[8px]"
-                                src="/src/assets/PaperPlaneTilt.svg"
+                                src="/assets/PaperPlaneTilt.svg"
                                 alt=""
                             />
                         )}

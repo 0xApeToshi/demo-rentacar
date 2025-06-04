@@ -58,7 +58,7 @@ function Header() {
             <div className="h-[80px] bg-white/75 flex w-full items-center place-content-between px-[120px] max-h-[100px]">
                 <Link to={"/"}>
                     <img
-                        src="/src/assets/OptimaLogoRed.svg"
+                        src="/assets/OptimaLogoRed.svg"
                         alt="Optima Rent Logo"
                     ></img>
                 </Link>

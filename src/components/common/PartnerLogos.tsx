@@ -2,19 +2,19 @@ function PartnerLogos() {
     const logoData = [
         {
             id: "1",
-            src: "/src/assets/croatiaLogo.png",
+            src: "/assets/croatiaLogo.png",
         },
         {
             id: "2",
-            src: "/src/assets/gasparicLogo.png",
+            src: "/assets/gasparicLogo.png",
         },
         {
             id: "3",
-            src: "/src/assets/eurohercLogo.png",
+            src: "/assets/eurohercLogo.png",
         },
         {
             id: "4",
-            src: "/src/assets/stasniLogo.png",
+            src: "/assets/stasniLogo.png",
         },
     ];
 

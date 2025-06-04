@@ -4,10 +4,10 @@ function Badge({ type, text }: badgeType) {
     let iconSrc;
     let bgColor;
     if (type === "offer") {
-        iconSrc = "/src/assets/handCoin.svg";
+        iconSrc = "/assets/handCoin.svg";
         bgColor = "bg-secondary";
     } else if (type === "benefit") {
-        iconSrc = "/src/assets/leafIcon.svg";
+        iconSrc = "/assets/leafIcon.svg";
         bgColor = "bg-success-700";
     } else {
         iconSrc = null;

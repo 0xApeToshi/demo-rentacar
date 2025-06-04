@@ -13,7 +13,7 @@ function CarCarousel() {
         {
             id: 1,
             name: "Suzuki SWIFT",
-            image: "/src/assets/suzukiSwift.png",
+            image: "/assets/suzukiSwift.png",
             description: t("cars.features.unlimited_mileage"),
             type: "Family",
             price: "20 €",
@@ -32,7 +32,7 @@ function CarCarousel() {
         {
             id: 2,
             name: "Opel Corsa Aut",
-            image: "/src/assets/opelCorsa.png",
+            image: "/assets/opelCorsa.png",
             description: t("cars.features.unlimited_mileage"),
             type: "Luxury",
             price: "20 €",
@@ -55,7 +55,7 @@ function CarCarousel() {
         {
             id: 3,
             name: "Fiat 500, Cabrio",
-            image: "/src/assets/fiat500.png",
+            image: "/assets/fiat500.png",
             description: t("cars.features.unlimited_mileage"),
             type: "Sports",
             price: "44 €",
@@ -69,7 +69,7 @@ function CarCarousel() {
         {
             id: 4,
             name: "Opel Crossland",
-            image: "/src/assets/opelCrossland.png",
+            image: "/assets/opelCrossland.png",
             description: t("cars.features.free_gps"),
             type: "SUV",
             price: "63 €",
@@ -121,8 +121,8 @@ function CarCarousel() {
                     className="flex gap-[32px] transition-transform duration-500 ease-in-out"
                     style={{
                         transform: `translateX(-${currentIndex === carData.length - 1
-                                ? (carData.length - 2) * (472 + 32)
-                                : currentIndex * (472 + 32)
+                            ? (carData.length - 2) * (472 + 32)
+                            : currentIndex * (472 + 32)
                             }px)`,
                     }}
                 >
@@ -130,8 +130,8 @@ function CarCarousel() {
                         <Card
                             key={car.id}
                             className={`flex-shrink-0 py-0 flex-col w-[472px] rounded-[8px] overflow-hidden border border-solid border-neutral-200 shadow-[7px_4px_13.2px_#00000040] transition-all duration-500 ease-in-out ${index === currentIndex
-                                    ? "scale-100"
-                                    : "scale-80"
+                                ? "scale-100"
+                                : "scale-80"
                                 }`}
                         >
                             <div className="absolute pt-[4px] pl-[4px] w-fit flex flex-col gap-[4px]">

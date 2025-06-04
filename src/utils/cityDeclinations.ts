@@ -75,7 +75,7 @@ export const getWordVariation = (word: string, variation: VariationType) => {
 
 const cityContent = {
     Zagreb: {
-        imageSrc: "/src/assets/zagrebBaiter.jpg",
+        imageSrc: "/assets/zagrebBaiter.jpg",
         title: "Istražite Zagreb uz Optima Rent",
         subtitle:
             "Uz Optima Rent, istraživanje grada nikada nije bilo jednostavnije i ugodnije!",
@@ -83,7 +83,7 @@ const cityContent = {
         buttonText: "",
     },
     Split: {
-        imageSrc: "/src/assets/splitBaiter.jpg",
+        imageSrc: "/assets/splitBaiter.jpg",
         title: "Istražite Split uz Optima Rent",
         subtitle:
             "Uz Optima Rent, istraživanje grada nikada nije bilo jednostavnije i ugodnije!",
@@ -94,7 +94,7 @@ const cityContent = {
 
 export const cityData = (city: string) => {
     const defaultData = {
-        imageSrc: "/src/assets/defaultCityBaiter.jpg",
+        imageSrc: "/assets/defaultCityBaiter.jpg",
         title: `Istražite ${city} uz Optima Rent`,
         subtitle:
             "Uz Optima Rent, istraživanje grada nikada nije bilo jednostavnije i ugodnije!",

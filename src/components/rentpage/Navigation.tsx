@@ -10,20 +10,20 @@ const LOCATIONS = [
         id: "airport",
         title: "Aerodrom Zagreb",
         description: "Besplatan transfer i dostava vozila",
-        icon: "/src/assets/airplaneIcon.svg",
+        icon: "/assets/airplaneIcon.svg",
     },
     {
         id: "center",
         title: "Centar Zagreba",
         description: "Udoban najam u srcu grada.",
-        icon: "/src/assets/centerIcon.svg",
+        icon: "/assets/centerIcon.svg",
     },
     {
         id: "address",
         title: "Vaša adresa",
         description:
             "Dostavljamo vozilo direktno na vašu lokaciju – kući, hotelu ili uredu.",
-        icon: "/src/assets/adressIcon.svg",
+        icon: "/assets/adressIcon.svg",
     },
 ];
 
@@ -99,11 +99,10 @@ function Navigation({ city }: rentProps) {
                                     }}
                                     onClick={() => setActiveTab(index)}
                                     onKeyDown={(e) => handleKeyDown(e)}
-                                    className={`flex gap-[20px] rounded-s-[16px] p-[20px] transition-all duration-200 ${
-                                        activeTab === index
+                                    className={`flex gap-[20px] rounded-s-[16px] p-[20px] transition-all duration-200 ${activeTab === index
                                             ? "h-full w-full bg-white text-base-black"
                                             : "bg-secondary-100 text-secondary-800 w-[90%]"
-                                    }`}
+                                        }`}
                                 >
                                     <img
                                         className="w-[40px] h-[40px]"

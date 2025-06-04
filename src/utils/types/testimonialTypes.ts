@@ -25,7 +25,7 @@ export const exampleTestimonials: Testimonial[] = [
         author: {
             name: 'Antonia Zorica',
             title: 'Customer',
-            image: '/src/assets/anticaTestimonialmage.jfif',
+            image: '/assets/anticaTestimonialmage.jfif',
         },
     },
     {
@@ -35,7 +35,7 @@ export const exampleTestimonials: Testimonial[] = [
         author: {
             name: 'Damir Jelinic',
             title: 'Customer',
-            image: '/src/assets/damirTestimonial.jfif',
+            image: '/assets/damirTestimonial.jfif',
         },
     },
     {
@@ -45,7 +45,7 @@ export const exampleTestimonials: Testimonial[] = [
         author: {
             name: 'Antonia Zorica',
             title: 'Customer',
-            image: '/src/assets/anticaTestimonialmage.jfif',
+            image: '/assets/anticaTestimonialmage.jfif',
         },
     },
     {
@@ -55,7 +55,7 @@ export const exampleTestimonials: Testimonial[] = [
         author: {
             name: 'Damir Jelinic',
             title: 'Customer',
-            image: '/src/assets/damirTestimonial.jfif',
+            image: '/assets/damirTestimonial.jfif',
         },
     },
 ];
@@ -71,7 +71,7 @@ export const useExampleTestimonials = () => {
             author: {
                 name: t("testimonials.1.author.name"),
                 title: t("testimonials.author.title"),
-                image: '/src/assets/anticaTestimonialmage.jfif',
+                image: '/assets/anticaTestimonialmage.jfif',
             },
         },
         {
@@ -81,7 +81,7 @@ export const useExampleTestimonials = () => {
             author: {
                 name: t("testimonials.2.author.name"),
                 title: t("testimonials.author.title"),
-                image: '/src/assets/damirTestimonial.jfif',
+                image: '/assets/damirTestimonial.jfif',
             },
         },
         {
@@ -91,7 +91,7 @@ export const useExampleTestimonials = () => {
             author: {
                 name: t("testimonials.3.author.name"),
                 title: t("testimonials.author.title"),
-                image: '/src/assets/anticaTestimonialmage.jfif',
+                image: '/assets/anticaTestimonialmage.jfif',
             },
         },
         {
@@ -101,7 +101,7 @@ export const useExampleTestimonials = () => {
             author: {
                 name: t("testimonials.4.author.name"),
                 title: t("testimonials.author.title"),
-                image: '/src/assets/damirTestimonial.jfif',
+                image: '/assets/damirTestimonial.jfif',
             },
         },
     ];
