@@ -18,13 +18,13 @@ const FooterColumn = ({ title, items, className = "" }: FooterColumnProps) => {
     };
 
     return (
-        <div className={`flex flex-col gap-[8px] items-start ${className}`}>
+        <div className={`flex flex-col gap-[8px] w-full items-start ${className}`}>
             {title && (
                 <div
                     className="font-bold text-base w-full flex justify-between items-center cursor-pointer md:cursor-default"
                     onClick={toggleOpen}
                 >
-                    <p>{t(`common.footer.categories.${title.toLowerCase()}`)}</p>
+                    <p className="text-left">{t(`common.footer.categories.${title.toLowerCase()}`)}</p>
                     <button className="md:hidden">
                         {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                     </button>
@@ -32,12 +32,12 @@ const FooterColumn = ({ title, items, className = "" }: FooterColumnProps) => {
             )}
             <ul
                 aria-label={title}
-                className={`flex flex-col items-start w-full md:w-[110px] gap-[8px] text-secondary-200 text-[14px] overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[500px]' : 'max-h-0 md:max-h-[500px]'}`}
+                className={`flex flex-col items-start w-full gap-[8px] text-secondary-200 text-[14px] overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[500px]' : 'max-h-0 md:max-h-[500px]'}`}
             >
                 {items.map((item) => (
-                    <li key={item.text} className="w-full">
+                    <li key={item.text} className="w-full text-left">
                         <Link
-                            className={`block whitespace-nowrap hover:text-primary ${className}`}
+                            className={`block text-left hover:text-primary ${className}`}
                             to={item.url}
                         >
                             {item.text}
@@ -57,15 +57,15 @@ function Footer() {
     return (
         <footer className="flex flex-col md:flex-row w-full bg-secondary-1000 px-6 sm:px-8 md:px-12 lg:px-[120px] py-[50px] md:py-[100px]">
             {/* Logo, Hours, and Social Icons Column */}
-            <div className="flex flex-col min-w-[200px] px-[13px] gap-[32px] items-center md:items-start mb-8 md:mb-0">
-                <div className="flex flex-col gap-[16px] items-center md:items-start">
+            <div className="flex flex-col min-w-[200px] px-[13px] gap-[32px] items-center mb-8 md:mb-0 md:mr-[60px] lg:mr-[80px]">
+                <div className="flex flex-col gap-[16px] items-center text-center">
                     <img
                         src="/assets/OptimaLogoFooter.svg"
                         alt="Optima Rent Logo"
                         className="max-w-full h-auto"
                     />
 
-                    <div className="flex flex-col w-[115px] h-[76px] items-center md:items-start text-base text-[14px] gap-[8px]">
+                    <div className="flex flex-col w-[115px] h-[76px] items-center text-center text-base text-[14px] gap-[8px]">
                         <p className="w-[103px] h-[34px]">
                             {t("common.footer.work_hours.weekdays")}
                             <br />
@@ -79,7 +79,7 @@ function Footer() {
                         </p>
                     </div>
                 </div>
-                <div className="flex gap-[8px] w-[56px] h-[24px]">
+                <div className="flex gap-[8px] w-[56px] h-[24px] justify-center">
                     <Link to="/facebook" aria-label="Facebook">
                         <img
                             className="brightness-0 invert"
@@ -136,13 +136,13 @@ function Footer() {
                 </div>
 
                 {/* Column 7 - Legal */}
-                <div className="flex flex-col gap-[8px] items-start">
-                    <p className="font-bold text-base md:hidden">{t("common.footer.categories.legal")}</p>
-                    <ul className="flex flex-col items-start w-full md:w-[110px] gap-[8px] text-secondary-200 text-[14px]">
+                <div className="flex flex-col gap-[8px] items-start w-full">
+                    <p className="font-bold text-base md:hidden text-left">{t("common.footer.categories.legal")}</p>
+                    <ul className="flex flex-col items-start w-full gap-[8px] text-secondary-200 text-[14px]">
                         {footerData.legal.map((item) => (
-                            <li key={item.text}>
+                            <li key={item.text} className="w-full text-left">
                                 <Link
-                                    className="block whitespace-nowrap hover:text-primary underline"
+                                    className="block text-left hover:text-primary underline"
                                     to={item.url}
                                 >
                                     {item.text}
