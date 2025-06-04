@@ -8,6 +8,7 @@
             "select": "Select",
             "continue": "Continue",
             "show": "Show",
+            "hide": "Hide",
             "contact_us": "Contact Us",
             "see_all": "See All",
             "view_more": "View More",
@@ -634,6 +635,7 @@
             "details": "View Details"
         },
         "protection": {
+            "title": "Insurance",
             "basic_insurance": {
                 "name": "Basic Insurance",
                 "description": "Provides essential coverage for your rental. Includes third-party liability insurance and basic collision damage waiver."
@@ -656,6 +658,8 @@
             "overview_text2": "All taxes and fees are included in your final price"
         },
         "addons": {
+            "title": "Addons",
+            "car_details": "Vehicle details",
             "extra_driver": {
                 "name": "Extra Driver",
                 "description": "Add an additional driver to your rental for flexibility during your trip."

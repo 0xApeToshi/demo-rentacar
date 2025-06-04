@@ -8,6 +8,7 @@
             "select": "Odaberi",
             "continue": "Nastavi",
             "show": "Prikaži",
+            "hide": "Sakrij",
             "contact_us": "Kontaktirajte nas",
             "see_all": "Vidi sve",
             "view_more": "Pogledaj više",
@@ -634,6 +635,7 @@
             "details": "Pogledaj detalje"
         },
         "protection": {
+            "title": "Osiguranje",
             "basic_insurance": {
                 "name": "Osnovno osiguranje",
                 "description": "Pruža osnovnu zaštitu za vaš najam. Uključuje osiguranje od odgovornosti prema trećim osobama i osnovnu zaštitu od oštećenja u sudaru."
@@ -656,6 +658,8 @@
             "overview_text2": "Svi porezi i naknade uključeni su u vašu konačnu cijenu"
         },
         "addons": {
+            "title": "Dodaci",
+            "car_details": "Detalji vozila",
             "extra_driver": {
                 "name": "Dodatni vozač",
                 "description": "Dodajte dodatnog vozača vašem najmu za fleksibilnost tijekom putovanja."
