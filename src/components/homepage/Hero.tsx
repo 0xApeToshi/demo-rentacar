@@ -62,7 +62,7 @@ function Hero() {
                 <div className="relative -top-27 right-0">
                     <PolaroidImage
                         alt="Car image"
-                        src="src/assets/HeroPic.jfif"
+                        src="/assets/HeroPic.jpg"
                         tiltDegrees={8.75}
                         className="w-[518px] z-0"
                     ></PolaroidImage>

@@ -11,7 +11,7 @@ function ServicesCards() {
             title: t("home.service_cards.car_rental.title"),
             subtitle: t("home.service_cards.car_rental.subtitle"),
             description: t("home.service_cards.car_rental.description"),
-            image: "/assets/van.jfif",
+            image: "/assets/van.jpg",
             buttonVariant: "primary" as const,
         },
         {
@@ -19,7 +19,7 @@ function ServicesCards() {
             title: t("home.service_cards.vans.title"),
             subtitle: t("home.service_cards.vans.subtitle"),
             description: t("home.service_cards.vans.description"),
-            image: "/assets/mountain.jfif",
+            image: "/assets/mountain.jpg",
             buttonVariant: "primary" as const,
         },
         {
@@ -27,7 +27,7 @@ function ServicesCards() {
             title: t("home.service_cards.long_term.title"),
             subtitle: t("home.service_cards.long_term.subtitle"),
             description: t("home.service_cards.long_term.description"),
-            image: "/assets/road.jfif",
+            image: "/assets/road.jpg",
             buttonVariant: "primary" as const,
         },
     ];

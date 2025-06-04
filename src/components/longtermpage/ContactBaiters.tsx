@@ -93,14 +93,14 @@ export function getTranslatedBaiterData() {
 
     const translatedData: contactBaitersTypes[] = [
         {
-            imageSrc: "/assets/contactBaiterOne.jfif",
+            imageSrc: "/assets/contactBaiterOne.jpg",
             title: t("long_term.contact_baiters.private.title"),
             subtitle: t("long_term.contact_baiters.private.subtitle"),
             text: t("long_term.contact_baiters.private.text"),
             buttonText: t("common.buttons.contact_us"),
         },
         {
-            imageSrc: "/assets/contactBaiterTwo.jfif",
+            imageSrc: "/assets/contactBaiterTwo.jpg",
             title: t("long_term.contact_baiters.business.title"),
             subtitle: t("long_term.contact_baiters.business.subtitle"),
             text: t("long_term.contact_baiters.business.text"),
@@ -117,7 +117,7 @@ export function getTranslatedAboutData() {
 
     const translatedAboutData: contactBaitersTypes[] = [
         {
-            imageSrc: "/assets/fleet.jfif",
+            imageSrc: "/assets/fleet.jpg",
             title: t("about.fleet.title"),
             subtitle: t("about.fleet.subtitle"),
             points: t("about.fleet.points", { returnObjects: true }) as string[],
@@ -125,7 +125,7 @@ export function getTranslatedAboutData() {
             buttonText: t("common.buttons.rent_now"),
         },
         {
-            imageSrc: "/assets/values.jfif",
+            imageSrc: "/assets/values.jpg",
             title: t("about.values.title"),
             subtitle: t("about.values.subtitle"),
             points: t("about.values.points", { returnObjects: true }) as string[],
@@ -133,7 +133,7 @@ export function getTranslatedAboutData() {
             buttonText: t("common.buttons.rent_long_term"),
         },
         {
-            imageSrc: "/assets/environment.jfif",
+            imageSrc: "/assets/environment.jpg",
             title: t("about.sustainable.title"),
             subtitle: t("about.sustainable.subtitle"),
             points: t("about.sustainable.points", { returnObjects: true }) as string[],

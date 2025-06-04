@@ -10,7 +10,7 @@ function BenefitsLongTerm() {
             title: t("long_term.benefits.tabs.registration.title"),
             content: {
                 text: t("long_term.benefits.tabs.registration.text"),
-                image: "/assets/vehicleRegistration.jfif",
+                image: "/assets/vehicleRegistration.jpg",
             },
         },
         {
@@ -18,7 +18,7 @@ function BenefitsLongTerm() {
             title: t("long_term.benefits.tabs.replacement.title"),
             content: {
                 text: t("long_term.benefits.tabs.replacement.text"),
-                image: "/assets/dalmatia.jfif",
+                image: "/assets/dalmatia.jpg",
             },
         },
         {

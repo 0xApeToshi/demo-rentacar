@@ -24,7 +24,7 @@ function Deals() {
                 <Card className="relative w-[600px] h-[396px] rounded-[8px] overflow-hidden">
                     <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
                         <img
-                            src="/assets/road.jfif"
+                            src="/assets/road.jpg"
                             className="absolute w-full h-full object-cover"
                             alt="Road"
                         />
@@ -63,7 +63,7 @@ function Deals() {
                 <Card className="relative w-[280px] h-[396px] rounded-[8px] overflow-hidden">
                     <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
                         <img
-                            src="/assets/sunsetCar.jfif"
+                            src="/assets/sunsetCar.jpg"
                             className="absolute w-full h-full object-cover"
                             alt="Sunset Car"
                         />
@@ -94,7 +94,7 @@ function Deals() {
                 <Card className="relative w-[280px] h-[396px] rounded-[8px] overflow-hidden">
                     <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
                         <img
-                            src="/assets/sunsetCar.jfif"
+                            src="/assets/sunsetCar.jpg"
                             className="absolute w-full h-full object-cover"
                             alt="Sunset Car"
                         />

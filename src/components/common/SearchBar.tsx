@@ -133,9 +133,9 @@ function SearchBar() {
                             <option
                                 key={location.id}
                                 value={location.city}
-                                selected={
-                                    searchParams.location === location.city
-                                }
+                            // selected={
+                            //     searchParams.location === location.city
+                            // }
                             >
                                 {location.city}, {location.name}
                             </option>

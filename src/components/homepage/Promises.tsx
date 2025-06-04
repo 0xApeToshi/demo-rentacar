@@ -6,22 +6,22 @@ function Promises() {
 
     const promisesData = [
         {
-            src: "src/assets/heartIcon.svg",
+            src: "/assets/heartIcon.svg",
             title: t("home.promises.items.personalized.title"),
             text: t("home.promises.items.personalized.description"),
         },
         {
-            src: "src/assets/fileIcon.svg",
+            src: "/assets/fileIcon.svg",
             title: t("home.promises.items.flexible.title"),
             text: t("home.promises.items.flexible.description"),
         },
         {
-            src: "src/assets/feedbackIcon.svg",
+            src: "/assets/feedbackIcon.svg",
             title: t("home.promises.items.feedback.title"),
             text: t("home.promises.items.feedback.description"),
         },
         {
-            src: "src/assets/mountIcon.svg",
+            src: "/assets/mountIcon.svg",
             title: t("home.promises.items.extra_mile.title"),
             text: t("home.promises.items.extra_mile.description"),
         },
@@ -32,7 +32,7 @@ function Promises() {
             <div className="bg-secondary-100 z-1 w-full flex justify-center relative">
                 <PolaroidImage
                     alt="Car being delivered by helicopter in snowy mountains"
-                    src="src/assets/HeroPic.jfif"
+                    src="/assets/HeroPic.jpg"
                     tiltDegrees={8.75}
                     className="w-[518px] top-45 -right-100"
                     absolute

@@ -27,9 +27,11 @@ function PartnerLogos() {
                 <div className="w-full flex justify-between">
                     {logoData.map((logo) => (
                         <img
+                            key={logo.id}
                             className="h-[115px] w-[245px] object-contain"
                             src={logo.src}
                             id={logo.id}
+                            alt=""
                         ></img>
                     ))}
                 </div>

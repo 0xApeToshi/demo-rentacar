@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import Facebook from "../../assets/Facebook.svg";
-import Instagram from "../../assets/Instagram.svg";
+import Facebook from "/assets/Facebook.svg";
+import Instagram from "/assets/Instagram.svg";
 import { FooterColumnProps, useFooterData } from "../../utils/types/footerTypes";
 
 const FooterColumn = ({ title, items, className = "" }: FooterColumnProps) => {

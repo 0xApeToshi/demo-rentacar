@@ -6,22 +6,22 @@ import { TFunction } from "i18next";
 // TODO use translation
 const getCardData = (_t: TFunction<"translation", undefined>) => [
     {
-        src: "src/assets/zagreb.jfif",
+        src: "/assets/zagreb.jpg",
         title: "Zagreb",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
-        src: "src/assets/istria.jfif",
+        src: "/assets/istria.jpg",
         title: "Istria",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
-        src: "src/assets/dalmatia.jfif",
+        src: "/assets/dalmatia.jpg",
         title: "Dalmatia",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
-        src: "src/assets/slavonia.jfif",
+        src: "/assets/slavonia.jpg",
         title: "Slavonia",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
@@ -53,8 +53,8 @@ function Explore() {
                     </Button>
                 </div>
                 <div className="flex justify-between w-full">
-                    {data.map((loc) => (
-                        <Card className="relative w-[285px] rounded-[8px] p-0 overflow-hidden">
+                    {data.map((loc, index) => (
+                        <Card key={index} className="relative w-[285px] rounded-[8px] p-0 overflow-hidden">
                             <CardContent className="w-full h-full flex flex-col p-0 gap-[24px]">
                                 <img
                                     className="w-full h-[284px] rounded-[8px] object-cover"
