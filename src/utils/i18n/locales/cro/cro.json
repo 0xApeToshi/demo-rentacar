@@ -1,6 +1,7 @@
 {
     "common": {
         "buttons": {
+            "all": "Sve",
             "search": "Pretraži",
             "book": "Rezerviraj",
             "reserve": "Rezerviraj",

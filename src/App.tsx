@@ -15,6 +15,7 @@ import Payment from "./components/bookingprocess/Payment";
 import CityRentalPage from "./components/pages/CityRentalPage";
 import ContactForm from "./components/common/ContactForm";
 import NotFoundPage from "./components/pages/NotFoundPage";
+import RentalPage from "./components/pages/RentalPage";
 
 function App() {
     return (
@@ -40,6 +41,7 @@ function App() {
                             <Route path="/long-term" element={<LongTermPage />} />
                             <Route path="/about-us" element={<AboutUsPage />} />
                             <Route path="/contact" element={<ContactForm />} />
+                            <Route path="/rental" element={<RentalPage />} />
 
                             {/* Dynamic city rental routes */}
                             <Route path="/rent-:citySlug" element={<CityRentalPage />} />

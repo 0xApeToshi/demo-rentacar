@@ -36,6 +36,7 @@ interface BookingState {
     selectedOptions: string[];
     selectedAddons: string[];
     totalPrice: number;
+    flow: "standard" | "reverse"; // Added flow property to track the booking flow
 }
 
 type BookingAction =
@@ -44,6 +45,7 @@ type BookingAction =
     | { type: "SELECT_OPTIONS"; payload: string[] }
     | { type: "SELECT_ADDONS"; payload: string[] }
     | { type: "UPDATE_TOTAL_PRICE"; payload: number }
+    | { type: "SET_FLOW"; payload: "standard" | "reverse" }
     | { type: "RESET_BOOKING" };
 
 export const initialState: BookingState = {
@@ -59,6 +61,7 @@ export const initialState: BookingState = {
     selectedOptions: [],
     selectedAddons: [],
     totalPrice: 0,
+    flow: "standard",
 };
 
 const BookingContext = createContext<{
@@ -104,6 +107,12 @@ const bookingReducer = (
             newState = {
                 ...state,
                 totalPrice: action.payload,
+            };
+            break;
+        case "SET_FLOW":
+            newState = {
+                ...state,
+                flow: action.payload,
             };
             break;
         case "RESET_BOOKING":

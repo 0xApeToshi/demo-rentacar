@@ -1,6 +1,7 @@
 {
     "common": {
         "buttons": {
+            "all": "All",
             "search": "Search",
             "book": "Book",
             "reserve": "Reserve",
