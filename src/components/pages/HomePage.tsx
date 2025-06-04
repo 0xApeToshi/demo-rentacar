@@ -18,8 +18,8 @@ function HomePage() {
         <div className="flex flex-col items-center bg-base w-full">
             <Hero />
             <div className="relative w-full">
-                <div className="relative flex justify-center items-end top-0 z-0 w-full h-auto pt-[100px] sm:pt-[120px] md:pt-[160px] pb-[60px] sm:pb-[80px] px-4 sm:px-6 md:px-8 lg:px-[120px] bg-primary">
-                    <div className="w-full max-w-[860px] h-fit">
+                <div className="relative flex justify-center items-end top-0 z-0 w-full h-auto pt-[130px] sm:pt-[150px] md:pt-[180px] pb-[70px] sm:pb-[90px] md:pb-[100px] px-4 sm:px-6 md:px-8 lg:px-[120px] bg-primary">
+                    <div className="w-full max-w-[860px] h-fit mt-[20px] sm:mt-[30px] md:mt-[40px]">
                         <span className="text-wrap text-3xl sm:text-4xl md:text-5xl lg:text-[64px] font-extrabold text-base leading-[110%]">
                             {t("home.red.tagline")}
                         </span>

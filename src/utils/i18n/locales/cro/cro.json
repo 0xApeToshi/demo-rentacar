@@ -60,6 +60,7 @@
                 "weekend_hours": "08:00 - 22:00"
             },
             "categories": {
+                "legal": "PRAVNO",
                 "locations": "LOKACIJE",
                 "travel_guides": "VODIČI",
                 "services": "USLUGE",
