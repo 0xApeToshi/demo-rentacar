@@ -1,37 +1,31 @@
-import { TFunction } from "node_modules/i18next";
 import { useTranslation } from "react-i18next";
 import PolaroidImage from "../common/PolaroidImage";
 
-const getCardData = (t: TFunction<"translation", undefined>) => [
-    {
-        src: "src/assets/heartIcon.svg",
-        title: "Personalized service",
-        description:
-            "Every customer is unique, and we tailor our services to meet your individual needs.",
-    },
-    {
-        src: "src/assets/fileIcon.svg",
-        title: "Flexible options",
-        description:
-            "From changing your rental car to adjusting your contract, we make things easy because we care about your convenience.",
-    },
-    {
-        src: "src/assets/feedbackIcon.svg",
-        title: "Customer feedback",
-        description:
-            "We actively listen to your feedback and continuously improve our services.",
-    },
-    {
-        src: "src/assets/mountIcon.svg",
-        title: "Going the extra mile",
-        description:
-            "Whether it’s delivering your car to an unusual location or resolving an issue quickly, we do whatever it takes to make sure you’re happy.",
-    },
-];
-
 function Promises() {
     const { t } = useTranslation();
-    const data = getCardData(t);
+
+    const promisesData = [
+        {
+            src: "src/assets/heartIcon.svg",
+            title: t("home.promises.items.personalized.title"),
+            text: t("home.promises.items.personalized.description"),
+        },
+        {
+            src: "src/assets/fileIcon.svg",
+            title: t("home.promises.items.flexible.title"),
+            text: t("home.promises.items.flexible.description"),
+        },
+        {
+            src: "src/assets/feedbackIcon.svg",
+            title: t("home.promises.items.feedback.title"),
+            text: t("home.promises.items.feedback.description"),
+        },
+        {
+            src: "src/assets/mountIcon.svg",
+            title: t("home.promises.items.extra_mile.title"),
+            text: t("home.promises.items.extra_mile.description"),
+        },
+    ];
 
     return (
         <>
@@ -47,28 +41,29 @@ function Promises() {
                 <div className="flex flex-col gap-[40px] items-start w-[1440px] px-[120px] pb-[140px] pt-[80px]">
                     <div className="flex flex-col gap-[8px] w-2/5 text-left">
                         <h3 className="text-primary font-extrabold leading-[110%] text-[46px]">
-                            We Care More: <br />
-                            Our Promise to You
+                            {t("home.promises.title")}
                         </h3>
                         <p className="text-base-black font-extrabold leading-[120%] text-[20px]">
-                            At Optima Rent, we live by our tagline, "We Care
-                            More." It’s not just something we say; it’s
-                            something we do every single day.
+                            {t("home.promises.subtitle")}
                         </p>
                     </div>
                     <div className="w-full flex flex-col gap-[20px]">
-                        {data.map((promise) => (
-                            <div className="flex text-left gap-[20px] rounded-[16px] px-[16px] py-[20px] bg-white w-full shadow-md">
+                        {promisesData.map((promise, index) => (
+                            <div
+                                key={index}
+                                className="flex text-left gap-[20px] rounded-[16px] px-[16px] py-[20px] bg-white w-full shadow-md"
+                            >
                                 <img
                                     className="w-[64px] h-[64px]"
                                     src={promise.src}
+                                    alt={promise.title}
                                 ></img>
                                 <div className="flex flex-col gap-[8px]">
                                     <p className="text-secondary-700 font-extrabold leading-[120%] text-[20px]">
                                         {promise.title}
                                     </p>
                                     <p className="text-base-black leading-[120%] text-[16px] max-w-2/3">
-                                        {promise.description}
+                                        {promise.text}
                                     </p>
                                 </div>
                             </div>

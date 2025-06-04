@@ -12,7 +12,7 @@ function Button({ variant, icon, className, ...props }: ButtonItem) {
             className={variant === "primary" ? primaryStyle : secondaryStyle}
             {...props}
         >
-            <p className="text-center flex items-center justify-center  font-semibold leading-[120%] text-[16px]">
+            <p className="text-center flex items-center justify-center font-semibold leading-[120%] text-[16px]">
                 {props.children}
             </p>
             {icon &&

@@ -1,140 +1,702 @@
 {
-    "nav": {
-        "rental": "Rent a Car",
-        "longTerm": "Long-Term Rental",
-        "offers": "Special Offers",
-        "locations": "Locations",
-        "about": "About Us",
-        "blog": "Blog",
-        "contact": "Contact"
-    },
-    "booking": {
-        "manage": "Manage Booking"
+    "common": {
+        "buttons": {
+            "search": "Search",
+            "book": "Book",
+            "reserve": "Reserve",
+            "select": "Select",
+            "continue": "Continue",
+            "show": "Show",
+            "contact_us": "Contact Us",
+            "see_all": "See All",
+            "view_more": "View More",
+            "learn_more": "Learn More",
+            "get_quote": "Get a Quote",
+            "send": "Send",
+            "explore": "Explore",
+            "reserve_now": "Reserve Now",
+            "previous_slide": "Previous slide",
+            "next_slide": "Next slide",
+            "choose": "Choose",
+            "rent_now": "Rent now",
+            "rent_long_term": "Rent long-term",
+            "first_registration": "First registration"
+        },
+        "navigation": {
+            "rental": "Rental",
+            "longTerm": "Long-Term",
+            "offers": "Offers",
+            "locations": "Locations",
+            "about": "About Us",
+            "blog": "Blog",
+            "contact": "Contact",
+            "services": "Our services"
+        },
+        "form": {
+            "company": "Company (Optional)",
+            "first_name": "First Name",
+            "last_name": "Last Name",
+            "email": "Email",
+            "car_type": "Choose car type",
+            "message": "Message",
+            "required": "Required",
+            "select_car_type": "Select a car type",
+            "age_confirmation": "I am 22 years of age or older.",
+            "form_success": "Form submitted successfully!",
+            "sending": "Sending..."
+        },
+        "validation": {
+            "required_field": "This field is required",
+            "invalid_email": "Invalid email format",
+            "form_error": "An error occurred while submitting. Please try again."
+        },
+        "footer": {
+            "work_hours": {
+                "weekdays": "Monday - Friday",
+                "weekdays_hours": "07:00 - 23:00",
+                "weekend": "Saturday - Sunday",
+                "weekend_hours": "08:00 - 22:00"
+            },
+            "categories": {
+                "locations": "LOCATIONS",
+                "travel_guides": "TRAVEL GUIDES",
+                "services": "SERVICES",
+                "vehicles": "VEHICLES",
+                "company": "COMPANY",
+                "support": "SUPPORT"
+            },
+            "legal": {
+                "terms": "Terms & Conditions",
+                "privacy": "Privacy Policy",
+                "cookies": "Cookie Policy"
+            },
+            "locations": {
+                "rent_zagreb": "Rent a car Zagreb",
+                "rent_split": "Rent a car Split",
+                "rent_zadar": "Rent a car Zadar"
+            },
+            "travel_guides": {
+                "zagreb": "Zagreb",
+                "istria": "Istria",
+                "dalmatia": "Dalmatia",
+                "slavonia": "Slavonia"
+            },
+            "services": {
+                "rent_a_car": "Rent a car",
+                "long_term": "Long term rental",
+                "offers": "Special offers"
+            },
+            "vehicles": {
+                "suv": "SUV >",
+                "sports": "Sports >",
+                "electric": "Electric >",
+                "limousine": "Limousine >",
+                "luxury": "Luxury >",
+                "city_car": "City car >"
+            },
+            "company": {
+                "about_us": "About us",
+                "careers": "Careers",
+                "sponsorship": "Sponsorship",
+                "press": "Press"
+            },
+            "support": {
+                "contact": "Contact >",
+                "rental_conditions": "Rental conditions >",
+                "loyalty": "Loyalty >",
+                "faq": "FAQ >",
+                "roadside": "Roadside assistance >",
+                "mobile": "Optima Rent - mobile app >"
+            },
+            "copyright": "All rights reserved."
+        },
+        "contact": {
+            "phone": "Tel:",
+            "email": "Email:"
+        },
+        "booking": {
+            "manage": "Manage Booking"
+        },
+        "yes": "Yes",
+        "no": "No",
+        "free": "Free"
     },
     "search": {
-        "place": "Pick-up & Drop-off Location",
+        "place": "Where?",
         "location": "Select a location",
-        "pickup": "Pick-up Date & Time",
-        "dropoff": "Drop-off Date & Time",
-        "button": "Search",
-        "alternateDropoff": "I want to return the car to a different location"
+        "pickup": "Pick-up",
+        "dropoff": "Drop-off",
+        "button": "Search for Vehicles",
+        "alternateDropoff": "Return to a different location",
+        "custom_dropoff": "Custom dropoff",
+        "validation": {
+            "invalid_date_range": "Pickup time must be before dropoff time"
+        }
     },
-    "hero": {
-        "title": "Car Rental That Goes The Extra Mile",
-        "checkOne": "Modern fleet – vehicles up to 2 years old",
-        "checkTwo": "Free pickup and delivery to your address",
-        "checkThree": "Full 24/7 support for your peace of mind",
-        "checkFour": "Flexible contracts tailored to your needs",
-        "tagline": "We Care More – Our promise to you"
+    "home": {
+        "hero": {
+            "title": "Car Rental Tailored to Your Needs",
+            "subtitle": "Unmatched flexibility delivered to your door. We go the extra mile to ensure your satisfaction.",
+            "checkOne": "New cars, renewed every 2 years",
+            "checkTwo": "Free delivery to your address",
+            "checkThree": "Unlimited mileage included",
+            "checkFour": "24/7 support with a personal touch",
+            "tagline": "Optima Rent - We Care More"
+        },
+        "red": {
+            "tagline": "Pick a car, and we'll take care of the rest"
+        },
+        "explore": {
+            "title": "Explore Croatia",
+            "subtitle": "Like a Local",
+            "description": "Discover the best routes, hidden gems, and must-visit destinations with our travel guides.",
+            "reading_time": "4 min read"
+        },
+        "deals": {
+            "title": "Drive more, pay less",
+            "subtitle": "Exclusive offers for new vehicles, flexible terms, and better prices – don't miss out!",
+            "special_offers": "Special Offers",
+            "offer_valid": "Offer available until the end of 2024",
+            "included_km": "This offer includes free limited mileage"
+        },
+        "reviews": {
+            "title": "Experiences that drive us",
+            "subtitle": "From fast support to flexible rentals, discover why drivers trust Optima Rent.",
+            "from_reviews": "From {count}+ reviews"
+        },
+        "promises": {
+            "title": "We Care More: Our Promise to You",
+            "subtitle": "At Optima Rent, we live by our tagline, \"We Care More.\" It's not just something we say; it's something we do every single day.",
+            "items": {
+                "personalized": {
+                    "title": "Personalized service",
+                    "description": "Every customer is unique, and we tailor our services to meet your individual needs."
+                },
+                "flexible": {
+                    "title": "Flexible options",
+                    "description": "From changing your rental car to adjusting your contract, we make things easy because we care about your convenience."
+                },
+                "feedback": {
+                    "title": "Customer feedback",
+                    "description": "We actively listen to your feedback and continuously improve our services."
+                },
+                "extra_mile": {
+                    "title": "Going the extra mile",
+                    "description": "Whether it's delivering your car to an unusual location or resolving an issue quickly, we do whatever it takes to make sure you're happy."
+                }
+            }
+        },
+        "service_cards": {
+            "car_rental": {
+                "title": "Car Rental",
+                "subtitle": "with personalized care for every client",
+                "description": "New vehicles, delivery to your address, and 24/7 support for worry-free driving."
+            },
+            "vans": {
+                "title": "Optima Vans",
+                "subtitle": "Big plans? We have the van to match.",
+                "description": "Spacious, modern vans and fast, reliable service – wherever you need it."
+            },
+            "long_term": {
+                "title": "Long-Term Rental",
+                "subtitle": "Worry-free continuous care",
+                "description": "No long-term contracts, pay monthly and change vehicles when it suits you."
+            }
+        },
+        "car_picker": {
+            "title": "Drive Only the Best",
+            "subtitle": "All our vehicles are new and reliable, ensuring your journey remains stress-free."
+        },
+        "reservation_banner": {
+            "title": "Book your car in 60 seconds!"
+        }
     },
-    "red": {
-        "tagline": "Easy & convenient car rental with Optima Rent"
+    "cars": {
+        "features": {
+            "passengers": "Passengers",
+            "luggage": "Luggage",
+            "doors": "Doors",
+            "transmission": "Transmission",
+            "automatic": "Automatic",
+            "manual": "Manual",
+            "free_gps": "Free GPS included",
+            "unlimited_mileage": "This offer includes free unlimited mileage",
+            "from": "From",
+            "per_day": "per day"
+        },
+        "badges": {
+            "best_value": "Best value for money",
+            "limited": "Limited availability",
+            "eco_friendly": "Eco-friendly"
+        },
+        "view_details": "View details"
     },
     "cards": {
         "location": {
-            "title": "CONVENIENT LOCATIONS",
-            "text": "Multiple pickup and drop-off points across the city"
+            "title": "BEST LOCATIONS",
+            "text": "Conveniently located pick-up points"
         },
         "exchange": {
-            "title": "FLEXIBLE RENTAL",
-            "text": "Change your vehicle if your needs change"
+            "title": "EASY EXCHANGE",
+            "text": "Flexible vehicle changes"
         },
         "cardPayment": {
-            "title": "EASY PAYMENT",
-            "text": "Secure and convenient payment methods"
+            "title": "CARD PAYMENT",
+            "text": "Secure and convenient payments"
         },
         "vehicles": {
-            "title": "MODERN VEHICLES",
-            "text": "Well-maintained cars up to 2 years old"
+            "title": "NEW VEHICLES",
+            "text": "Modern, reliable fleet"
         },
         "support": {
             "title": "24/7 SUPPORT",
-            "text": "Professional assistance whenever you need it"
+            "text": "Always ready to help"
         },
         "flex": {
-            "title": "TRANSPARENT PRICING",
-            "text": "No hidden fees or unexpected charges"
+            "title": "FLEXIBLE TERMS",
+            "text": "Adaptable to your needs"
+        }
+    },
+    "about": {
+        "hero": {
+            "title": "More than car rental – We Care More",
+            "subtitle": "You always come first with us. Discover why we are the fastest-growing car rental company in the region."
+        },
+        "story": {
+            "title": "Our Story: Who We Are and How We Started",
+            "subtitle": "Built on care, guided by excellence",
+            "description": "Optima Rent was born from a simple idea – to create a car rental experience that puts the customer first. We started as a small, passionate team with a vision of providing a service where we put the customer first. From day one, we focused on modern, reliable vehicles and premium customer support. This commitment has made us one of the fastest-growing car rental companies in the region.",
+            "additional_title": "At Optima Rent, you don't just rent a car –",
+            "additional_description": "you get security, flexibility, and carefree driving. Whether you're exploring new cities or need a long-term solution, we're with you every step of the way.",
+            "values": {
+                "customer_commitment": "Customer commitment",
+                "from_day_one": "from day one",
+                "rapid_growth": "Rapid growth",
+                "thanks_to": "thanks to excellent service and innovation",
+                "our_promise": "Our promise:",
+                "we_care_more": "We always care more"
+            }
+        },
+        "cards": {
+            "title": "What Makes Us Different",
+            "subtitle": "Why choose Optima Rent?",
+            "description": "We don't just offer vehicles – we provide a rental experience that adapts to you."
+        },
+        "team": {
+            "title": "A Team That Cares More",
+            "description1": "Behind every excellent rental experience is a team of dedicated professionals who are ready to go the extra mile. At Optima Rent, we're not just trained – we're committed to making your experience simple, stress-free, and tailored to you.",
+            "description2": "From customer support to the vehicle maintenance team, we all share the same mission: to put you first.",
+            "member_roles": {
+                "ceo": "Founder & CEO",
+                "operations": "Head of Operations",
+                "support": "Customer Support Manager"
+            },
+            "member_quotes": {
+                "ceo": "Building a company that truly cares about its customers has always been my passion.",
+                "operations": "Ensuring every car is delivered on time, in perfect condition.",
+                "support": "I love helping our customers have the best experience possible."
+            }
+        },
+        "banner": {
+            "title": "Are you ready for your journey with Optima Rent?",
+            "subtitle": "We're excited to be part of your journey.",
+            "description": "Whether you need a car for one day or a long-term rental, we've got you covered with flexible options and a customer-first approach."
+        },
+        "sustainable": {
+            "title": "Sustainability and Social Responsibility",
+            "subtitle": "We care more – not just about customers, but also about the environment and community. At Optima Rent, we're committed to reducing our ecological footprint through:",
+            "points": [
+                "Eco-friendly vehicles with lower fuel consumption",
+                "Regular fleet maintenance to reduce emissions",
+                "Support for local initiatives and partnerships with socially responsible projects"
+            ]
+        },
+        "fleet": {
+            "title": "Modern Fleet",
+            "subtitle": "Quality, safety, and comfort",
+            "points": [
+                "Up to 2 years old",
+                "Regularly maintained - no unexpected breakdowns",
+                "Diverse selection - from city cars to SUVs and vans",
+                "With us, you're not just renting a car – you're choosing safety and reliability."
+            ]
+        },
+        "values": {
+            "title": "Our Core Values",
+            "subtitle": "At the heart of everything we do are the values that define who we are:",
+            "points": [
+                "Customer care",
+                "Flexibility",
+                "Innovation",
+                "Trust"
+            ]
+        }
+    },
+    "long_term": {
+        "hero": {
+            "title": "Long-Term Car Rental, Worry-Free Driving",
+            "subtitle": "Enjoy new vehicles, 24/7 support, and flexible terms that adapt to your needs.",
+            "points": [
+                "New cars",
+                "Flexible contracts",
+                "24/7 support - tailored to your needs"
+            ]
+        },
+        "intro": {
+            "title": "More than rental, it's a partnership",
+            "description": "Why choose Optima Rent for long-term rental?"
+        },
+        "benefits": {
+            "title": "Long-Term Rental Benefits",
+            "tabs": {
+                "registration": {
+                    "title": "Vehicle Registration",
+                    "text": "Forget the paperwork – with long-term rental, we handle all administrative obligations. No time wasted or additional costs, just carefree driving from day one.",
+                    "points": [
+                        "Save time and money",
+                        "No paperwork or bureaucracy",
+                        "Simple and easy"
+                    ]
+                },
+                "replacement": {
+                    "title": "Replacement Vehicle",
+                    "text": "Our expert team ensures all necessary steps are completed on time."
+                },
+                "maintenance": {
+                    "title": "Vehicle Maintenance",
+                    "text": "We take care of your vehicle's maintenance throughout the entire rental period. Our expert team ensures all necessary steps are completed on time."
+                },
+                "damage": {
+                    "title": "Damage Management",
+                    "text": "We take care of your vehicle's maintenance throughout the entire rental period. Our expert team ensures all necessary steps are completed on time."
+                },
+                "insurance": {
+                    "title": "Vehicle Insurance",
+                    "text": "We take care of your vehicle's maintenance throughout the entire rental period. Our expert team ensures all necessary steps are completed on time."
+                },
+                "roadside": {
+                    "title": "Roadside Assistance Guarantee",
+                    "text": "We take care of your vehicle's maintenance throughout the entire rental period. Our expert team ensures all necessary steps are completed on time."
+                },
+                "tires": {
+                    "title": "Tire Replacement",
+                    "text": "We take care of your vehicle's maintenance throughout the entire rental period. Our expert team ensures all necessary steps are completed on time."
+                },
+                "cost_control": {
+                    "title": "Cost Control",
+                    "text": "We take care of your vehicle's maintenance throughout the entire rental period. Our expert team ensures all necessary steps are completed on time."
+                }
+            }
+        },
+        "comparison": {
+            "title": "Why choose long-term car rental instead of leasing?",
+            "subtitle": "More flexibility, fewer worries.",
+            "table": {
+                "header": "FEATURES",
+                "rows": {
+                    "initial_payment": {
+                        "feature": "Initial financial contribution",
+                        "long_term": "Free from leasing contracting",
+                        "leasing": "Tied to 20% -30%"
+                    },
+                    "financing": {
+                        "feature": "Vehicle financing",
+                        "long_term": true,
+                        "leasing": true
+                    },
+                    "basic_insurance": {
+                        "feature": "Mandatory basic insurance",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "full_insurance": {
+                        "feature": "Comprehensive insurance",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "registration": {
+                        "feature": "Registration and technical inspection costs",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "road_tax": {
+                        "feature": "Road tax for motor vehicles",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "maintenance": {
+                        "feature": "Regular and extraordinary vehicle maintenance",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "assistance": {
+                        "feature": "Assistance and roadside help",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "replacement": {
+                        "feature": "Replacement vehicle in case of breakdown or damage",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "tires": {
+                        "feature": "Seasonal tire change and storage",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "vehicle_age": {
+                        "feature": "Vehicle age",
+                        "long_term": "Always up to 2 years old",
+                        "leasing": "Vehicle ages during contract"
+                    },
+                    "contract_flexibility": {
+                        "feature": "Contract flexibility",
+                        "long_term": "Flexible, month to month",
+                        "leasing": "Fixed, long-term contracts"
+                    },
+                    "initial_costs": {
+                        "feature": "Initial costs",
+                        "long_term": "None",
+                        "leasing": "High"
+                    },
+                    "vehicle_exchange": {
+                        "feature": "Possibility of vehicle exchange during rental",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "single_payment": {
+                        "feature": "All costs included in one monthly price",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "availability": {
+                        "feature": "Available to private and business users",
+                        "long_term": "Yes, for both individuals and legal entities",
+                        "leasing": "Mostly for legal entities"
+                    }
+                }
+            },
+            "long_term": "Long-Term<br>Rental",
+            "leasing": "Leasing"
+        },
+        "flow": {
+            "title": "How Long-Term Car Rental Works",
+            "steps": {
+                "choose": {
+                    "title": "1. Choose your car",
+                    "text": "Browse our selection of vehicles online. Find the car that suits your long-term rental needs, whether it's a compact, SUV, or luxury model."
+                },
+                "contact": {
+                    "title": "2. Send a contact form",
+                    "text": "Fill out our quick online contact form with your details and rental preferences. We'll review your request and reach out to you shortly."
+                },
+                "call": {
+                    "title": "3. Call us to finalize details",
+                    "text": "Our team will call you to discuss the rental duration, insurance options, and any add-ons like GPS or roadside assistance.",
+                    "offer": "In a day or two!"
+                },
+                "confirm": {
+                    "title": "4. Confirm and drive away",
+                    "text": "Once everything is arranged, pick up your car at a convenient time. Drive with confidence, and if you need an extension or have any questions, just give us a call."
+                }
+            }
+        },
+        "categories": {
+            "title": "No worries, just new and reliable vehicles.",
+            "subtitle": "Choose vehicles",
+            "features": [
+                "3000 kms/month",
+                "Standard roadside assistance",
+                "Maintenance",
+                "1x Free additional driver"
+            ],
+            "categories": {
+                "mini": {
+                    "title": "Mini",
+                    "subtitle": "Fiat 500 or similar model"
+                },
+                "economy": {
+                    "title": "Economy",
+                    "subtitle": "Opel Corsa or similar model"
+                },
+                "suv": {
+                    "title": "SUV",
+                    "subtitle": "Mazda CX 30 or similar model"
+                }
+            }
+        },
+        "contact_baiters": {
+            "private": {
+                "title": "Long-term rental for private users",
+                "subtitle": "Looking for a flexible and affordable way to drive without the commitment of ownership?",
+                "text": "Our long-term car rental options give you the freedom to rent a vehicle for weeks or months—perfect for extended vacations, temporary needs, or simply enjoying the benefits of having your own car. Choose from our wide range of vehicles, customize your rental, and enjoy hassle-free driving for as long as you need."
+            },
+            "business": {
+                "title": "Business rental",
+                "subtitle": "Need vehicles for smooth business operations?",
+                "text": "Our long-term business rentals provide a simple and cost-effective solution. Whether you're equipping your sales team with company cars, addressing seasonal demand, or managing business travel, we offer a fleet of reliable vehicles tailored to your business needs. Take advantage of competitive rates, flexible contracts, and personalized support to keep your operations on the road."
+            }
+        },
+        "features": {
+            "new_vehicles": "Up to 2 years old",
+            "flexible_terms": {
+                "title": "FLEXIBLE TERMS",
+                "description": "and possibility of vehicle exchange"
+            },
+            "no_hidden_costs": {
+                "title": "NO HIDDEN COSTS",
+                "description": "and no complications"
+            },
+            "support": "and quick response in case of need",
+            "delivery": {
+                "title": "Delivery and pickup",
+                "description": "of vehicles at your address"
+            }
+        }
+    },
+    "rent": {
+        "hero": {
+            "title": "Rent a Car {city}",
+            "subtitle": "New vehicles, flexible service, and delivery to your address"
+        },
+        "why_choose": {
+            "title": "Why choose Optima Rent for car rental in {city}?",
+            "subtitle": "Optima Rent is always nearby – pick up or return your vehicle at these locations."
+        },
+        "locations": {
+            "title": "Where can you find us in {city}?",
+            "subtitle": "Optima Rent is always nearby – pick up or return your vehicle at these locations.",
+            "airport": {
+                "title": "Zagreb Airport",
+                "description": "Free transfer and vehicle delivery"
+            },
+            "center": {
+                "title": "Zagreb Center",
+                "description": "Comfortable rental in the heart of the city."
+            },
+            "address": {
+                "title": "Your Address",
+                "description": "We deliver the vehicle directly to your location – home, hotel, or office."
+            }
+        },
+        "car_picker": {
+            "title": "Choose the perfect vehicle for your stay in {city}",
+            "subtitle": "Check out our fleet and find the car that best suits your needs.",
+            "categories": {
+                "mini": {
+                    "title": "MINI CARS",
+                    "description": "Ideal for city driving."
+                },
+                "suv": {
+                    "title": "SUVs AND SEDANS",
+                    "description": "Perfect for family and business users."
+                },
+                "van": {
+                    "title": "VANS",
+                    "description": "Spacious option for groups or larger luggage."
+                }
+            }
+        },
+        "banner": {
+            "title": "Book a car today",
+            "subtitle": "Take advantage of premium rental service in {city} with Optima Rent",
+            "description": "Whether you need a car for a day or a long-term rental, we've got you covered with flexible options and a customer-first approach."
+        },
+        "reviews": {
+            "title": "What do our customers say about rentals in {city}?",
+            "subtitle": "Showing a few reviews from customers who rented a vehicle in {city}."
         }
     },
     "booking_process": {
         "progress": {
-            "rental_details": "Rental details",
+            "rental_details": "Rental Details",
             "car_selection": "Car Selection",
             "protection": "Protection Products",
-            "addons": "Other Add-ons",
+            "addons": "Add-ons",
             "payment": "Payment"
         },
         "car_selection": {
-            "filter_title": "Filter & Sort",
+            "filter_title": "Filter and Sort",
             "sort_by": "Sort by",
             "featured": "Featured",
             "price_high_low": "Price: High to Low",
             "price_low_high": "Price: Low to High",
             "car_type": "Car Type",
             "price_per_day": "Price per day",
-            "gearshift": "Gearshift type",
+            "gearshift": "Gearshift",
             "automatic": "Automatic",
             "manual": "Manual",
-            "passengers": "Number of Passengers",
-            "filter_button": "Filter",
+            "passengers": "Passengers",
+            "filter_button": "Apply Filters",
             "select_button": "Select",
-            "details": "Details"
+            "details": "View Details"
         },
         "protection": {
-            "title": "Protection Products",
             "basic_insurance": {
                 "name": "Basic Insurance",
-                "description": "Coverage for basic accidents and third-party damage",
-                "price": "15 €/day"
+                "description": "Provides essential coverage for your rental. Includes third-party liability insurance and basic collision damage waiver."
             },
             "full_insurance": {
-                "name": "Full Coverage Insurance",
-                "description": "Complete coverage including theft and natural disasters",
-                "price": "25 €/day"
+                "name": "Full Insurance",
+                "description": "Comprehensive protection with zero deductible. Covers damages to the vehicle, theft, and personal belongings."
             },
             "additional_driver": {
-                "name": "Additional Driver",
-                "description": "Add one more authorized driver",
-                "price": "10 €/day"
+                "name": "Additional Driver Coverage",
+                "description": "Allows another person to legally drive the rental vehicle. All drivers must meet our age and license requirements."
             },
             "full_tank": {
                 "name": "Full Tank Option",
-                "description": "Return the car with any fuel level, we handle refueling",
-                "price": "45 €/day"
+                "description": "Return the car with any fuel level without refueling charges. Convenient for busy schedules or early departures."
             },
             "continue": "Continue",
-            "booking_overview": "Your Booking Overview",
-            "overview_text1": "The Party shall not be liable for any material damage caused to the vehicle if it complies with all rental conditions",
-            "overview_text2": "Our comprehensive protection options provide peace of mind throughout your rental period"
+            "booking_overview": "Booking Overview",
+            "overview_text1": "You've selected a great vehicle and protection package",
+            "overview_text2": "All taxes and fees are included in your final price"
         },
         "addons": {
-            "title": "Additional Services",
             "extra_driver": {
                 "name": "Extra Driver",
-                "description": "Add an additional authorized driver to your rental",
-                "price": "12 €/day"
+                "description": "Add an additional driver to your rental for flexibility during your trip."
             },
             "green_card": {
-                "name": "Green Card",
-                "description": "International insurance certificate for cross-border travel",
-                "price": "35 €/day"
+                "name": "Green Card Insurance",
+                "description": "International insurance certificate for traveling outside Croatia."
             },
             "gps": {
                 "name": "GPS Navigation",
-                "description": "Advanced navigation system with real-time traffic updates",
-                "price": "8 €/day"
+                "description": "Never get lost with our premium GPS system with updated maps."
             },
             "child_seat": {
                 "name": "Child Seat",
-                "description": "Safe and comfortable child seat for kids under 5 years",
-                "price": "7 €/day"
+                "description": "Safety-approved child seat suitable for different age groups."
             },
-            "continue": "Continue",
-            "price_details": "Price details"
+            "price_details": "Price details",
+            "continue": "Continue"
         },
         "payment": {
             "title": "Payment Details",
             "reserve_now": "Reserve Now"
         }
+    },
+    "faq": {
+        "title": "FAQs",
+        "questions": [
+            {
+                "question": "How long can I rent a car with the long-term rental option?",
+                "answer": "You can rent a car for as little as 1 month or as long as several months, depending on your needs. We offer flexible rental periods that you can extend as needed. Just let us know, and we'll tailor the rental to suit your schedule."
+            },
+            {
+                "question": "What's included in the long-term rental option?",
+                "answer": "Lorem ipsum ..."
+            },
+            {
+                "question": "Can I switch to a different car during my rental period?",
+                "answer": "Lorem ipsum ..."
+            },
+            {
+                "question": "Are there any mileage limits with long-term rentals?",
+                "answer": "Lorem ipsum ..."
+            }
+        ]
     }
 }

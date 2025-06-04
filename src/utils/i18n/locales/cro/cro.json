@@ -1,79 +1,702 @@
 {
-    "booking.manage": "Upravljanje rezervacijom",
-
-    "nav": {
-        "rental": "Najam automobila",
-        "longTerm": "Dugoročni najam",
-        "offers": "Posebne ponude",
-        "locations": "Lokacije",
-        "about": "O nama",
-        "blog": "Blog",
-        "contact": "Kontakt"
+    "common": {
+        "buttons": {
+            "search": "Pretraži",
+            "book": "Rezerviraj",
+            "reserve": "Rezerviraj",
+            "select": "Odaberi",
+            "continue": "Nastavi",
+            "show": "Prikaži",
+            "contact_us": "Kontaktirajte nas",
+            "see_all": "Vidi sve",
+            "view_more": "Pogledaj više",
+            "learn_more": "Saznaj više",
+            "get_quote": "Zatraži ponudu",
+            "send": "Pošalji",
+            "explore": "Istraži",
+            "reserve_now": "Rezerviraj odmah",
+            "previous_slide": "Prethodni slajd",
+            "next_slide": "Sljedeći slajd",
+            "choose": "Odaberi",
+            "rent_now": "Iznajmi odmah",
+            "rent_long_term": "Dugoročni najam",
+            "first_registration": "Prva registracija"
+        },
+        "navigation": {
+            "rental": "Najam",
+            "longTerm": "Dugoročni najam",
+            "offers": "Ponude",
+            "locations": "Lokacije",
+            "about": "O nama",
+            "blog": "Blog",
+            "contact": "Kontakt",
+            "services": "Naše usluge"
+        },
+        "form": {
+            "company": "Tvrtka (opcionalno)",
+            "first_name": "Ime",
+            "last_name": "Prezime",
+            "email": "Email",
+            "car_type": "Odaberite tip vozila",
+            "message": "Poruka",
+            "required": "Obavezno",
+            "select_car_type": "Odaberite tip vozila",
+            "age_confirmation": "Imam 22 godine ili više.",
+            "form_success": "Obrazac uspješno poslan!",
+            "sending": "Slanje..."
+        },
+        "validation": {
+            "required_field": "Ovo polje je obavezno",
+            "invalid_email": "Neispravan format email adrese",
+            "form_error": "Došlo je do pogreške prilikom slanja. Molimo pokušajte ponovno."
+        },
+        "footer": {
+            "work_hours": {
+                "weekdays": "Pon - Petak",
+                "weekdays_hours": "07:00 - 23:00",
+                "weekend": "Subota - Nedjelja",
+                "weekend_hours": "08:00 - 22:00"
+            },
+            "categories": {
+                "locations": "LOKACIJE",
+                "travel_guides": "VODIČI",
+                "services": "USLUGE",
+                "vehicles": "VOZILA",
+                "company": "TVRTKA",
+                "support": "PODRŠKA"
+            },
+            "legal": {
+                "terms": "Uvjeti korištenja",
+                "privacy": "Politika privatnosti",
+                "cookies": "Politika kolačića"
+            },
+            "locations": {
+                "rent_zagreb": "Rent a car Zagreb",
+                "rent_split": "Rent a car Split",
+                "rent_zadar": "Rent a car Zadar"
+            },
+            "travel_guides": {
+                "zagreb": "Zagreb",
+                "istria": "Istra",
+                "dalmatia": "Dalmacija",
+                "slavonia": "Slavonija"
+            },
+            "services": {
+                "rent_a_car": "Najam automobila",
+                "long_term": "Dugoročni najam",
+                "offers": "Posebne ponude"
+            },
+            "vehicles": {
+                "suv": "SUV >",
+                "sports": "Sportski >",
+                "electric": "Električni >",
+                "limousine": "Limuzine >",
+                "luxury": "Luksuzni >",
+                "city_car": "Gradski automobili >"
+            },
+            "company": {
+                "about_us": "O nama",
+                "careers": "Karijere",
+                "sponsorship": "Sponzorstva",
+                "press": "Mediji"
+            },
+            "support": {
+                "contact": "Kontakt >",
+                "rental_conditions": "Uvjeti najma >",
+                "loyalty": "Program vjernosti >",
+                "faq": "Česta pitanja >",
+                "roadside": "Pomoć na cesti >",
+                "mobile": "Optima Rent - mobilna aplikacija >"
+            },
+            "copyright": "Sva prava pridržana."
+        },
+        "contact": {
+            "phone": "Tel:",
+            "email": "Email:"
+        },
+        "booking": {
+            "manage": "Upravljanje rezervacijom"
+        },
+        "yes": "Da",
+        "no": "Ne",
+        "free": "Besplatno"
     },
-    "hero": {
-        "title": "Sigurna vožnja počinje s pravim partnerom",
-        "subtitle": "Odaberite vozilo, a mi ćemo se pobrinuti za sve ostalo. Idemo korak dalje kako bismo osigurali vaše zadovoljstvo.",
-        "checkOne": "Samo nova i provjerena vozila",
-        "checkTwo": "Mogućnost dostave i preuzimanja na vašu adresu",
-        "checkThree": "Brza rezervacija, bez papirologije i skrivenih troškova",
-        "checkFour": "Ako vam auto ne odgovara, lako ga zamijenimo",
-        "tagline": "300+ tvrtki se pouzdano oslanjaju na nas"
-    },
-
-    "red.tagline": "Odaberite auto, a mi ćemo se pobrinuti za sve ostalo",
     "search": {
-        "place": "Mjesto preuzimanja",
-        "location": "Izaberite lokaciju",
-        "pickup": "Vrijeme preuzimanja",
-        "dropoff": "Vrijeme vraćanja",
-        "button": "Pronađi vozilo",
-        "alternateDropoff": "Vraćanje automobila u drugu poslovnicu"
+        "place": "Gdje?",
+        "location": "Odaberite lokaciju",
+        "pickup": "Preuzimanje",
+        "dropoff": "Povratak",
+        "button": "Pretraži vozila",
+        "alternateDropoff": "Povratak na drugoj lokaciji",
+        "custom_dropoff": "Prilagođeni povratak",
+        "validation": {
+            "invalid_date_range": "Vrijeme preuzimanja mora biti prije vremena povratka"
+        }
     },
-
+    "home": {
+        "hero": {
+            "title": "Najam automobila prilagođen vašim potrebama",
+            "subtitle": "Neusporediva fleksibilnost s dostavom na vašu adresu. Činimo korak više kako bismo osigurali vaše zadovoljstvo.",
+            "checkOne": "Nova vozila, obnavljana svake 2 godine",
+            "checkTwo": "Besplatna dostava na vašu adresu",
+            "checkThree": "Uključena neograničena kilometraža",
+            "checkFour": "Podrška 24/7 s osobnim pristupom",
+            "tagline": "Optima Rent - We Care More"
+        },
+        "red": {
+            "tagline": "Odaberite auto, a mi ćemo se pobrinuti za sve ostalo"
+        },
+        "explore": {
+            "title": "Istražite Hrvatsku",
+            "subtitle": "Kao pravi lokalac",
+            "description": "Otkrijte najbolje rute, skrivene dragulje i nezaobilazne destinacije uz naše vodiče za putovanja.",
+            "reading_time": "4 min čitanja"
+        },
+        "deals": {
+            "title": "Vozite više, platite manje",
+            "subtitle": "Ekskluzivne ponude za nova vozila, fleksibilni uvjeti i bolje cijene – ne propustite priliku!",
+            "special_offers": "Posebne ponude",
+            "offer_valid": "Ponuda dostupna do kraja 2024",
+            "included_km": "Ova ponuda uključuje besplatnu ograničenu kilometražu"
+        },
+        "reviews": {
+            "title": "Iskustva koja nas pokreću",
+            "subtitle": "Od brze podrške do fleksibilnog najma, saznajte zašto vozači vjeruju Optima Rentu.",
+            "from_reviews": "Od {count}+ recenzija"
+        },
+        "promises": {
+            "title": "We Care More: Naše obećanje vama",
+            "subtitle": "U Optima Rentu živimo prema našem sloganu, \"We Care More\". To nije samo nešto što govorimo; to je nešto što činimo svaki dan.",
+            "items": {
+                "personalized": {
+                    "title": "Personalizirana usluga",
+                    "description": "Svaki korisnik je jedinstven, a mi prilagođavamo naše usluge kako bismo zadovoljili vaše individualne potrebe."
+                },
+                "flexible": {
+                    "title": "Fleksibilne opcije",
+                    "description": "Od promjene vozila za najam do prilagodbe ugovora, olakšavamo stvari jer nam je stalo do vaše udobnosti."
+                },
+                "feedback": {
+                    "title": "Povratne informacije korisnika",
+                    "description": "Aktivno slušamo vaše povratne informacije i kontinuirano poboljšavamo naše usluge."
+                },
+                "extra_mile": {
+                    "title": "Korak više",
+                    "description": "Bilo da se radi o dostavi vašeg automobila na neuobičajenu lokaciju ili brzom rješavanju problema, činimo sve što je potrebno da biste bili zadovoljni."
+                }
+            }
+        },
+        "service_cards": {
+            "car_rental": {
+                "title": "Najam automobila",
+                "subtitle": "s personaliziranom brigom za svakog klijenta",
+                "description": "Nova vozila, dostava na vašu adresu i podrška 24/7 za bezbrižnu vožnju."
+            },
+            "vans": {
+                "title": "Optima kombiji",
+                "subtitle": "Veliki planovi? Imamo kombi koji im odgovara.",
+                "description": "Prostrani, moderni kombiji i brza, pouzdana usluga – gdje god vam je potrebno."
+            },
+            "long_term": {
+                "title": "Dugoročni najam",
+                "subtitle": "Bezbrižna kontinuirana briga",
+                "description": "Bez dugoročnih ugovora, plaćajte mjesečno i mijenjajte vozila kada vam odgovara."
+            }
+        },
+        "car_picker": {
+            "title": "Vozite samo najbolje",
+            "subtitle": "Sva naša vozila su nova i pouzdana, osiguravajući da vaše putovanje ostane bez stresa."
+        },
+        "reservation_banner": {
+            "title": "Rezervirajte svoj automobil za 60 sekundi!"
+        }
+    },
+    "cars": {
+        "features": {
+            "passengers": "Putnici",
+            "luggage": "Prtljaga",
+            "doors": "Vrata",
+            "transmission": "Mjenjač",
+            "automatic": "Automatski",
+            "manual": "Ručni",
+            "free_gps": "Besplatni GPS uključen",
+            "unlimited_mileage": "Ova ponuda uključuje besplatnu neograničenu kilometražu",
+            "from": "Od",
+            "per_day": "na dan"
+        },
+        "badges": {
+            "best_value": "Najbolja vrijednost za cijenu",
+            "limited": "Ograničena dostupnost",
+            "eco_friendly": "Ekološki prihvatljivo"
+        },
+        "view_details": "Pogledaj detalje"
+    },
     "cards": {
         "location": {
-            "title": "TREBATE AUTO?",
-            "text": "Dostavljamo ga i preuzimamo na vašoj adresi"
+            "title": "NAJBOLJE LOKACIJE",
+            "text": "Praktično smještene točke preuzimanja"
         },
         "exchange": {
-            "title": "NISTE ZADOVOLJNI?",
-            "text": "Lako ga zamjenjujemo"
+            "title": "JEDNOSTAVNA ZAMJENA",
+            "text": "Fleksibilne promjene vozila"
         },
         "cardPayment": {
-            "title": "NEMATE KARTICU?",
-            "text": "Možete platiti i gotovinom"
+            "title": "PLAĆANJE KARTICOM",
+            "text": "Sigurna i praktična plaćanja"
         },
         "vehicles": {
-            "title": "SAMO NOVA VOZILA",
-            "text": "Maksimalno 2 godine stara"
+            "title": "NOVA VOZILA",
+            "text": "Moderna, pouzdana flota"
         },
         "support": {
-            "title": "24/7 PODRŠKA",
-            "text": "Uvijek dostupna i brzo reagira"
+            "title": "PODRŠKA 24/7",
+            "text": "Uvijek spremni pomoći"
         },
         "flex": {
-            "title": "NAJBRŽE RASTUĆA",
-            "text": "rent-a-car tvrtka u regiji"
+            "title": "FLEKSIBILNI UVJETI",
+            "text": "Prilagodljivi vašim potrebama"
         }
     },
-    "services": {
-        "headline": "",
-        "button": "",
-        "cars": {
-            "title": "",
-            "subtitle": "",
-            "text": ""
+    "about": {
+        "hero": {
+            "title": "Više od najma automobila – We Care More",
+            "subtitle": "S nama ste uvijek na prvom mjestu. Otkrijte zašto smo najbrže rastuća rent-a-car tvrtka u regiji."
         },
-        "vans": {
-            "title": "",
-            "subtitle": "",
-            "text": ""
+        "story": {
+            "title": "Naša priča: Tko smo i kako smo počeli",
+            "subtitle": "Izgrađeni na brizi, vođeni izvrsnošću",
+            "description": "Optima Rent nastao je iz jednostavne ideje – stvoriti rent-a-car iskustvo koje stavlja korisnika na prvo mjesto. Počeli smo kao mali, strastveni tim s vizijom pružanja usluge gdje smo stavili korisnika na prvo mjesto. Od prvog dana fokusirali smo se na moderna, pouzdana vozila i vrhunsku korisničku podršku. Upravo nas je ta predanost učinila jednom od najbrže rastućih rent-a-car tvrtki u regiji.",
+            "additional_title": "U Optima Rentu ne iznajmljujete samo automobil –",
+            "additional_description": "dobivate sigurnost, fleksibilnost i bezbrižnu vožnju. Bilo da istražujete nove gradove ili trebate dugoročno rješenje, mi smo uz vas na svakom koraku.",
+            "values": {
+                "customer_commitment": "Posvećenost korisnicima",
+                "from_day_one": "od prvog dana",
+                "rapid_growth": "Brz rast",
+                "thanks_to": "zahvaljujući izvrsnoj usluzi i inovacijama",
+                "our_promise": "Naše obećanje:",
+                "we_care_more": "Uvijek brinemo više"
+            }
         },
-        "longterm": {
-            "title": "",
-            "subtitle": "",
-            "text": ""
+        "cards": {
+            "title": "Što nas čini drugačijima",
+            "subtitle": "Zašto odabrati Optima Rent?",
+            "description": "Ne nudimo samo vozila – pružamo iskustvo najma koje se prilagođava vama."
+        },
+        "team": {
+            "title": "Tim koji brine više",
+            "description1": "Iza svakog izvrsnog iskustva najma stoji tim posvećenih stručnjaka koji su spremni učiniti više. U Optima Rentu nismo samo obučeni – mi smo posvećeni tome da vaše iskustvo bude jednostavno, bez stresa i prilagođeno vama.",
+            "description2": "Od korisničke podrške do tima za održavanje vozila, svi dijelimo istu misiju: staviti vas na prvo mjesto.",
+            "member_roles": {
+                "ceo": "Osnivač i izvršni direktor",
+                "operations": "Voditelj operacija",
+                "support": "Voditelj korisničke podrške"
+            },
+            "member_quotes": {
+                "ceo": "Izgradnja tvrtke koja istinski brine o svojim klijentima oduvijek je bila moja strast.",
+                "operations": "Osiguravanje da svaki automobil bude isporučen na vrijeme, u savršenom stanju.",
+                "support": "Volim pomagati našim korisnicima da imaju najbolje moguće iskustvo."
+            }
+        },
+        "banner": {
+            "title": "Jeste li spremni za svoje putovanje s Optima Rent?",
+            "subtitle": "Uzbuđeni smo što smo dio vašeg putovanja.",
+            "description": "Bez obzira trebate li automobil na jedan dan ili dugoročni najam, pokrili smo vas fleksibilnim opcijama i pristupom koji je na prvom mjestu klijentu."
+        },
+        "sustainable": {
+            "title": "Održivost i društvena odgovornost",
+            "subtitle": "Brinemo više – ne samo o korisnicima, već i o okolišu i zajednici. U Optima Rentu posvećeni smo smanjenju ekološkog otiska kroz:",
+            "points": [
+                "Ekološki prihvatljiva vozila s nižom potrošnjom goriva",
+                "Redovno održavanje flote za smanjenje emisija",
+                "Podršku lokalnim inicijativama i partnerstva s društveno odgovornim projektima"
+            ]
+        },
+        "fleet": {
+            "title": "Moderna flota",
+            "subtitle": "Kvaliteta, sigurnost i udobnost",
+            "points": [
+                "Do 2 godine starosti",
+                "Redovito održavana - bez nepredviđenih kvarova",
+                "Raznolika ponuda - od gradskih automobila do SUV-pva i kombija",
+                "Kod nas ne iznajmljujete samo automobil – birate sigurnost i pouzdanost."
+            ]
+        },
+        "values": {
+            "title": "Naše temeljne vrijednosti",
+            "subtitle": "U srcu svega što radimo su vrijednosti koje definiraju tko smo:",
+            "points": [
+                "Briga o korisnicima",
+                "Fleksibilnost",
+                "Inovacije",
+                "Povjerenje"
+            ]
         }
     },
-    "carousel": {}
+    "long_term": {
+        "hero": {
+            "title": "Dugoročni najam vozila, bezbrižna vožnja",
+            "subtitle": "Uživajte u novim vozilima, 0-24 podršci i fleksibilnim uvjetima koji se prilagođavaju vašim potrebama.",
+            "points": [
+                "Nova vozila",
+                "Fleksibilni ugovori",
+                "24/7 podrška - prilagođena vašim potrebama"
+            ]
+        },
+        "intro": {
+            "title": "Više od najma, to je partnerstvo",
+            "description": "Zašto odabrati Optima Rent za dugoročni najam?"
+        },
+        "benefits": {
+            "title": "Prednosti dugoročnog najma",
+            "tabs": {
+                "registration": {
+                    "title": "Registracija vozila",
+                    "text": "Zaboravite na papirologiju – kod dugoročnog najma, sve administrativne obaveze preuzimamo mi. Nema gubljenja vremena ni dodatnih troškova, samo bezbrižna vožnja od prvog dana.",
+                    "points": [
+                        "Uštedite vrijeme i novac",
+                        "Bez papirologije i birokracije",
+                        "Jednostavno i lagano"
+                    ]
+                },
+                "replacement": {
+                    "title": "Zamjensko vozilo",
+                    "text": "Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka."
+                },
+                "maintenance": {
+                    "title": "Održavanje vozila",
+                    "text": "Brinemo o održavanju vašeg vozila tijekom cijelog razdoblja najma. Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka."
+                },
+                "damage": {
+                    "title": "Upravljanje štetama",
+                    "text": "Brinemo o održavanju vašeg vozila tijekom cijelog razdoblja najma. Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka."
+                },
+                "insurance": {
+                    "title": "Osiguranje vozila",
+                    "text": "Brinemo o održavanju vašeg vozila tijekom cijelog razdoblja najma. Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka."
+                },
+                "roadside": {
+                    "title": "Jamstvo pomoći na cesti",
+                    "text": "Brinemo o održavanju vašeg vozila tijekom cijelog razdoblja najma. Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka."
+                },
+                "tires": {
+                    "title": "Zamjena guma",
+                    "text": "Brinemo o održavanju vašeg vozila tijekom cijelog razdoblja najma. Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka."
+                },
+                "cost_control": {
+                    "title": "Kontrola troškova",
+                    "text": "Brinemo o održavanju vašeg vozila tijekom cijelog razdoblja najma. Naš stručni tim osigurava pravovremeno obavljanje svih potrebnih koraka."
+                }
+            }
+        },
+        "comparison": {
+            "title": "Zašto odabrati dugoročni najam vozila umjesto leasinga?",
+            "subtitle": "Više fleksibilnosti, manje briga.",
+            "table": {
+                "header": "KARAKTERISTIKE",
+                "rows": {
+                    "initial_payment": {
+                        "feature": "Početno financijsko učešće",
+                        "long_term": "Oslobođeno ugovaranja leasinga",
+                        "leasing": "Vezano uz 20% -30%"
+                    },
+                    "financing": {
+                        "feature": "Financiranje vozila",
+                        "long_term": true,
+                        "leasing": true
+                    },
+                    "basic_insurance": {
+                        "feature": "Obvezno osnovno osiguranje",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "full_insurance": {
+                        "feature": "Kasko osiguranje",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "registration": {
+                        "feature": "Troškovi registracije i tehničkog pregleda",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "road_tax": {
+                        "feature": "Porez na cestovna motorna vozila",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "maintenance": {
+                        "feature": "Redovno i izvanredno održavanje vozila",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "assistance": {
+                        "feature": "Asistencija i pomoć na cesti",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "replacement": {
+                        "feature": "Zamjensko vozilo u slučaju kvara ili štete",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "tires": {
+                        "feature": "Sezonska zamjena i skladištenje guma",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "vehicle_age": {
+                        "feature": "Starost vozila",
+                        "long_term": "Uvijek do 2 godine starosti",
+                        "leasing": "Vozilo stari tijekom ugovora"
+                    },
+                    "contract_flexibility": {
+                        "feature": "Fleksibilnost ugovora",
+                        "long_term": "Fleksibilno, iz mjeseca u mjesec",
+                        "leasing": "Fiksni, dugoročni ugovori"
+                    },
+                    "initial_costs": {
+                        "feature": "Početni troškovi",
+                        "long_term": "Nema",
+                        "leasing": "Visoki"
+                    },
+                    "vehicle_exchange": {
+                        "feature": "Mogućnost zamjene vozila tijekom najma",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "single_payment": {
+                        "feature": "Svi troškovi uključeni u jednu mjesečnu cijenu",
+                        "long_term": true,
+                        "leasing": false
+                    },
+                    "availability": {
+                        "feature": "Dostupno privatnim i poslovnim korisnicima",
+                        "long_term": "Da, i za fizičke i za pravne osobe",
+                        "leasing": "Uglavnom za pravne osobe"
+                    }
+                }
+            },
+            "long_term": "Dugoročni<br>najam",
+            "leasing": "Leasing"
+        },
+        "flow": {
+            "title": "Kako funkcionira dugoročni najam vozila",
+            "steps": {
+                "choose": {
+                    "title": "1. Odaberite svoj automobil",
+                    "text": "Pregledajte naš izbor vozila online. Pronađite automobil koji odgovara vašim potrebama za dugoročni najam, bilo da se radi o kompaktnom, SUV-u ili luksuznom modelu."
+                },
+                "contact": {
+                    "title": "2. Pošaljite obrazac za kontakt",
+                    "text": "Ispunite naš brzi online obrazac za kontakt s vašim podacima i preferencijama za najam. Pregledat ćemo vaš zahtjev i uskoro vas kontaktirati."
+                },
+                "call": {
+                    "title": "3. Nazovite nas da dovršite detalje",
+                    "text": "Naš tim će vas nazvati kako bi razgovarao o trajanju najma, opcijama osiguranja i dodatnim uslugama poput GPS-a ili pomoći na cesti.",
+                    "offer": "U dan ili dva!"
+                },
+                "confirm": {
+                    "title": "4. Potvrdite i odvezite se",
+                    "text": "Kada je sve dogovoreno, preuzmite svoj automobil u odgovarajuće vrijeme. Vozite s povjerenjem, a ako trebate produženje ili imate pitanja, samo nas nazovite."
+                }
+            }
+        },
+        "categories": {
+            "title": "Bez briga, samo nova i pouzdana vozila.",
+            "subtitle": "Odaberite vozila",
+            "features": [
+                "3000 km/mjesečno",
+                "Standardna pomoć na cesti",
+                "Održavanje",
+                "1x Besplatni dodatni vozač"
+            ],
+            "categories": {
+                "mini": {
+                    "title": "Mini",
+                    "subtitle": "Fiat 500 ili sličan model"
+                },
+                "economy": {
+                    "title": "Ekonomični",
+                    "subtitle": "Opel Corsa ili sličan model"
+                },
+                "suv": {
+                    "title": "SUV",
+                    "subtitle": "Mazda CX 30 ili sličan model"
+                }
+            }
+        },
+        "contact_baiters": {
+            "private": {
+                "title": "Dugoročni najam za privatne korisnike",
+                "subtitle": "Tražite fleksibilan i pristupačan način vožnje bez obveze vlasništva?",
+                "text": "Naše opcije dugoročnog najma automobila daju vam slobodu da unajmite vozilo tjednima ili mjesecima—savršeno za produženi odmor, privremene potrebe ili jednostavno uživanje u pogodnostima posjedovanja vlastitog automobila. Birajte iz naše široke ponude vozila, prilagodite svoj najam i uživajte u vožnji bez muke onoliko dugo koliko vam je potrebno."
+            },
+            "business": {
+                "title": "Poslovni najam",
+                "subtitle": "Trebate vozila za neometano poslovanje?",
+                "text": "Naši dugoročni poslovni najam pružaju jednostavno i isplativo rješenje. Bilo da opremate svoj prodajni tim službenim automobilima, rješavate sezonsku potražnju ili upravljate poslovnim putovanjima, nudimo flotu pouzdanih vozila prilagođenih vašim poslovnim potrebama. Iskoristite prednosti konkurentnih cijena, fleksibilnih ugovora i personalizirane podrške kako biste zadržali svoje operacije na putu."
+            }
+        },
+        "features": {
+            "new_vehicles": "Do 2 godine starosti",
+            "flexible_terms": {
+                "title": "FLEKSIBILNI UVJETI",
+                "description": "i mogućnost zamjene vozila"
+            },
+            "no_hidden_costs": {
+                "title": "BEZ SKRIVENIH TROŠKOVA",
+                "description": "i bez komplikacija"
+            },
+            "support": "i brz odgovor u slučaju potrebe",
+            "delivery": {
+                "title": "Dostava i preuzimanje",
+                "description": "vozila na vašoj adresi"
+            }
+        }
+    },
+    "rent": {
+        "hero": {
+            "title": "Rent a Car {city}",
+            "subtitle": "Nova vozila, fleksibilna usluga i dostava na vašu adresu"
+        },
+        "why_choose": {
+            "title": "Zašto odabrati Optima Rent za najam automobila u {city}?",
+            "subtitle": "Optima Rent je uvijek u blizini – preuzmite ili vratite vozilo na ovim lokacijama."
+        },
+        "locations": {
+            "title": "Gdje nas možete pronaći u {city}?",
+            "subtitle": "Optima Rent je uvijek u blizini – preuzmite ili vratite vozilo na ovim lokacijama.",
+            "airport": {
+                "title": "Aerodrom Zagreb",
+                "description": "Besplatan transfer i dostava vozila"
+            },
+            "center": {
+                "title": "Centar Zagreba",
+                "description": "Udoban najam u srcu grada."
+            },
+            "address": {
+                "title": "Vaša adresa",
+                "description": "Dostavljamo vozilo direktno na vašu lokaciju – kući, hotelu ili uredu."
+            }
+        },
+        "car_picker": {
+            "title": "Odaberite savršeno vozilo za svoj boravak u {city}",
+            "subtitle": "Provjerite našu flotu i pronađite automobil koji najbolje odgovara vašim potrebama.",
+            "categories": {
+                "mini": {
+                    "title": "MINI AUTOMOBILI",
+                    "description": "Idealni za gradske vožnje."
+                },
+                "suv": {
+                    "title": "SUV I LIMUZINE",
+                    "description": "Savršeni za obiteljske i poslovne korisnike."
+                },
+                "van": {
+                    "title": "KOMBI VOZILA",
+                    "description": "Prostrana opcija za grupe ili veći prtljag."
+                }
+            }
+        },
+        "banner": {
+            "title": "Rezervirajte automobil već danas",
+            "subtitle": "Iskoristite vrhunsku uslugu najma u {city} uz Optima Rent",
+            "description": "Bez obzira trebate li automobil na jedan dan ili dugoročni najam, pokrili smo vas fleksibilnim opcijama i pristupom koji je na prvom mjestu klijentu."
+        },
+        "reviews": {
+            "title": "Što naši korisnici kažu o najmu u {city}?",
+            "subtitle": "Prikaz nekoliko recenzija korisnika koji su unajmili vozilo u {city}."
+        }
+    },
+    "booking_process": {
+        "progress": {
+            "rental_details": "Detalji najma",
+            "car_selection": "Odabir automobila",
+            "protection": "Proizvodi zaštite",
+            "addons": "Dodatne opcije",
+            "payment": "Plaćanje"
+        },
+        "car_selection": {
+            "filter_title": "Filtriraj i sortiraj",
+            "sort_by": "Sortiraj po",
+            "featured": "Istaknuto",
+            "price_high_low": "Cijena: od više prema nižoj",
+            "price_low_high": "Cijena: od niže prema višoj",
+            "car_type": "Tip automobila",
+            "price_per_day": "Cijena po danu",
+            "gearshift": "Mjenjač",
+            "automatic": "Automatski",
+            "manual": "Ručni",
+            "passengers": "Putnici",
+            "filter_button": "Primijeni filtere",
+            "select_button": "Odaberi",
+            "details": "Pogledaj detalje"
+        },
+        "protection": {
+            "basic_insurance": {
+                "name": "Osnovno osiguranje",
+                "description": "Pruža osnovnu zaštitu za vaš najam. Uključuje osiguranje od odgovornosti prema trećim osobama i osnovnu zaštitu od oštećenja u sudaru."
+            },
+            "full_insurance": {
+                "name": "Puno osiguranje",
+                "description": "Sveobuhvatna zaštita bez participacije. Pokriva oštećenja na vozilu, krađu i osobne stvari."
+            },
+            "additional_driver": {
+                "name": "Pokriće za dodatnog vozača",
+                "description": "Omogućuje drugoj osobi da legalno vozi unajmljeno vozilo. Svi vozači moraju ispunjavati naše uvjete u pogledu dobi i vozačke dozvole."
+            },
+            "full_tank": {
+                "name": "Opcija punog spremnika",
+                "description": "Vratite automobil s bilo kojom razinom goriva bez naknade za punjenje. Praktično za užurbane rasporede ili rane odlaske."
+            },
+            "continue": "Nastavi",
+            "booking_overview": "Pregled rezervacije",
+            "overview_text1": "Odabrali ste odlično vozilo i paket zaštite",
+            "overview_text2": "Svi porezi i naknade uključeni su u vašu konačnu cijenu"
+        },
+        "addons": {
+            "extra_driver": {
+                "name": "Dodatni vozač",
+                "description": "Dodajte dodatnog vozača vašem najmu za fleksibilnost tijekom putovanja."
+            },
+            "green_card": {
+                "name": "Zelena karta osiguranja",
+                "description": "Međunarodna potvrda o osiguranju za putovanje izvan Hrvatske."
+            },
+            "gps": {
+                "name": "GPS navigacija",
+                "description": "Nikada se ne izgubite uz naš premium GPS sustav s ažuriranim kartama."
+            },
+            "child_seat": {
+                "name": "Dječja sjedalica",
+                "description": "Sigurnosno odobrena dječja sjedalica prikladna za različite dobne skupine."
+            },
+            "price_details": "Detalji cijene",
+            "continue": "Nastavi"
+        },
+        "payment": {
+            "title": "Detalji plaćanja",
+            "reserve_now": "Rezerviraj odmah"
+        }
+    },
+    "faq": {
+        "title": "Često postavljana pitanja",
+        "questions": [
+            {
+                "question": "Koliko dugo mogu unajmiti automobil s opcijom dugoročnog najma?",
+                "answer": "Možete unajmiti automobil na najmanje 1 mjesec ili na nekoliko mjeseci, ovisno o vašim potrebama. Nudimo fleksibilna razdoblja najma koja možete produžiti po potrebi. Samo nam javite, a mi ćemo prilagoditi najam vašem rasporedu."
+            },
+            {
+                "question": "Što je uključeno u opciju dugoročnog najma?",
+                "answer": "Lorem ipsum ..."
+            },
+            {
+                "question": "Mogu li prijeći na drugi automobil tijekom razdoblja najma?",
+                "answer": "Lorem ipsum ..."
+            },
+            {
+                "question": "Postoje li ograničenja kilometraže kod dugoročnih najmova?",
+                "answer": "Lorem ipsum ..."
+            }
+        ]
+    }
 }

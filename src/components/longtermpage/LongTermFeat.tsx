@@ -18,7 +18,7 @@ const getCardData = (t: TFunction<"translation", undefined>) => [
                 />
             </svg>
         ),
-        title: "SAMO NOVA VOZILA",
+        title: t("cards.vehicles.title"),
         description: "Do 2 godine starosti",
     },
     {
@@ -32,7 +32,7 @@ const getCardData = (t: TFunction<"translation", undefined>) => [
             >
                 <path
                     d="M50.6667 34.6666C51.5734 34.6666 52.4534 34.7733 53.3334 34.9066V21.3333L37.3334 5.33331H16.0001C13.0401 5.33331 10.6667 7.70665 10.6667 10.6666V53.3333C10.6667 56.2933 13.0401 58.6666 16.0001 58.6666H36.8267C35.4667 56.32 34.6667 53.6 34.6667 50.6666C34.6667 41.84 41.8401 34.6666 50.6667 34.6666ZM34.6667 9.33331L49.3334 24H34.6667V9.33331ZM53.3334 52V48H42.6667V42.6666H53.3334V38.6666L61.3334 45.3333L53.3334 52ZM48.0001 53.3333H58.6667V58.6666H48.0001V62.6666L40.0001 56L48.0001 49.3333V53.3333Z"
-                    fill="black"
+                    fill="#0B0A0A"
                 />
             </svg>
         ),
@@ -90,7 +90,7 @@ const getCardData = (t: TFunction<"translation", undefined>) => [
                 />
             </svg>
         ),
-        title: "DOSTAVA I PREUZIMANJE",
+        title: "Dostava i preuzimanje",
         description: "vozila na vašoj adresi",
     },
 ];

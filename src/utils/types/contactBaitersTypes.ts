@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 export interface contactBaitersTypes {
     imageSrc: string;
     title: string;
@@ -72,3 +74,69 @@ export const aboutData: contactBaitersTypes[] = [
         buttonText: "",
     },
 ];
+
+export const useBaiterData = () => {
+    const { t } = useTranslation();
+
+    return [
+        {
+            imageSrc: "/src/assets/contactBaiterOne.jfif",
+            title: t("long_term.contact_baiters.private.title"),
+            subtitle: t("long_term.contact_baiters.private.subtitle"),
+            text: t("long_term.contact_baiters.private.text"),
+            buttonText: t("common.buttons.contact_us"),
+        },
+        {
+            imageSrc: "/src/assets/contactBaiterTwo.jfif",
+            title: t("long_term.contact_baiters.business.title"),
+            subtitle: t("long_term.contact_baiters.business.subtitle"),
+            text: t("long_term.contact_baiters.business.text"),
+            buttonText: t("common.buttons.contact_us"),
+        },
+    ];
+};
+
+export const useAboutData = () => {
+    const { t } = useTranslation();
+
+    return [
+        {
+            imageSrc: "/src/assets/fleet.jfif",
+            title: t("about.fleet.title"),
+            subtitle: t("about.fleet.subtitle"),
+            points: [
+                t("about.fleet.points.0"),
+                t("about.fleet.points.1"),
+                t("about.fleet.points.2"),
+                t("about.fleet.points.3"),
+            ],
+            color: "blue",
+            buttonText: t("common.buttons.rent_now"),
+        },
+        {
+            imageSrc: "/src/assets/values.jfif",
+            title: t("about.values.title"),
+            subtitle: t("about.values.subtitle"),
+            points: [
+                t("about.values.points.0"),
+                t("about.values.points.1"),
+                t("about.values.points.2"),
+                t("about.values.points.3"),
+            ],
+            color: "blue",
+            buttonText: t("common.buttons.rent_long_term"),
+        },
+        {
+            imageSrc: "/src/assets/environment.jfif",
+            title: t("about.sustainable.title"),
+            subtitle: t("about.sustainable.subtitle"),
+            points: [
+                t("about.sustainable.points.0"),
+                t("about.sustainable.points.1"),
+                t("about.sustainable.points.2"),
+            ],
+            color: "green",
+            buttonText: "",
+        },
+    ];
+};

@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import CarCarousel from "../common/CarCarousel";
+// import CarCarousel from "../common/CarCarousel";
 import Deals from "../homepage/Deals";
 import FeatureCards from "../homepage/FeatureCards";
 import Hero from "../homepage/Hero";
@@ -21,11 +21,11 @@ function HomePage() {
                 <div className="relative flex justify-center items-end top-0 z-0 w-full h-[472px] pt-[160px] pb-[80px] px-[120px] bg-primary">
                     <div className="w-[860px] h-fit">
                         <span className="text-wrap text-[64px] font-extrabold text-base leading-[110%]">
-                            {t("red.tagline")}
+                            {t("home.red.tagline")}
                         </span>
                     </div>
                 </div>
-                <div className="absolute left-0 right-0 -top-8  transform z-10 flex justify-center">
+                <div className="absolute left-0 right-0 -top-8 transform z-10 flex justify-center">
                     <SearchBar></SearchBar>
                 </div>
             </div>
@@ -34,7 +34,7 @@ function HomePage() {
 
             <div className="w-[1440px] px-[120px] py-[80px] flex flex-col items-center gap-[40px]">
                 <span className="w-[842px] h-[51px] text-primary text-[46px] font-extrabold leading-[110%]">
-                    Naše usluge
+                    {t("common.navigation.services")}
                 </span>
 
                 <ServicesCards />
@@ -44,8 +44,8 @@ function HomePage() {
             <Deals />
 
             <Reviews
-                title="Iskustva koja nas pokreću"
-                text="Od brze podrške do fleksibilnog najma, saznajte zašto vozači vjeruju Optima Rentu."
+                title={t("home.reviews.title")}
+                text={t("home.reviews.subtitle")}
             />
             <PartnerLogos />
 
@@ -56,7 +56,7 @@ function HomePage() {
             <div className="w-full bg-primary flex justify-center">
                 <div className="w-[1440px] flex flex-col items-center px-[120px] pt-[100px] pb-[120px] gap-[40px] ">
                     <span className="text-left w-full max-w-[1440px] text-[46px] font-extrabold text-base leading-[110%]">
-                        Rezervirajte svoj automobil za 60 sekundi!
+                        {t("home.reservation_banner.title")}
                     </span>
                     <SearchBar />
                 </div>

@@ -8,28 +8,25 @@ function ServicesCards() {
     const cardData = [
         {
             id: 1,
-            title: "Car Rental",
-            subtitle: "with personalized care for every client",
-            description:
-                "New vehicles, delivery to your address, and 24/7 support for worry-free driving.",
+            title: t("home.service_cards.car_rental.title"),
+            subtitle: t("home.service_cards.car_rental.subtitle"),
+            description: t("home.service_cards.car_rental.description"),
             image: "/src/assets/van.jfif",
             buttonVariant: "primary" as const,
         },
         {
             id: 2,
-            title: "Optima Vans",
-            subtitle: "Big plans? We have the van to match.",
-            description:
-                "Spacious, modern vans and fast, reliable service – wherever you need it.",
+            title: t("home.service_cards.vans.title"),
+            subtitle: t("home.service_cards.vans.subtitle"),
+            description: t("home.service_cards.vans.description"),
             image: "/src/assets/mountain.jfif",
             buttonVariant: "primary" as const,
         },
         {
             id: 3,
-            title: "Long-Term Rental",
-            subtitle: "Worry-free continuous care",
-            description:
-                "No long-term contracts, pay monthly and change vehicles when it suits you.",
+            title: t("home.service_cards.long_term.title"),
+            subtitle: t("home.service_cards.long_term.subtitle"),
+            description: t("home.service_cards.long_term.description"),
             image: "/src/assets/road.jfif",
             buttonVariant: "primary" as const,
         },
@@ -67,7 +64,7 @@ function ServicesCards() {
                         icon="show"
                         className="z-1 w-full"
                     >
-                        Show
+                        {t("common.buttons.show")}
                     </Button>
                 </Card>
             ))}

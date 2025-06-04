@@ -1,4 +1,5 @@
 import { baiterData } from "@/utils/types/contactBaitersTypes";
+import { useTranslation } from "react-i18next";
 import PartnerLogos from "../common/PartnerLogos";
 import BenefitsLongTerm from "../longtermpage/BenefitsLongTerm";
 import CategoryShower from "../longtermpage/CategoryShower";
@@ -11,6 +12,8 @@ import Faq from "../common/Faq";
 import ContactForm from "../common/ContactForm";
 
 function LongTermPage() {
+    const { t } = useTranslation();
+
     return (
         <div className="flex flex-col items-center bg-base w-full">
             <LongTermHero></LongTermHero>
@@ -18,10 +21,10 @@ function LongTermPage() {
                 <div className=" w-[1440px] p-[80px] pb-[40px] flex justify-center">
                     <div className="w-[600px] flex flex-col gap-[16px]">
                         <span className="text-left text-[64px] font-gilroy text-primary leading-[110%]">
-                            Više od najma, to je partnerstvo
+                            {t("long_term.intro.title")}
                         </span>
-                        <p className="text-left text-[16px] text-base-black  leading-[150%]">
-                            Zašto odabrati Optima Rent za dugoročni najam?
+                        <p className="text-left text-[16px] text-base-black leading-[150%]">
+                            {t("long_term.intro.description")}
                         </p>
                     </div>
                 </div>

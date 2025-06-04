@@ -14,11 +14,12 @@ function ReviewCard({ company = "facebook", rating = 5, reviewCount = 10 }) {
             <img
                 className="grayscale-75 w-[101px] object-contain"
                 src={imageSrc}
+                alt={company}
             ></img>
             <div className="flex flex-col gap-[4px]">
                 <StarRating rating={rating} />
                 <p className="text-base-black text-[12px]">
-                    From {reviewCount}+ reviews
+                    {t("home.reviews.from_reviews", { count: reviewCount })}
                 </p>
             </div>
         </div>

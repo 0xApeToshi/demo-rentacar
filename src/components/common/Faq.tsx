@@ -1,50 +1,14 @@
 import { useState } from "react";
-
-const faqItems = [
-    {
-        question: "How long can I rent a car with the long-term rental option?",
-        answer: "You can rent a car for as little as 1 month or as long as several months, depending on your needs. We offer flexible rental periods that you can extend as needed. Just let us know, and we'll tailor the rental to suit your schedule.",
-    },
-    {
-        question: "What's included in the long-term rental option?",
-        answer: "Lorem ipsum ...",
-    },
-    {
-        question: "Can I switch to a different car during my rental period?",
-        answer: "Lorem ipsum ...",
-    },
-    {
-        question: "Are there any mileage limits with long-term rentals?",
-        answer: "Lorem ipsum ...",
-    },
-    {
-        question: "Are there any mileage limits with long-term rentals?",
-        answer: "Lorem ipsum ...",
-    },
-    {
-        question: "Are there any mileage limits with long-term rentals?",
-        answer: "Lorem ipsum ...",
-    },
-    {
-        question: "Are there any mileage limits with long-term rentals?",
-        answer: "Lorem ipsum ...",
-    },
-    {
-        question: "Are there any mileage limits with long-term rentals?",
-        answer: "Lorem ipsum ...",
-    },
-    {
-        question: "Are there any mileage limits with long-term rentals?",
-        answer: "Lorem ipsum ...",
-    },
-    {
-        question: "Are there any mileage limits with long-term rentals?",
-        answer: "Lorem ipsum ...",
-    },
-];
+import { useTranslation } from "react-i18next";
 
 function Faq() {
     const [isActive, setActive] = useState(1);
+    const { t } = useTranslation();
+
+    const faqItems = t("faq.questions", { returnObjects: true }) as Array<{
+        question: string;
+        answer: string;
+    }>;
 
     function handleClick(index: number) {
         setActive(isActive === index ? 0 : index);
@@ -64,7 +28,7 @@ function Faq() {
                     className="w-[653px] text-left font-gilroy leading-[110%] text-[64px] text-primary"
                     id="faq-heading"
                 >
-                    FAQs
+                    {t("faq.title")}
                 </h3>
                 {faqItems.map((item, index) => (
                     <div
@@ -96,14 +60,14 @@ function Faq() {
                             <img
                                 src="/src/assets/minusIcon.svg"
                                 className="w-[32px] h-[32px]"
-                                alt=""
+                                alt="Collapse"
                                 onClick={() => handleClick(index + 1)}
                             ></img>
                         ) : (
                             <img
                                 src="/src/assets/arrowDownIcon.svg"
                                 className="w-[32px] h-[32px]"
-                                alt=""
+                                alt="Expand"
                                 onClick={() => handleClick(index + 1)}
                             ></img>
                         )}

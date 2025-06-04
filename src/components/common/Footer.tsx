@@ -1,48 +1,58 @@
+import { useTranslation } from "react-i18next";
 import Facebook from "../../assets/Facebook.svg";
 import Instagram from "../../assets/Instagram.svg";
-import { FooterColumnProps, footerData } from "../../utils/types/footerTypes";
+import { FooterColumnProps, useFooterData } from "../../utils/types/footerTypes";
 
-const FooterColumn = ({ title, items, className = "" }: FooterColumnProps) => (
-    <div
-        className={`flex flex-col gap-[8px] items-start text-[14px] w-[110px]`}
-    >
-        {title && <p className="font-bold text-base">{title}</p>}
-        <ul
-            aria-label={title}
-            className="flex flex-col items-start w-[110px] gap-[8px] text-secondary-200 text-[14px]"
-        >
-            {items.map((item) => (
-                <li key={item.text}>
-                    <a
-                        className={`block whitespace-nowrap hover:text-primary ${className}`}
-                        href={item.url}
-                    >
-                        {item.text}
-                    </a>
-                </li>
-            ))}
-        </ul>
-    </div>
-);
+const FooterColumn = ({ title, items, className = "" }: FooterColumnProps) => {
+    const { t } = useTranslation();
+
+    return (
+        <div className={`flex flex-col gap-[8px] items-start text-[14px] w-[110px]`}>
+            {title && <p className="font-bold text-base">{t(`common.footer.categories.${title.toLowerCase()}`)}</p>}
+            <ul
+                aria-label={title}
+                className="flex flex-col items-start w-[110px] gap-[8px] text-secondary-200 text-[14px]"
+            >
+                {items.map((item) => (
+                    <li key={item.text}>
+                        <a
+                            className={`block whitespace-nowrap hover:text-primary ${className}`}
+                            href={item.url}
+                        >
+                            {item.text}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
 
 function Footer() {
+    const { t } = useTranslation();
+    // Use the translated footer data
+    const footerData = useFooterData();
+
     return (
         <footer className="flex w-full bg-secondary-1000 justify-between items-start px-[120px] py-[100px]">
             <div className="flex flex-col min-w-[200px] px-[13px] gap-[32px] items-center">
                 <div className="flex flex-col gap-[16px] items-center">
-                    <img src="/src/assets/OptimaLogoFooter.svg"></img>
+                    <img
+                        src="/src/assets/OptimaLogoFooter.svg"
+                        alt="Optima Rent Logo"
+                    ></img>
 
                     <div className="flex flex-col w-[115px] h-[76px] items-center text-base text-[14px] gap-[8px]">
                         <p className="w-[103px] h-[34px]">
-                            Monday - Friday
+                            {t("common.footer.work_hours.weekdays")}
                             <br />
-                            07:00 - 23:00
+                            {t("common.footer.work_hours.weekdays_hours")}
                         </p>
                         <p className="w-[103px] h-[34px]">
                             <span className="block whitespace-nowrap">
-                                Saturday - Sunday
+                                {t("common.footer.work_hours.weekend")}
                             </span>
-                            08:00 - 22:00
+                            {t("common.footer.work_hours.weekend_hours")}
                         </p>
                     </div>
                 </div>
@@ -51,12 +61,14 @@ function Footer() {
                         <img
                             className="brightness-0 invert"
                             src={Facebook}
+                            alt="Facebook"
                         ></img>
                     </a>
                     <a href="/instagram" aria-label="Instagram">
                         <img
                             className="brightness-0 invert"
                             src={Instagram}
+                            alt="Instagram"
                         ></img>
                     </a>
                 </div>
@@ -68,7 +80,7 @@ function Footer() {
                     items={footerData.columns.locations}
                 />
                 <FooterColumn
-                    title="TRAVEL GUIDES"
+                    title="TRAVEL_GUIDES"
                     items={footerData.columns.travelGuides}
                 />
             </div>
@@ -95,7 +107,20 @@ function Footer() {
                 />
             </div>
 
-            <FooterColumn items={footerData.legal} className="underline" />
+            <div className="flex flex-col gap-[8px] items-start text-[14px] w-[110px]">
+                <ul className="flex flex-col items-start w-[110px] gap-[8px] text-secondary-200 text-[14px]">
+                    {footerData.legal.map((item) => (
+                        <li key={item.text}>
+                            <a
+                                className="block whitespace-nowrap hover:text-primary underline"
+                                href={item.url}
+                            >
+                                {item.text}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </footer>
     );
 }

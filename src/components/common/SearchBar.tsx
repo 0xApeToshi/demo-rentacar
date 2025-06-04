@@ -30,18 +30,19 @@ function SearchBar() {
     const navigate = useNavigate();
 
     const [searchParams, setParams] = useState<SearchState>(state.search);
+    const { t } = useTranslation();
 
     const handleSearch = useCallback(async () => {
         if (!searchParams.location) {
-            setError("Please select a location");
+            setError(t("common.validation.required_field"));
             return;
         }
         if (!searchParams.pickupDate || !searchParams.pickupTime) {
-            setError("Please select pickup date and time");
+            setError(t("common.validation.required_field"));
             return;
         }
         if (!searchParams.dropoffDate || !searchParams.dropoffTime) {
-            setError("Please select dropoff date and time");
+            setError(t("common.validation.required_field"));
             return;
         }
 
@@ -53,7 +54,7 @@ function SearchBar() {
         );
 
         if (!dateUtils.isValidDateRange(pickup, dropoff)) {
-            setError("Pickup time must be before dropoff time");
+            setError(t("search.validation.invalid_date_range", "Pickup time must be before dropoff time"));
             return;
         }
 
@@ -64,7 +65,7 @@ function SearchBar() {
             const response = await searchService.searchCars(searchParams);
             console.log("Search results:", response);
         } catch (err) {
-            setError("An error occurred while searching. Please try again.");
+            setError(t("common.validation.form_error"));
             console.error("Search error:", err);
         } finally {
             dispatch({ type: "RESET_BOOKING" });
@@ -72,7 +73,7 @@ function SearchBar() {
             setLoading(false);
             navigate("/booking");
         }
-    }, [searchParams]);
+    }, [searchParams, t, dispatch, navigate]);
 
     const handlePickupDateChange = (date: Dayjs | null) => {
         setParams((prev) => ({
@@ -102,13 +103,11 @@ function SearchBar() {
         }));
     };
 
-    const { t } = useTranslation();
-
     return (
         <div className="flex z-1 flex-col justify-start w-[1277px] bg-base px-[48px] pt-[40px] pb-[60px] rounded-[10px] gap-[10px] relative shadow-[4px_-8px_15px_-3px_rgba(0,0,0,0.1)]">
             <div className="absolute inline-flex right-[64px] top-[30px] w-fit rounded-[6px] p-[6px] bg-[#E3F0E6] gap-[4px]">
                 <a className="flex text-[12px] text-secondary-1000 leading-[120%]">
-                    ⚡Rent your car in 60 seconds
+                    ⚡{t("home.reservation_banner.title", "Book your car in 60 seconds!")}
                 </a>
             </div>
 
@@ -204,7 +203,7 @@ function SearchBar() {
                         onClick={handleSearch}
                         disabled={isLoading}
                     >
-                        {isLoading ? "Loading..." : t("search.button")}
+                        {isLoading ? t("common.form.sending") : t("search.button")}
                     </Button>
                 </div>
                 {error && (
@@ -217,7 +216,7 @@ function SearchBar() {
             {differentLocation && (
                 <div className="flex flex-col gap-[4px] w-[531px]">
                     <label className="flex text-[14px] text-base-black leading-[120%]">
-                        Custom dropoff
+                        {t("search.custom_dropoff", "Custom dropoff")}
                     </label>
                     <select
                         className="w-full px-[14px] py-[12px] border rounded-[6px] appearance-none border-neutral-700 hover:border-primary"

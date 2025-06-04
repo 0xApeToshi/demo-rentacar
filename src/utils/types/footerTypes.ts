@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 export interface FooterItem {
     text: string;
     url: string;
@@ -9,60 +11,56 @@ export interface FooterColumnProps {
     className?: string;
 }
 
-export const footerData: {
-    columns: {
-        locations: FooterItem[];
-        travelGuides: FooterItem[];
-        services: FooterItem[];
-        vehicles: FooterItem[];
-        company: FooterItem[];
-        support: FooterItem[];
+// Add a translation hook that returns the same structure
+// Add a translation hook that returns the same structure
+export const useFooterData = () => {
+    const { t } = useTranslation();
+
+    return {
+        columns: {
+            locations: [
+                { text: t("common.footer.locations.rent_zagreb"), url: "/rent-zagreb" },
+                { text: t("common.footer.locations.rent_split"), url: "/rent-split" },
+                { text: t("common.footer.locations.rent_zadar"), url: "/rent-zadar" },
+            ],
+            travelGuides: [
+                { text: t("common.footer.travel_guides.zagreb"), url: "/zagreb" },
+                { text: t("common.footer.travel_guides.istria"), url: "/istria" },
+                { text: t("common.footer.travel_guides.dalmatia"), url: "/dalmatia" },
+                { text: t("common.footer.travel_guides.slavonia"), url: "/slavonia" },
+            ],
+            services: [
+                { text: t("common.footer.services.rent_a_car"), url: "/rent-a-car" },
+                { text: t("common.footer.services.long_term"), url: "/long-term" },
+                { text: t("common.footer.services.offers"), url: "/offers" },
+            ],
+            vehicles: [
+                { text: t("common.footer.vehicles.suv"), url: "/suv" },
+                { text: t("common.footer.vehicles.sports"), url: "/sports" },
+                { text: t("common.footer.vehicles.electric"), url: "/electric" },
+                { text: t("common.footer.vehicles.limousine"), url: "/limousine" },
+                { text: t("common.footer.vehicles.luxury"), url: "/luxury" },
+                { text: t("common.footer.vehicles.city_car"), url: "/city-car" },
+            ],
+            company: [
+                { text: t("common.footer.company.about_us"), url: "/about-us" },
+                { text: t("common.footer.company.careers"), url: "/careers" },
+                { text: t("common.footer.company.sponsorship"), url: "/sponsorship" },
+                { text: t("common.footer.company.press"), url: "/press" },
+            ],
+            support: [
+                { text: t("common.footer.support.contact"), url: "/contact" },
+                { text: t("common.footer.support.rental_conditions"), url: "/rental-conditions" },
+                { text: t("common.footer.support.loyalty"), url: "/loyalty" },
+                { text: t("common.footer.support.faq"), url: "/faq" },
+                { text: t("common.footer.support.roadside"), url: "/roadside" },
+                { text: t("common.footer.support.mobile"), url: "/mobile" },
+            ],
+        },
+        legal: [
+            { text: t("common.footer.legal.terms"), url: "/terms" },
+            { text: t("common.footer.legal.privacy"), url: "/privacy" },
+            { text: t("common.footer.legal.cookies"), url: "/cookies" },
+        ],
     };
-    legal: FooterItem[];
-} = {
-    columns: {
-        locations: [
-            { text: "Rent a car Zagreb", url: "/rent-zagreb" },
-            { text: "Rent a car Split", url: "/rent-split" },
-            { text: "Rent a car Zadar", url: "/rent-zadar" },
-        ],
-        travelGuides: [
-            { text: "Zagreb", url: "/zagreb" },
-            { text: "Istria", url: "/istria" },
-            { text: "Dalmatia", url: "/dalmatia" },
-            { text: "Slavonia", url: "/slavonia" },
-        ],
-        services: [
-            { text: "Rent a car", url: "/rent-a-car" },
-            { text: "Long term rental", url: "/long-term" },
-            { text: "Special offers", url: "/offers" },
-        ],
-        vehicles: [
-            { text: "SUV >", url: "/suv" },
-            { text: "Sports >", url: "/sports" },
-            { text: "Electric >", url: "/electric" },
-            { text: "Limousine >", url: "/limousine" },
-            { text: "Luxury >", url: "/luxury" },
-            { text: "City car >", url: "/city-car" },
-        ],
-        company: [
-            { text: "About us", url: "/about-us" },
-            { text: "Careers", url: "/careers" },
-            { text: "Sponsorship", url: "/sponsorship" },
-            { text: "Press", url: "/press" },
-        ],
-        support: [
-            { text: "Contact >", url: "/suv" },
-            { text: "Rental conditions >", url: "/rental-conditions" },
-            { text: "Loyalty >", url: "/loyalty" },
-            { text: "FAQ >", url: "/faq" },
-            { text: "Roadside assistance >", url: "/roadside" },
-            { text: "Optima Rent - mobile app >", url: "/mobile" },
-        ],
-    },
-    legal: [
-        { text: "Terms & Conditions", url: "/terms" },
-        { text: "Privacy Policy", url: "/privacy" },
-        { text: "Cookie Policy", url: "/cookies" },
-    ],
 };

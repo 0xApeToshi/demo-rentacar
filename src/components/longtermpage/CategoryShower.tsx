@@ -1,26 +1,29 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Button from "../common/Button";
+import { useTranslation } from "react-i18next";
 
 function CategoryShower() {
+    const { t } = useTranslation();
+
     const features = [
         {
             id: "1",
-            text: "3000 kms/month",
+            text: t("long_term.categories.features.0"),
         },
         {
             id: "2",
-            text: "Standard roadside assistance",
+            text: t("long_term.categories.features.1"),
         },
         {
             id: "3",
-            text: "Maintainance",
+            text: t("long_term.categories.features.2"),
         },
         {
             id: "4",
             text: (
                 <span>
-                    1x <span className="text-[#337540]">Free</span> additional
-                    driver
+                    1x <span className="text-[#337540]">{t("common.free")}</span>{" "}
+                    {t("long_term.categories.features.3")}
                 </span>
             ),
         },
@@ -30,20 +33,20 @@ function CategoryShower() {
         {
             id: "1",
             src: "/src/assets/miniCoverImage.png",
-            category: "Mini",
-            tagline: "Fiat 500 or similar model",
+            category: t("long_term.categories.categories.mini.title"),
+            tagline: t("long_term.categories.categories.mini.subtitle"),
         },
         {
             id: "2",
             src: "/src/assets/economyCoverImage.png",
-            category: "Economy",
-            tagline: "Opel Corsa or similar model",
+            category: t("long_term.categories.categories.economy.title"),
+            tagline: t("long_term.categories.categories.economy.subtitle"),
         },
         {
             id: "3",
             src: "/src/assets/suvCoverImage.png",
-            category: "SUV",
-            tagline: "Mazda CX 30 or similar model",
+            category: t("long_term.categories.categories.suv.title"),
+            tagline: t("long_term.categories.categories.suv.subtitle"),
         },
     ];
 
@@ -52,10 +55,10 @@ function CategoryShower() {
             <section className="w-[1440px] px-[160px] py-[80px] flex flex-col gap-[40px]">
                 <div className="flex flex-col gap-[16px] text-left">
                     <h3 className="text-[46px] text-primary font-extrabold leading-[110%]">
-                        Bez briga, samo nova i pouzdana vozila.
+                        {t("long_term.categories.title")}
                     </h3>
                     <p className="text-[20px] text-base-black font-extrabold leading-[120%]">
-                        Odaberite vozila
+                        {t("long_term.categories.subtitle")}
                     </p>
                 </div>
                 <div className="flex gap-[16px]">
@@ -68,6 +71,7 @@ function CategoryShower() {
                                 <img
                                     className="max-h-[205px] object-contain"
                                     src={category.src}
+                                    alt={category.category}
                                 />
                             </div>
                             <CardContent className="flex flex-col items-start gap-[20px] p-[20px] bg-base">
@@ -86,7 +90,7 @@ function CategoryShower() {
                                             key={feature.id}
                                             className="flex gap-[8px]"
                                         >
-                                            <img src="/src/assets/checkCircle.svg"></img>
+                                            <img src="/src/assets/checkCircle.svg" alt="Check"></img>
                                             <span className="text-[16px] leading-[150%] text-base-black">
                                                 {feature.text}
                                             </span>
@@ -95,7 +99,7 @@ function CategoryShower() {
                                 </div>
 
                                 <Button variant="primary" icon="search">
-                                    Choose
+                                    {t("common.buttons.choose")}
                                 </Button>
                             </CardContent>
                         </Card>

@@ -1,9 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
-import Button from "../common/Button";
+import { useTranslation } from "react-i18next";
 
 function TeamCarousel() {
+    const { t } = useTranslation();
+
     const teamData = [
         {
             id: 1,
@@ -77,19 +79,13 @@ function TeamCarousel() {
             <div className="flex flex-col gap-[40px] max-w-[1200px]">
                 <div className="flex flex-col gap-[16px] text-left w-fit max-w-[520px]">
                     <h3 className=" text-[46px] font-gilroy text-primary leading-[110%]">
-                        Tim koji brine više
+                        {t("about.team.title")}
                     </h3>
                     <p className="text-base-black text-[16px] leading-[120%]">
-                        Iza svakog izvrsnog iskustva najma stoji tim posvećenih
-                        stručnjaka koji su spremni učiniti više. U Optima Rentu
-                        nismo samo obučeni – mi smo posvećeni tome da vaše
-                        iskustvo bude jednostavno, bez stresa i prilagođeno
-                        vama.
+                        {t("about.team.description1")}
                     </p>
                     <p className="text-base-black text-[16px] leading-[120%]">
-                        Od korisničke podrške do tima za održavanje vozila, svi
-                        dijelimo istu misiju:{" "}
-                        <strong>staviti vas na prvo mjesto.</strong>
+                        {t("about.team.description2")}
                     </p>
                 </div>
 
@@ -101,11 +97,10 @@ function TeamCarousel() {
                     <div
                         className="flex gap-[32px] transition-transform duration-500 ease-in-out"
                         style={{
-                            transform: `translateX(-${
-                                currentIndex === teamData.length - 1
+                            transform: `translateX(-${currentIndex === teamData.length - 1
                                     ? (teamData.length - 2) * (351 + 32)
                                     : currentIndex * (351 + 32)
-                            }px)`,
+                                }px)`,
                         }}
                     >
                         {teamData.map((member) => (
@@ -140,9 +135,10 @@ function TeamCarousel() {
                                     <img
                                         className="absolute top-0 left-0 w-full h-full object-cover"
                                         src={member.hoverImg}
+                                        alt={member.name}
                                     />
                                     <p className="text-[100px] font-semibold text-left z-1">
-                                        ”
+                                        "
                                     </p>
                                     <p className="font-gilroy text-left z-1 text-[32px] leading-[120%] text-base-black">
                                         Ensuring every car is delivered on time,

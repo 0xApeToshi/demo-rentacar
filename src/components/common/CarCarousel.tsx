@@ -4,25 +4,27 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Button from "./Button";
 import { useCallback, useEffect, useState } from "react";
 import Badge from "./Badge";
+import { useTranslation } from "react-i18next";
 
 function CarCarousel() {
+    const { t } = useTranslation();
+
     const carData: CarData[] = [
         {
             id: 1,
             name: "Suzuki SWIFT",
             image: "/src/assets/suzukiSwift.png",
-            description:
-                "Ova ponuda uključuje besplatnu neograničenu kilometražu",
+            description: t("cars.features.unlimited_mileage"),
             type: "Family",
             price: "20 €",
             passengers: 5,
             luggage: 4,
             doors: 4,
             hasManualTransmission: true,
-            buttonText: "Rezerviraj",
+            buttonText: t("common.buttons.book"),
             badges: [
                 {
-                    text: "Najbolja vrijednost za cijenu",
+                    text: t("cars.badges.best_value"),
                     type: "offer",
                 },
             ],
@@ -31,23 +33,21 @@ function CarCarousel() {
             id: 2,
             name: "Opel Corsa Aut",
             image: "/src/assets/opelCorsa.png",
-            description:
-                "Ova ponuda uključuje besplatnu neograničenu kilometražu",
+            description: t("cars.features.unlimited_mileage"),
             type: "Luxury",
-
             price: "20 €",
             passengers: 5,
             luggage: 4,
             doors: 4,
             hasManualTransmission: true,
-            buttonText: "Rezerviraj",
+            buttonText: t("common.buttons.book"),
             badges: [
                 {
-                    text: "Ograničena dostupnost",
+                    text: t("cars.badges.limited"),
                     type: "warning",
                 },
                 {
-                    text: "Eco-friendly",
+                    text: t("cars.badges.eco_friendly"),
                     type: "benefit",
                 },
             ],
@@ -56,31 +56,28 @@ function CarCarousel() {
             id: 3,
             name: "Fiat 500, Cabrio",
             image: "/src/assets/fiat500.png",
-            description:
-                "Ova ponuda uključuje besplatnu neograničenu kilometražu",
+            description: t("cars.features.unlimited_mileage"),
             type: "Sports",
-
             price: "44 €",
             passengers: 5,
             luggage: 1,
             doors: 2,
             hasManualTransmission: true,
-            buttonText: "Book",
+            buttonText: t("common.buttons.book"),
             badges: [],
         },
         {
             id: 4,
             name: "Opel Crossland",
             image: "/src/assets/opelCrossland.png",
-            description: "This offer includes free unlimited mileage",
+            description: t("cars.features.free_gps"),
             type: "SUV",
-
             price: "63 €",
             passengers: 5,
             luggage: 4,
             doors: 4,
             hasManualTransmission: true,
-            buttonText: "Book",
+            buttonText: t("common.buttons.book"),
             badges: [],
         },
     ];
@@ -123,25 +120,24 @@ function CarCarousel() {
                 <div
                     className="flex gap-[32px] transition-transform duration-500 ease-in-out"
                     style={{
-                        transform: `translateX(-${
-                            currentIndex === carData.length - 1
+                        transform: `translateX(-${currentIndex === carData.length - 1
                                 ? (carData.length - 2) * (472 + 32)
                                 : currentIndex * (472 + 32)
-                        }px)`,
+                            }px)`,
                     }}
                 >
                     {carData.map((car, index) => (
                         <Card
                             key={car.id}
-                            className={`flex-shrink-0 py-0 flex-col w-[472px] rounded-[8px] overflow-hidden border border-solid border-neutral-200 shadow-[7px_4px_13.2px_#00000040] transition-all duration-500 ease-in-out ${
-                                index === currentIndex
+                            className={`flex-shrink-0 py-0 flex-col w-[472px] rounded-[8px] overflow-hidden border border-solid border-neutral-200 shadow-[7px_4px_13.2px_#00000040] transition-all duration-500 ease-in-out ${index === currentIndex
                                     ? "scale-100"
                                     : "scale-80"
-                            }`}
+                                }`}
                         >
                             <div className="absolute pt-[4px] pl-[4px] w-fit flex flex-col gap-[4px]">
-                                {car.badges.map((badge) => (
+                                {car.badges.map((badge, idx) => (
                                     <Badge
+                                        key={idx}
                                         type={badge.type}
                                         text={badge.text}
                                     />
@@ -168,13 +164,13 @@ function CarCarousel() {
 
                                     <div className="flex flex-col text-right items-end">
                                         <span className="text-neutral-500 leading-[150%] text-[16px]">
-                                            Od
+                                            {t("cars.features.from")}
                                         </span>
                                         <span className="text-base-black font-extrabold leading-[120%] text-[32px]">
                                             {car.price}
                                         </span>
                                         <span className="text-neutral-500 leading-[150%] text-[16px]">
-                                            na dan
+                                            {t("cars.features.per_day")}
                                         </span>
                                     </div>
                                 </div>

@@ -3,6 +3,7 @@ import {
     contactBaitersTypes,
 } from "@/utils/types/contactBaitersTypes";
 import Button from "../common/Button";
+import { useTranslation } from "react-i18next";
 
 interface ContactBaiterItemProps extends contactBaitersTypes {
     isMirrored?: boolean;
@@ -18,6 +19,8 @@ function ContactBaiterItem({
     color,
     isMirrored = false,
 }: ContactBaiterItemProps) {
+    // const { t } = useTranslation();
+
     return (
         <div className="w-full bg-base flex justify-center">
             <section className="w-[1440px] min-h-[800px] relative px-[120px] py-[200px] flex justify-between">
@@ -39,12 +42,12 @@ function ContactBaiterItem({
                     )}
                     {points && (
                         <div className="flex flex-col gap-[4px]">
-                            {points.map((point) => (
-                                <div className="flex items-start">
+                            {points.map((point, index) => (
+                                <div className="flex items-start" key={index}>
                                     {color === "blue" ? (
-                                        <img src="/src/assets/heroCheckCircle.svg" />
+                                        <img src="/src/assets/heroCheckCircle.svg" alt="Check" />
                                     ) : (
-                                        <img src="/src/assets/checkCircle.svg" />
+                                        <img src="/src/assets/checkCircle.svg" alt="Check" />
                                     )}
 
                                     <p className="text-[16px] leading-[150%]">
@@ -82,6 +85,64 @@ function ContactBaiters({ items }: BaiterProps) {
             ))}
         </>
     );
+}
+
+// Helper function to update data source in contactBaitersTypes.ts
+export function getTranslatedBaiterData() {
+    const { t } = useTranslation();
+
+    const translatedData: contactBaitersTypes[] = [
+        {
+            imageSrc: "/src/assets/contactBaiterOne.jfif",
+            title: t("long_term.contact_baiters.private.title"),
+            subtitle: t("long_term.contact_baiters.private.subtitle"),
+            text: t("long_term.contact_baiters.private.text"),
+            buttonText: t("common.buttons.contact_us"),
+        },
+        {
+            imageSrc: "/src/assets/contactBaiterTwo.jfif",
+            title: t("long_term.contact_baiters.business.title"),
+            subtitle: t("long_term.contact_baiters.business.subtitle"),
+            text: t("long_term.contact_baiters.business.text"),
+            buttonText: t("common.buttons.contact_us"),
+        },
+    ];
+
+    return translatedData;
+}
+
+// Helper function for about page data
+export function getTranslatedAboutData() {
+    const { t } = useTranslation();
+
+    const translatedAboutData: contactBaitersTypes[] = [
+        {
+            imageSrc: "/src/assets/fleet.jfif",
+            title: t("about.fleet.title"),
+            subtitle: t("about.fleet.subtitle"),
+            points: t("about.fleet.points", { returnObjects: true }) as string[],
+            color: "blue",
+            buttonText: t("common.buttons.rent_now"),
+        },
+        {
+            imageSrc: "/src/assets/values.jfif",
+            title: t("about.values.title"),
+            subtitle: t("about.values.subtitle"),
+            points: t("about.values.points", { returnObjects: true }) as string[],
+            color: "blue",
+            buttonText: t("common.buttons.rent_long_term"),
+        },
+        {
+            imageSrc: "/src/assets/environment.jfif",
+            title: t("about.sustainable.title"),
+            subtitle: t("about.sustainable.subtitle"),
+            points: t("about.sustainable.points", { returnObjects: true }) as string[],
+            color: "green",
+            buttonText: "",
+        },
+    ];
+
+    return translatedAboutData;
 }
 
 export default ContactBaiters;

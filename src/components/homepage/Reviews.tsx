@@ -1,7 +1,7 @@
 import { exampleTestimonials } from "@/utils/types/testimonialTypes";
 import ReviewCard from "../common/ReviewCard";
 import ReviewsCarousel from "../common/ReviewsCarousel";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 interface reviewProps {
     title: string;
@@ -9,7 +9,7 @@ interface reviewProps {
 }
 
 function Reviews({ title, text }: reviewProps) {
-    const { t } = useTranslation();
+    // const { t } = useTranslation();
 
     return (
         <div className="w-full bg-white flex justify-center">

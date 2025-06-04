@@ -8,20 +8,20 @@ function Header() {
     const { t } = useTranslation();
 
     const navItems = [
-        { id: "rental", label: t("nav.rental"), href: "/rental" },
-        { id: "longTerm", label: t("nav.longTerm"), href: "/long-term" },
-        { id: "offers", label: t("nav.offers"), href: "/offers" },
-        { id: "location", label: t("nav.locations"), href: "/locations" },
-        { id: "about", label: t("nav.about"), href: "/about-us" },
-        { id: "blog", label: t("nav.blog"), href: "/blog" },
-        { id: "contact", label: t("nav.contact"), href: "/contact" },
+        { id: "rental", label: t("common.navigation.rental"), href: "/rental" },
+        { id: "longTerm", label: t("common.navigation.longTerm"), href: "/long-term" },
+        { id: "offers", label: t("common.navigation.offers"), href: "/offers" },
+        { id: "location", label: t("common.navigation.locations"), href: "/locations" },
+        { id: "about", label: t("common.navigation.about"), href: "/about-us" },
+        { id: "blog", label: t("common.navigation.blog"), href: "/blog" },
+        { id: "contact", label: t("common.navigation.contact"), href: "/contact" },
     ];
 
     return (
         <header className="shadow-lg z-99 relative">
             <div className="bg-base flex w-full place-content-between px-[120px] py-[16px] max-h-[100px]">
                 <div className="h-[20px] text-neutral inline-flex gap-[40px]">
-                    <div className=" inline-flex gap-1 items-center justify-center">
+                    <div className="inline-flex gap-1 items-center justify-center">
                         <LocalPhoneIcon
                             sx={{
                                 width: 20,
@@ -29,10 +29,10 @@ function Header() {
                             }}
                         />
                         <p className="text-[14px] leading-[120%] text-center">
-                            <strong>Tel:</strong> +385 (01) 6264 743
+                            <strong>{t("common.contact.phone")}</strong> +385 (01) 6264 743
                         </p>
                     </div>
-                    <div className=" inline-flex gap-1 items-center justify-center">
+                    <div className="inline-flex gap-1 items-center justify-center">
                         <EmailIcon
                             sx={{
                                 width: 20,
@@ -40,7 +40,7 @@ function Header() {
                             }}
                         />
                         <p className="text-[14px] leading-[120%] text-center">
-                            <strong>Email:</strong> info@optimarent.hr
+                            <strong>{t("common.contact.email")}</strong> info@optimarent.hr
                         </p>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ function Header() {
                         href="/manage-booking"
                         className="underline text-[14px] leading-[120%] text-center hover:text-primary"
                     >
-                        {t("booking.manage")}
+                        {t("common.booking.manage")}
                     </a>
                     <LanguageChangerButton />
                 </div>
@@ -59,7 +59,7 @@ function Header() {
                 <Link to={"/"}>
                     <img
                         src="/src/assets/OptimaLogoRed.svg"
-                        onClick={() => console.log("wow")}
+                        alt="Optima Rent Logo"
                     ></img>
                 </Link>
                 <nav aria-label="Main">

@@ -1,9 +1,12 @@
 import { carCategories } from "@/utils/types/carTypes";
 import { useState, FormEvent, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Button from "./Button";
 import { FormData } from "@/utils/types/formTypes";
 
 function ContactForm() {
+    const { t } = useTranslation();
+
     const [formData, setFormData] = useState<FormData>({
         company: "",
         firstName: "",
@@ -42,13 +45,13 @@ function ContactForm() {
     }, [errorMessage, submitSuccess]);
 
     const validateForm = (): string => {
-        if (!formData.firstName) return "First name is required";
-        if (!formData.lastName) return "Last name is required";
-        if (!formData.email) return "Email is required";
+        if (!formData.firstName) return t("common.validation.required_field");
+        if (!formData.lastName) return t("common.validation.required_field");
+        if (!formData.email) return t("common.validation.required_field");
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
-            return "Invalid email format";
-        if (!formData.carType) return "Please select a car type";
-        if (!formData.message) return "Message is required";
+            return t("common.validation.invalid_email");
+        if (!formData.carType) return t("common.validation.required_field");
+        if (!formData.message) return t("common.validation.required_field");
         return "";
     };
 
@@ -71,6 +74,7 @@ function ContactForm() {
             console.log("Form submitted:", formData);
 
             setSubmitSuccess(true);
+            // Reset form
             // setFormData({
             //     company: "",
             //     firstName: "",
@@ -81,7 +85,7 @@ function ContactForm() {
             //     isOver22: false,
             // });
         } catch (error) {
-            setErrorMessage("Failed to submit form. Please try again.");
+            setErrorMessage(t("common.validation.form_error"));
         } finally {
             setIsSubmitting(false);
         }
@@ -109,8 +113,8 @@ function ContactForm() {
                     onSubmit={handleSubmit}
                     className="relative max-w-[656px] text-left flex z-1 flex-col gap-[20px] items-end"
                 >
-                    <h3 className="text-[64px] w-full leading-[106%] font-gilroy text-base">
-                        Kontaktirajte nas
+                    <h3 className="text-left h-[140px] w-full text-[64px] font-gilroy text-base leading-[110%]">
+                        {t("common.navigation.contact")}
                     </h3>
 
                     <div className="flex w-full flex-col gap-[10px]">
@@ -118,7 +122,7 @@ function ContactForm() {
                             htmlFor="company"
                             className="text-base text-[14px] leading-[120%]"
                         >
-                            Company (Optional)
+                            {t("common.form.company")}
                         </label>
                         <input
                             type="text"
@@ -136,7 +140,7 @@ function ContactForm() {
                                 htmlFor="firstName"
                                 className="text-base text-[14px] leading-[120%]"
                             >
-                                First Name *
+                                {t("common.form.first_name")} *
                             </label>
                             <input
                                 type="text"
@@ -153,7 +157,7 @@ function ContactForm() {
                                 htmlFor="lastName"
                                 className="text-base text-[14px] leading-[120%]"
                             >
-                                Last Name *
+                                {t("common.form.last_name")} *
                             </label>
                             <input
                                 type="text"
@@ -172,7 +176,7 @@ function ContactForm() {
                                 htmlFor="email"
                                 className="text-base text-[14px] leading-[120%]"
                             >
-                                Email *
+                                {t("common.form.email")} *
                             </label>
                             <input
                                 type="email"
@@ -189,7 +193,7 @@ function ContactForm() {
                                 htmlFor="carType"
                                 className="text-base text-[14px] leading-[120%]"
                             >
-                                Choose car type *
+                                {t("common.form.car_type")} *
                             </label>
                             <select
                                 id="carType"
@@ -198,7 +202,9 @@ function ContactForm() {
                                 onChange={handleChange}
                                 className="w-fill bg-base py-[12px] px-[14px] border border-secondary rounded-[8px]"
                             >
-                                <option value="">Select a car type</option>
+                                <option value="">
+                                    {t("common.form.select_car_type")}
+                                </option>
                                 {carCategories.map((category) => (
                                     <option
                                         key={category.value}
@@ -216,7 +222,7 @@ function ContactForm() {
                             htmlFor="message"
                             className="text-base text-[14px] leading-[120%]"
                         >
-                            Message *
+                            {t("common.form.message")} *
                         </label>
                         <textarea
                             id="message"
@@ -239,7 +245,7 @@ function ContactForm() {
                             htmlFor="isOver22"
                             className="text-base text-[14px] leading-[120%]"
                         >
-                            I am 22 years of age or older.
+                            {t("common.form.age_confirmation")}
                         </label>
                     </div>
 
@@ -249,7 +255,7 @@ function ContactForm() {
                         type="submit"
                         disabled={isSubmitting}
                     >
-                        {isSubmitting ? "Sending..." : "Send"}
+                        {isSubmitting ? t("common.form.sending") : t("common.buttons.send")}
                         {!isSubmitting && (
                             <img
                                 className="pl-[8px]"
@@ -258,7 +264,7 @@ function ContactForm() {
                             />
                         )}
                     </Button>
-                    {/* I would prefer if these were popups, but this is just mock */}
+
                     {errorMessage && (
                         <div className="bg-base rounded text-primary text-sm self-center">
                             {errorMessage}
@@ -267,7 +273,7 @@ function ContactForm() {
 
                     {submitSuccess && (
                         <div className="bg-base rounded text-green-500 text-sm self-center">
-                            Form submitted successfully!
+                            {t("common.form.form_success")}
                         </div>
                     )}
                 </form>

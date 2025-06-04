@@ -1,36 +1,29 @@
+import { useTranslation } from "react-i18next";
+
 function OurStory() {
+    const { t } = useTranslation();
+
     return (
         <div className="w-full flex justify-center bg-neutral-100">
             <section className="w-[1440px] px-[120px] py-[80px] flex gap-[80px] items-end">
                 <div className="max-w-[600px] text-left flex flex-col gap-[16px]">
                     <div className="flex flex-col gap-[8px]">
                         <h3 className="font-gilroy text-[46px] leading-[110%] text-primary">
-                            Naša priča: Tko smo i kako smo počeli
+                            {t("about.story.title")}
                         </h3>
                         <p className="text-[20px] leading-[120%] font-gilroy">
-                            Izgrađeni na brizi, vođeni izvrsnošću
+                            {t("about.story.subtitle")}
                         </p>
                     </div>
                     <p className="leading-[150%] text-[16px]">
-                        {" "}
-                        Optima Rent nastao je iz jednostavne ideje – stvoriti
-                        rent-a-car iskustvo koje stavlja korisnika na prvo
-                        mjesto. Počeli smo kao mali, strastveni tim s vizijom
-                        pružanja usluge gdje smo stavili korisnika na prvo
-                        mjesto. Od prvog dana fokusirali smo se na moderna,
-                        pouzdana vozila i vrhunsku korisničku podršku. Upravo
-                        nas je ta predanost učinila jednom od najbrže rastućih
-                        rent-a-car tvrtki u regiji.
+                        {t("about.story.description")}
                     </p>
                     <div className="flex flex-col gap-[10px]">
                         <p className="text-[20px] leading-[120%] font-gilroy">
-                            U Optima Rentu ne iznajmljujete samo automobil
-                            –{" "}
+                            {t("about.story.additional_title")}
                         </p>
                         <p className="leading-[150%] text-[16px]">
-                            dobivate sigurnost, fleksibilnost i bezbrižnu
-                            vožnju. Bilo da istražujete nove gradove ili trebate
-                            dugoročno rješenje, mi smo uz vas na svakom koraku.
+                            {t("about.story.additional_description")}
                         </p>
                     </div>
                 </div>
@@ -40,14 +33,15 @@ function OurStory() {
                             <img
                                 className="w-[24px] h-[24px]"
                                 src="/src/assets/userLogo.svg"
+                                alt="User icon"
                             />
                         </div>
 
                         <p className="bg-secondary-100 w-full text-base-black w-[408px] h-[62px] px-[28px] py-[20px] flex items-center">
                             <span className="h-fit bg-primary rounded-[999px] text-base px-[8px] pt-[1px] pb-[2px]">
-                                Posvećenost korisnicima
+                                {t("about.story.values.customer_commitment")}
                             </span>
-                            od prvog dana
+                            {t("about.story.values.from_day_one")}
                         </p>
                     </div>
                     <div className="flex">
@@ -55,14 +49,15 @@ function OurStory() {
                             <img
                                 className="w-[24px] h-[24px]"
                                 src="/src/assets/chartLogo.svg"
+                                alt="Chart icon"
                             />
                         </div>
 
                         <p className="bg-secondary-100 w-full text-base-black w-[408px] h-[62px] px-[28px] py-[20px] flex items-center">
                             <span className="h-fit bg-primary rounded-[999px] text-base px-[8px] pt-[1px] pb-[2px]">
-                                Brz rast
+                                {t("about.story.values.rapid_growth")}
                             </span>
-                            zahvaljujući izvrsnoj usluzi i inovacijama
+                            {t("about.story.values.thanks_to")}
                         </p>
                     </div>
                     <div className="flex">
@@ -70,13 +65,14 @@ function OurStory() {
                             <img
                                 className="w-[24px] h-[24px]"
                                 src="/src/assets/handHeartLogo.svg"
+                                alt="Heart icon"
                             />
                         </div>
 
                         <p className="bg-secondary-100 w-full text-base-black w-[408px] h-[62px] px-[28px] py-[20px] flex items-center">
-                            Naše obećanje:
+                            {t("about.story.values.our_promise")}
                             <span className="h-fit bg-primary rounded-[999px] text-base px-[8px] pt-[1px] pb-[2px]">
-                                Uvijek brinemo više
+                                {t("about.story.values.we_care_more")}
                             </span>
                         </p>
                     </div>

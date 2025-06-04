@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 export interface Testimonial {
     id: string;
     rating: number;
@@ -57,3 +59,50 @@ export const exampleTestimonials: Testimonial[] = [
         },
     },
 ];
+
+export const useExampleTestimonials = () => {
+    const { t } = useTranslation();
+
+    return [
+        {
+            id: '1',
+            rating: 4.5,
+            text: t("testimonials.1.text"),
+            author: {
+                name: t("testimonials.1.author.name"),
+                title: t("testimonials.author.title"),
+                image: '/src/assets/anticaTestimonialmage.jfif',
+            },
+        },
+        {
+            id: '2',
+            rating: 5,
+            text: t("testimonials.2.text"),
+            author: {
+                name: t("testimonials.2.author.name"),
+                title: t("testimonials.author.title"),
+                image: '/src/assets/damirTestimonial.jfif',
+            },
+        },
+        {
+            id: '3',
+            rating: 4.5,
+            text: t("testimonials.3.text"),
+            author: {
+                name: t("testimonials.3.author.name"),
+                title: t("testimonials.author.title"),
+                image: '/src/assets/anticaTestimonialmage.jfif',
+            },
+        },
+        {
+            id: '4',
+            rating: 5,
+            text: t("testimonials.4.text"),
+            author: {
+                name: t("testimonials.4.author.name"),
+                title: t("testimonials.author.title"),
+                image: '/src/assets/damirTestimonial.jfif',
+            },
+        },
+    ];
+};
