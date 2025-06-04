@@ -1,7 +1,7 @@
 // src/components/rental/RentalDateTimeForm.tsx
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useBooking } from "@/context/BookingContext";
+// import { useBooking } from "@/context/BookingContext";
 import { useNavigate } from "react-router-dom";
 import { carTypes } from "@/utils/types/carTypes";
 import { SearchState } from "@/utils/types/searchTypes";
@@ -9,6 +9,7 @@ import { DatePicker, TimePicker } from "antd";
 import { dateUtils } from "@/utils/dateUtils";
 import Button from "../common/Button";
 import { Dayjs } from "dayjs";
+import { useBooking } from "@/context/BookingContext";
 
 interface RentalDateTimeFormProps {
     selectedCar: carTypes | null;
@@ -16,7 +17,8 @@ interface RentalDateTimeFormProps {
 
 function RentalDateTimeForm({ selectedCar }: RentalDateTimeFormProps) {
     const { t } = useTranslation();
-    const { state, dispatch } = useBooking();
+    // const { state, dispatch } = useBooking();
+    const { dispatch } = useBooking();
     const navigate = useNavigate();
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);

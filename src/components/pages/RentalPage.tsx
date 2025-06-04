@@ -4,13 +4,13 @@ import { useTranslation } from "react-i18next";
 import RentalVehicleGrid from "../rental/RentalVehicleGrid";
 import RentalDateTimeForm from "../rental/RentalDateTimeForm";
 import ProgressSteps from "../bookingprocess/ProgressSteps";
-import { useBooking } from "@/context/BookingContext";
+// import { useBooking } from "@/context/BookingContext";
 import FeatureCards from "../homepage/FeatureCards";
 import { carTypes } from "@/utils/types/carTypes";
 
 function RentalPage() {
     const { t } = useTranslation();
-    const { state } = useBooking();
+    // const { state } = useBooking();
     const [selectedCar, setSelectedCar] = useState<carTypes | null>(null);
     const [step, setStep] = useState<"vehicles" | "details">("vehicles");
 
